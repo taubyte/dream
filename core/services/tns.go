@@ -11,7 +11,7 @@ import (
 
 func (u *Universe) CreateTNSService(config *commonIface.ServiceConfig) (peer.Node, error) {
 	if registry.Registry.TNS.Service == nil {
-		return nil, fmt.Errorf(`Service is nil, have you imported _ "bitbucket.org/taubyte/tns/service"`)
+		return nil, fmt.Errorf(`Service is nil, have you imported _ "github.com/taubyte/odo/protocols/tns/service"`)
 	}
 
 	tns, err := registry.Registry.TNS.Service(u.ctx, config)
@@ -32,7 +32,7 @@ func (u *Universe) CreateTNSService(config *commonIface.ServiceConfig) (peer.Nod
 
 func (s *Simple) CreateTNSClient(config *commonIface.ClientConfig) error {
 	if registry.Registry.TNS.Client == nil {
-		return fmt.Errorf(`client is nil, have you imported _ "bitbucket.org/taubyte/tns-p2p-client"`)
+		return fmt.Errorf(`client is nil, have you imported _ "github.com/taubyte/odo/clients/p2p/tns"`)
 	}
 	_tns, err := registry.Registry.TNS.Client(s.Node, config)
 	if err != nil {

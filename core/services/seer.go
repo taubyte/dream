@@ -11,7 +11,7 @@ import (
 
 func (u *Universe) CreateSeerService(config *commonIface.ServiceConfig) (peer.Node, error) {
 	if registry.Registry.Seer.Service == nil {
-		return nil, fmt.Errorf(`Service is nil, have you imported _ "bitbucket.org/taubyte/seer/service"`)
+		return nil, fmt.Errorf(`Service is nil, have you imported _ "github.com/taubyte/odo/protocols/seer/service"`)
 	}
 
 	seer, err := registry.Registry.Seer.Service(u.ctx, config)
@@ -32,7 +32,7 @@ func (u *Universe) CreateSeerService(config *commonIface.ServiceConfig) (peer.No
 
 func (s *Simple) CreateSeerClient(config *commonIface.ClientConfig) error {
 	if registry.Registry.Seer.Client == nil {
-		return fmt.Errorf(`client is nil, have you imported _ "bitbucket.org/taubyte/seer-p2p-client"`)
+		return fmt.Errorf(`client is nil, have you imported _ "github.com/taubyte/odo/clients/p2p/seer"`)
 	}
 
 	_seer, err := registry.Registry.Seer.Client(s.Node, config)

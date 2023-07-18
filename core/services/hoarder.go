@@ -18,7 +18,7 @@ func (u *Universe) CreateHoarderService(config *commonIface.ServiceConfig) (peer
 	}
 
 	if registry.Registry.Hoarder.Service == nil {
-		return nil, fmt.Errorf(`service is nil, have you imported _ "bitbucket.org/taubyte/hoarder/service"`)
+		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/hoarder/service"`)
 	}
 
 	hoarder, err := registry.Registry.Hoarder.Service(u.ctx, config)
@@ -39,7 +39,7 @@ func (u *Universe) CreateHoarderService(config *commonIface.ServiceConfig) (peer
 
 func (s *Simple) CreateHoarderClient(config *commonIface.ClientConfig) error {
 	if registry.Registry.Hoarder.Client == nil {
-		return fmt.Errorf(`client is nil, have you imported _ "bitbucket.org/taubyte/hoarder/api/p2p"`)
+		return fmt.Errorf(`client is nil, have you imported _ "github.com/taubyte/odo/clients/p2p/hoarder"`)
 	}
 
 	_hoarder, err := registry.Registry.Hoarder.Client(s.Node, config)

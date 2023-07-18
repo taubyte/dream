@@ -5,21 +5,9 @@ go 1.19
 replace github.com/ipfs/go-block-format => github.com/ipfs/go-block-format v0.1.1
 
 require (
-	bitbucket.org/taubyte/auth v0.4.5
 	bitbucket.org/taubyte/billing v0.2.7
 	bitbucket.org/taubyte/console v0.4.1
-	bitbucket.org/taubyte/go-auth-http v0.1.2
-	bitbucket.org/taubyte/go-moody-blues v0.1.34
-	bitbucket.org/taubyte/hoarder v0.3.1
-	bitbucket.org/taubyte/monkey v0.4.1
-	bitbucket.org/taubyte/node v0.5.4
 	bitbucket.org/taubyte/p2p v0.8.2
-	bitbucket.org/taubyte/patrick v0.3.1
-	bitbucket.org/taubyte/q-node v0.1.0
-	bitbucket.org/taubyte/seer v0.3.1
-	bitbucket.org/taubyte/seer-p2p-client v0.1.1
-	bitbucket.org/taubyte/tns v0.4.1
-	bitbucket.org/taubyte/tns-p2p-client v0.1.1
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/ipfs/go-log/v2 v2.5.1
 	github.com/jedib0t/go-pretty/v6 v6.4.6
@@ -30,6 +18,7 @@ require (
 	github.com/taubyte/go-simple-git v0.2.5
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.1
+	github.com/taubyte/odo v0.0.0-20230718161427-5af101b9a5d5
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
 	golang.org/x/crypto v0.11.0
@@ -41,25 +30,23 @@ require (
 	atomicgo.dev/cursor v0.1.1 // indirect
 	atomicgo.dev/keyboard v0.2.9 // indirect
 	atomicgo.dev/schedule v0.0.2 // indirect
+	bitbucket.org/taubyte/auth v0.4.5 // indirect
 	bitbucket.org/taubyte/config-compiler v0.4.2 // indirect
 	bitbucket.org/taubyte/cors_jwt v0.0.0-20230320193005-fe981677d292 // indirect
 	bitbucket.org/taubyte/dreamland v0.4.1 // indirect
 	bitbucket.org/taubyte/dreamland-test v0.3.1 // indirect
-	bitbucket.org/taubyte/go-builder v0.1.2 // indirect
-	bitbucket.org/taubyte/go-interfaces v0.2.1 // indirect
+	bitbucket.org/taubyte/go-auth-http v0.1.2 // indirect
+	bitbucket.org/taubyte/go-moody-blues v0.1.34 // indirect
 	bitbucket.org/taubyte/go-node-counters v0.1.7 // indirect
 	bitbucket.org/taubyte/go-node-database v0.2.1 // indirect
-	bitbucket.org/taubyte/go-node-http v0.3.2 // indirect
-	bitbucket.org/taubyte/go-node-ipfs v0.2.0 // indirect
-	bitbucket.org/taubyte/go-node-p2p v0.2.1 // indirect
-	bitbucket.org/taubyte/go-node-pubsub v0.3.1 // indirect
-	bitbucket.org/taubyte/go-node-smartops v0.2.0 // indirect
-	bitbucket.org/taubyte/go-node-storage v0.2.1 // indirect
 	bitbucket.org/taubyte/go-node-tvm v0.2.2 // indirect
-	bitbucket.org/taubyte/http v0.3.0 // indirect
 	bitbucket.org/taubyte/http-auto v0.1.1 // indirect
 	bitbucket.org/taubyte/kvdb v0.4.1 // indirect
+	bitbucket.org/taubyte/monkey v0.4.1 // indirect
 	bitbucket.org/taubyte/mycelium v0.4.4 // indirect
+	bitbucket.org/taubyte/node v0.5.4 // indirect
+	bitbucket.org/taubyte/seer-p2p-client v0.1.1 // indirect
+	bitbucket.org/taubyte/tns-p2p-client v0.1.1 // indirect
 	github.com/CAFxX/httpcompression v0.0.8 // indirect
 	github.com/DataDog/zstd v1.5.2 // indirect
 	github.com/Microsoft/go-winio v0.5.2 // indirect
@@ -221,7 +208,7 @@ require (
 	github.com/opencontainers/image-spec v1.0.2 // indirect
 	github.com/opencontainers/runtime-spec v1.1.0-rc.1 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
-	github.com/otiai10/copy v1.11.0 // indirect
+	github.com/otiai10/copy v1.12.0 // indirect
 	github.com/pbnjay/memory v0.0.0-20210728143218-7b4eea64cf58 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/polydawn/refmt v0.89.0 // indirect
@@ -237,7 +224,7 @@ require (
 	github.com/raulk/go-watchdog v1.3.0 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
-	github.com/rogpeppe/go-internal v1.10.0 // indirect
+	github.com/rogpeppe/go-internal v1.11.0 // indirect
 	github.com/rs/cors v1.8.3 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/sergi/go-diff v1.2.0 // indirect
@@ -245,6 +232,7 @@ require (
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/stripe/stripe-go/v72 v72.86.0 // indirect
+	github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29 // indirect
 	github.com/taubyte/domain-validation v1.0.0 // indirect
 	github.com/taubyte/go-doci v1.0.2 // indirect
 	github.com/taubyte/go-project-schema v0.9.3 // indirect

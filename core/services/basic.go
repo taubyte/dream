@@ -11,7 +11,6 @@ import (
 	"github.com/taubyte/go-interfaces/services/hoarder"
 	"github.com/taubyte/go-interfaces/services/monkey"
 	"github.com/taubyte/go-interfaces/services/patrick"
-	"github.com/taubyte/go-interfaces/services/q"
 	"github.com/taubyte/go-interfaces/services/seer"
 	"github.com/taubyte/go-interfaces/services/tns"
 )
@@ -151,16 +150,4 @@ func (b *basicMultiverse) Console() (common.Universe, console.Client, error) {
 	}
 
 	return b.multiverse, simple.Console(), nil
-}
-
-func (b *basicMultiverse) Q() (common.Universe, q.Client, error) {
-	b.Service("q")
-	b.clients.Q = &commonIface.ClientConfig{}
-
-	simple, err := b.start()
-	if err != nil {
-		return nil, nil, fmt.Errorf("getting %s client failed with: %s", "q", err)
-	}
-
-	return b.multiverse, simple.Q(), nil
 }

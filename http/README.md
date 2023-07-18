@@ -31,7 +31,7 @@ air
 See [example/main.go](example/main.go)
 ## Installation
 ```
-go get -u bitbucket.org/taubyte/go-auth-http
+go get -u github.com/taubyte/odo/clients/http/auth
 ```
 
 

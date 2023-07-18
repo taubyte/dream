@@ -22,33 +22,29 @@ import (
 	"github.com/urfave/cli/v2"
 
 	// Empty imports for initializing fixtures, and client/service run methods
-	_ "bitbucket.org/taubyte/auth/api/p2p"
-	_ "bitbucket.org/taubyte/auth/service"
 	_ "bitbucket.org/taubyte/billing/api/p2p"
 	_ "bitbucket.org/taubyte/billing/service"
 	_ "bitbucket.org/taubyte/console/api/p2p"
 	_ "bitbucket.org/taubyte/console/ui/service"
-	moodyCommon "bitbucket.org/taubyte/go-moody-blues/common"
-	_ "bitbucket.org/taubyte/hoarder/api/p2p"
-	_ "bitbucket.org/taubyte/hoarder/service"
-	_ "bitbucket.org/taubyte/monkey/api/p2p"
-	_ "bitbucket.org/taubyte/monkey/fixtures/compile"
-	_ "bitbucket.org/taubyte/monkey/service"
-	_ "bitbucket.org/taubyte/node/service"
-	_ "bitbucket.org/taubyte/patrick/api/p2p"
-	_ "bitbucket.org/taubyte/patrick/service"
-	_ "bitbucket.org/taubyte/q-node/api/p2p"
-	_ "bitbucket.org/taubyte/q-node/ui/service"
-	_ "bitbucket.org/taubyte/seer-p2p-client"
-	_ "bitbucket.org/taubyte/seer/service"
-	_ "bitbucket.org/taubyte/tns-p2p-client"
-	_ "bitbucket.org/taubyte/tns/service"
 	_ "github.com/taubyte/dreamland/fixtures"
+	_ "github.com/taubyte/odo/clients/p2p/auth"
+	_ "github.com/taubyte/odo/clients/p2p/hoarder"
+	_ "github.com/taubyte/odo/clients/p2p/monkey"
+	_ "github.com/taubyte/odo/clients/p2p/patrick"
+	_ "github.com/taubyte/odo/clients/p2p/seer"
+	_ "github.com/taubyte/odo/clients/p2p/tns"
+	_ "github.com/taubyte/odo/protocols/auth/service"
+	_ "github.com/taubyte/odo/protocols/hoarder/service"
+	_ "github.com/taubyte/odo/protocols/monkey/fixtures/compile"
+	_ "github.com/taubyte/odo/protocols/monkey/service"
+	_ "github.com/taubyte/odo/protocols/node/service"
+	_ "github.com/taubyte/odo/protocols/patrick/service"
+	_ "github.com/taubyte/odo/protocols/seer/service"
+	_ "github.com/taubyte/odo/protocols/tns/service"
 )
 
 func main() {
 	peer.DevMode = true
-	moodyCommon.Dev = true
 	ctx, ctxC := context.WithCancel(context.Background())
 
 	defer func() {

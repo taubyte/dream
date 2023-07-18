@@ -6,21 +6,21 @@ import (
 	"testing"
 	"time"
 
-	_ "bitbucket.org/taubyte/auth/service"
 	commonDreamland "github.com/taubyte/dreamland/core/common"
 	dreamland "github.com/taubyte/dreamland/core/services"
 	"github.com/taubyte/dreamland/http/inject"
 	commonIface "github.com/taubyte/go-interfaces/common"
+	_ "github.com/taubyte/odo/protocols/auth/service"
 
-	_ "bitbucket.org/taubyte/hoarder/service"
-	_ "bitbucket.org/taubyte/monkey/service"
-	_ "bitbucket.org/taubyte/patrick/service"
-	_ "bitbucket.org/taubyte/seer/service"
-	_ "bitbucket.org/taubyte/tns/service"
+	_ "github.com/taubyte/odo/protocols/hoarder/service"
+	_ "github.com/taubyte/odo/protocols/monkey/service"
+	_ "github.com/taubyte/odo/protocols/patrick/service"
+	_ "github.com/taubyte/odo/protocols/seer/service"
+	_ "github.com/taubyte/odo/protocols/tns/service"
 
-	_ "bitbucket.org/taubyte/monkey/api/p2p"
-	_ "bitbucket.org/taubyte/patrick/api/p2p"
-	_ "bitbucket.org/taubyte/tns-p2p-client"
+	_ "github.com/taubyte/odo/clients/p2p/monkey"
+	_ "github.com/taubyte/odo/clients/p2p/patrick"
+	_ "github.com/taubyte/odo/clients/p2p/tns"
 )
 
 func TestRoutes(t *testing.T) {

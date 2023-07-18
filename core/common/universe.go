@@ -114,7 +114,5 @@ type Simple interface {
 	Billing() billingIface.Client
 	CreateConsoleClient(config *commonIface.ClientConfig) error
 	Console() consoleIface.Client
-	CreateQClient(config *commonIface.ClientConfig) error
-	Q() qIface.Client
 	Provides(clients ...string) error
 }

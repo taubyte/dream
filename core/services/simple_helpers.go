@@ -12,6 +12,5 @@ func (s *Simple) getAll() map[string]common.ClientCreationMethod {
 		"seer":    s.CreateSeerClient,
 		"tns":     s.CreateTNSClient,
 		"console": s.CreateConsoleClient,
-		"q":       s.CreateQClient,
 	}
 }

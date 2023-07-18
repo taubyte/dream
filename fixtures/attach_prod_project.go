@@ -7,12 +7,12 @@ import (
 	"io"
 	"strings"
 
-	commonAuth "bitbucket.org/taubyte/auth/common"
-	httpAuthClient "bitbucket.org/taubyte/go-auth-http"
 	"github.com/google/go-github/github"
 	commonDreamland "github.com/taubyte/dreamland/core/common"
 	dreamlandRegistry "github.com/taubyte/dreamland/core/registry"
 	"github.com/taubyte/dreamland/helpers"
+	httpAuthClient "github.com/taubyte/odo/clients/http/auth"
+	commonAuth "github.com/taubyte/odo/protocols/common"
 	"golang.org/x/oauth2"
 )
 

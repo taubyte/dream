@@ -14,9 +14,9 @@ import (
 	"strings"
 	"text/template"
 
-	commonAuth "bitbucket.org/taubyte/auth/common"
-	httpAuthClient "bitbucket.org/taubyte/go-auth-http"
 	"github.com/taubyte/go-interfaces/services/patrick"
+	httpAuthClient "github.com/taubyte/odo/clients/http/auth"
+	commonAuth "github.com/taubyte/odo/protocols/common"
 )
 
 var ac *httpAuthClient.Client

@@ -50,7 +50,6 @@ func (u *Universe) createService(name string, config *commonIface.ServiceConfig)
 		"tns":     u.CreateTNSService,
 		"console": u.CreateConsoleService,
 		"node":    u.CreateNodeService,
-		"q":       u.CreateQService,
 	}
 
 	handle, ok := all[name]

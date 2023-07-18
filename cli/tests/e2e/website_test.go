@@ -5,17 +5,17 @@ import (
 	"testing"
 	"time"
 
-	_ "bitbucket.org/taubyte/auth/service"
-	_ "bitbucket.org/taubyte/hoarder/service"
-	_ "bitbucket.org/taubyte/monkey/service"
-	_ "bitbucket.org/taubyte/patrick/service"
-	_ "bitbucket.org/taubyte/tns/service"
 	commonDreamland "github.com/taubyte/dreamland/core/common"
 	"github.com/taubyte/dreamland/core/services"
 	commonTest "github.com/taubyte/dreamland/helpers"
 	commonIface "github.com/taubyte/go-interfaces/common"
 	specCommon "github.com/taubyte/go-specs/common"
 	spec "github.com/taubyte/go-specs/methods"
+	_ "github.com/taubyte/odo/protocols/auth/service"
+	_ "github.com/taubyte/odo/protocols/hoarder/service"
+	_ "github.com/taubyte/odo/protocols/monkey/service"
+	_ "github.com/taubyte/odo/protocols/patrick/service"
+	_ "github.com/taubyte/odo/protocols/tns/service"
 )
 
 var testWebsiteId = "2a547229-190d-412b-b13a-a4fb5306dec9"
