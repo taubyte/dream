@@ -6,7 +6,6 @@ import (
 	"github.com/taubyte/dreamland/core/common"
 	commonIface "github.com/taubyte/go-interfaces/common"
 	"github.com/taubyte/go-interfaces/services/auth"
-	"github.com/taubyte/go-interfaces/services/billing"
 	"github.com/taubyte/go-interfaces/services/console"
 	"github.com/taubyte/go-interfaces/services/hoarder"
 	"github.com/taubyte/go-interfaces/services/monkey"
@@ -72,17 +71,7 @@ func (b *basicMultiverse) Auth() (common.Universe, auth.Client, error) {
 
 	return b.multiverse, simple.Auth(), nil
 }
-func (b *basicMultiverse) Billing() (common.Universe, billing.Client, error) {
-	b.Service("billing")
-	b.clients.Billing = &commonIface.ClientConfig{}
 
-	simple, err := b.start()
-	if err != nil {
-		return nil, nil, fmt.Errorf("getting %s client failed with: %s", "billing", err)
-	}
-
-	return b.multiverse, simple.Billing(), nil
-}
 func (b *basicMultiverse) Hoarder() (common.Universe, hoarder.Client, error) {
 	b.Service("hoarder")
 	b.clients.Hoarder = &commonIface.ClientConfig{}

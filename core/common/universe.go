@@ -6,12 +6,10 @@ import (
 	commonIface "github.com/taubyte/go-interfaces/common"
 	"github.com/taubyte/go-interfaces/p2p/peer"
 	authIface "github.com/taubyte/go-interfaces/services/auth"
-	billingIface "github.com/taubyte/go-interfaces/services/billing"
 	consoleIface "github.com/taubyte/go-interfaces/services/console"
 	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
 	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
 	patrickIface "github.com/taubyte/go-interfaces/services/patrick"
-	qIface "github.com/taubyte/go-interfaces/services/q"
 	seerIface "github.com/taubyte/go-interfaces/services/seer"
 	nodeIface "github.com/taubyte/go-interfaces/services/substrate"
 	tnsIface "github.com/taubyte/go-interfaces/services/tns"
@@ -37,10 +35,8 @@ type SimpleConfigClients struct {
 	TNS     *commonIface.ClientConfig
 	Monkey  *commonIface.ClientConfig
 	Hoarder *commonIface.ClientConfig
-	Billing *commonIface.ClientConfig
 	Node    *commonIface.ClientConfig
 	Console *commonIface.ClientConfig
-	Q       *commonIface.ClientConfig
 }
 
 type Config struct {
@@ -58,10 +54,8 @@ type Universe interface {
 	TNS() tnsIface.Service
 	Monkey() monkeyIface.Service
 	Hoarder() hoarderIface.Service
-	Billing() billingIface.Service
 	Node() nodeIface.Service
 	Console() consoleIface.Service
-	Q() qIface.Service
 	Context() context.Context
 	Stop()
 	// If no simple defined, starts one named StartAllDefaultSimple.
@@ -88,10 +82,8 @@ type Universe interface {
 	TnsByPid(pid string) (tnsIface.Service, bool)
 	MonkeyByPid(pid string) (monkeyIface.Service, bool)
 	HoarderByPid(pid string) (hoarderIface.Service, bool)
-	BillingByPid(pid string) (billingIface.Service, bool)
 	NodeByPid(pid string) (nodeIface.Service, bool)
 	ConsoleByPid(pid string) (consoleIface.Service, bool)
-	QByPid(pid string) (qIface.Service, bool)
 	ListNumber(name string) int
 	GetServicePids(name string) ([]string, error)
 }
@@ -110,8 +102,6 @@ type Simple interface {
 	Monkey() monkeyIface.Client
 	CreateHoarderClient(config *commonIface.ClientConfig) error
 	Hoarder() hoarderIface.Client
-	CreateBillingClient(config *commonIface.ClientConfig) error
-	Billing() billingIface.Client
 	CreateConsoleClient(config *commonIface.ClientConfig) error
 	Console() consoleIface.Client
 	Provides(clients ...string) error

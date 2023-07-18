@@ -5,7 +5,6 @@ go 1.19
 replace github.com/ipfs/go-block-format => github.com/ipfs/go-block-format v0.1.1
 
 require (
-	bitbucket.org/taubyte/billing v0.2.7
 	bitbucket.org/taubyte/console v0.4.1
 	bitbucket.org/taubyte/p2p v0.8.2
 	github.com/google/go-github v17.0.0+incompatible
@@ -31,6 +30,7 @@ require (
 	atomicgo.dev/keyboard v0.2.9 // indirect
 	atomicgo.dev/schedule v0.0.2 // indirect
 	bitbucket.org/taubyte/auth v0.4.5 // indirect
+	bitbucket.org/taubyte/billing v0.2.7 // indirect
 	bitbucket.org/taubyte/config-compiler v0.4.2 // indirect
 	bitbucket.org/taubyte/cors_jwt v0.0.0-20230320193005-fe981677d292 // indirect
 	bitbucket.org/taubyte/dreamland v0.4.1 // indirect
@@ -231,7 +231,6 @@ require (
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
-	github.com/stripe/stripe-go/v72 v72.86.0 // indirect
 	github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29 // indirect
 	github.com/taubyte/domain-validation v1.0.0 // indirect
 	github.com/taubyte/go-doci v1.0.2 // indirect

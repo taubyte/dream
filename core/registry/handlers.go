@@ -17,7 +17,6 @@ type Handlers struct {
 
 var Registry = struct {
 	Auth    Handlers
-	Billing Handlers
 	Hoarder Handlers
 	Monkey  Handlers
 	Patrick Handlers
@@ -25,7 +24,6 @@ var Registry = struct {
 	TNS     Handlers
 	Console Handlers
 	Node    Handlers
-	Q       Handlers
 }{}
 
 // Order of params important!

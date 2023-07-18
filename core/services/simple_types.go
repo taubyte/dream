@@ -6,12 +6,10 @@ import (
 	"github.com/taubyte/dreamland/core/common"
 	p2p "github.com/taubyte/go-interfaces/p2p/peer"
 	authIface "github.com/taubyte/go-interfaces/services/auth"
-	billingIface "github.com/taubyte/go-interfaces/services/billing"
 	consoleIface "github.com/taubyte/go-interfaces/services/console"
 	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
 	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
 	patrickIface "github.com/taubyte/go-interfaces/services/patrick"
-	qIface "github.com/taubyte/go-interfaces/services/q"
 	seerIface "github.com/taubyte/go-interfaces/services/seer"
 	tnsIface "github.com/taubyte/go-interfaces/services/tns"
 )
@@ -26,8 +24,6 @@ type Simple struct {
 		monkey  monkeyIface.Client
 		hoarder hoarderIface.Client
 		console consoleIface.Client
-		billing billingIface.Client
-		q       qIface.Client
 	}
 }
 
@@ -70,12 +66,4 @@ func (s *Simple) Monkey() monkeyIface.Client {
 
 func (s *Simple) Hoarder() hoarderIface.Client {
 	return s.Clients.hoarder
-}
-
-func (s *Simple) Billing() billingIface.Client {
-	return s.Clients.billing
-}
-
-func (s *Simple) Q() qIface.Client {
-	return s.Clients.q
 }

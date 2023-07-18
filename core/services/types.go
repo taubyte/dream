@@ -8,12 +8,10 @@ import (
 	commonIface "github.com/taubyte/go-interfaces/common"
 	peer "github.com/taubyte/go-interfaces/p2p/peer"
 	authIface "github.com/taubyte/go-interfaces/services/auth"
-	billingIface "github.com/taubyte/go-interfaces/services/billing"
 	consoleIface "github.com/taubyte/go-interfaces/services/console"
 	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
 	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
 	patrickIface "github.com/taubyte/go-interfaces/services/patrick"
-	qIface "github.com/taubyte/go-interfaces/services/q"
 	seerIface "github.com/taubyte/go-interfaces/services/seer"
 	nodeIface "github.com/taubyte/go-interfaces/services/substrate"
 	tnsIface "github.com/taubyte/go-interfaces/services/tns"
@@ -138,18 +136,6 @@ func (u *Universe) HoarderByPid(pid string) (hoarderIface.Service, bool) {
 	return byId[hoarderIface.Service](u, u.service["hoarder"].nodes, pid)
 }
 
-func (u *Universe) Billing() billingIface.Service {
-	ret, ok := first[billingIface.Service](u, u.service["billing"].nodes)
-	if !ok {
-		return nil
-	}
-	return ret
-}
-
-func (u *Universe) BillingByPid(pid string) (billingIface.Service, bool) {
-	return byId[billingIface.Service](u, u.service["billing"].nodes, pid)
-}
-
 func (u *Universe) Node() nodeIface.Service {
 	ret, ok := first[nodeIface.Service](u, u.service["node"].nodes)
 	if !ok {
@@ -172,19 +158,6 @@ func (u *Universe) Console() consoleIface.Service {
 
 func (u *Universe) ConsoleByPid(pid string) (consoleIface.Service, bool) {
 	return byId[consoleIface.Service](u, u.service["console"].nodes, pid)
-}
-
-func (u *Universe) Q() qIface.Service {
-	ret, ok := first[qIface.Service](u, u.service["q"].nodes)
-	if !ok {
-		return nil
-	}
-
-	return ret
-}
-
-func (u *Universe) QByPid(pid string) (qIface.Service, bool) {
-	return byId[qIface.Service](u, u.service["q"].nodes, pid)
 }
 
 func byId[T any](u *Universe, i map[string]commonIface.Service, pid string) (T, bool) {

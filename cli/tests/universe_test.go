@@ -5,8 +5,6 @@ import (
 	"testing"
 	"time"
 
-	_ "bitbucket.org/taubyte/billing/api/p2p"
-	_ "bitbucket.org/taubyte/billing/service"
 	_ "bitbucket.org/taubyte/console/api/p2p"
 	_ "bitbucket.org/taubyte/console/ui/service"
 	cliCommon "github.com/taubyte/dreamland/cli/common"
@@ -30,7 +28,7 @@ import (
 	_ "github.com/taubyte/odo/protocols/tns/service"
 )
 
-var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "billing", "node", "console", "q"}
+var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "node", "console"}
 
 func TestKillService(t *testing.T) {
 	t.Skip("this test needs to be redone")
@@ -213,10 +211,6 @@ func TestUniverseAll(t *testing.T) {
 		return
 	}
 
-	if u.Billing() == nil || simple.Billing() == nil {
-		t.Error("Billing is nil || BillingClient == nil")
-		return
-	}
 	if u.Node() == nil {
 		t.Error("Node is nil")
 		return
@@ -265,10 +259,8 @@ func TestMultipleServices(t *testing.T) {
 			"tns":     {Others: map[string]int{"copies": 3}},
 			"monkey":  {Others: map[string]int{"copies": 3}},
 			"hoarder": {Others: map[string]int{"copies": 3}},
-			"billing": {Others: map[string]int{"copies": 3}},
 			"node":    {Others: map[string]int{"copies": 3}},
 			"console": {Others: map[string]int{"copies": 3}},
-			"q":       {Others: map[string]int{"copies": 3}},
 		},
 	})
 	if err != nil {

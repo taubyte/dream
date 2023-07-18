@@ -21,9 +21,7 @@ import (
 	client "github.com/taubyte/dreamland/http"
 	"github.com/urfave/cli/v2"
 
-	// Empty imports for initializing fixtures, and client/service run methods
-	_ "bitbucket.org/taubyte/billing/api/p2p"
-	_ "bitbucket.org/taubyte/billing/service"
+	// Empty imports for initializing fixtures, and client/service run methods"
 	_ "bitbucket.org/taubyte/console/api/p2p"
 	_ "bitbucket.org/taubyte/console/ui/service"
 	_ "github.com/taubyte/dreamland/fixtures"
@@ -63,8 +61,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	return
 }
 
 func defineCLI(ctx *common.Context) *(cli.App) {

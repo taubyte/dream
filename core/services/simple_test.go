@@ -14,10 +14,6 @@ func TestClientsWithDefaults(t *testing.T) {
 		t.Error("Auth is nil")
 		return
 	}
-	if config.Billing == nil {
-		t.Error("Billing is nil")
-		return
-	}
 	if config.Patrick == nil {
 		t.Error("Patrick is nil")
 		return
@@ -36,10 +32,6 @@ func TestClientsWithDefaults(t *testing.T) {
 	}
 	if config.Console == nil {
 		t.Error("Console is nil")
-		return
-	}
-	if config.Q == nil {
-		t.Error("Q is nil")
 		return
 	}
 }
