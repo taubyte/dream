@@ -30,8 +30,4 @@ func TestClientsWithDefaults(t *testing.T) {
 		t.Error("Hoarder is nil")
 		return
 	}
-	if config.Console == nil {
-		t.Error("Console is nil")
-		return
-	}
 }

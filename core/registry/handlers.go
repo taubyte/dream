@@ -22,7 +22,6 @@ var Registry = struct {
 	Patrick Handlers
 	Seer    Handlers
 	TNS     Handlers
-	Console Handlers
 	Node    Handlers
 }{}
 

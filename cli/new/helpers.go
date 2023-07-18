@@ -246,6 +246,5 @@ func getFilledClientConfig() commonDreamland.SimpleConfigClients {
 		Monkey:  &commonIface.ClientConfig{},
 		Hoarder: &commonIface.ClientConfig{},
 		Node:    &commonIface.ClientConfig{},
-		Console: &commonIface.ClientConfig{},
 	}
 }

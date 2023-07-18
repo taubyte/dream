@@ -3,7 +3,6 @@ package services
 import (
 	"context"
 
-	"github.com/spf13/afero"
 	"github.com/taubyte/dreamland/core/common"
 	"github.com/taubyte/dreamland/core/registry"
 )
@@ -19,10 +18,6 @@ func (m *multiverse) Context() context.Context {
 
 func (m *multiverse) Exist(universe string) bool {
 	return Exist(universe)
-}
-
-func (m *multiverse) Ui() afero.Fs {
-	return ui
 }
 
 func (m *multiverse) Universe(name string) common.Universe {

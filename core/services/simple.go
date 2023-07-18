@@ -27,8 +27,6 @@ func ClientsWithDefaults(names ...string) common.SimpleConfigClients {
 			config.Monkey = &commonIface.ClientConfig{}
 		case "hoarder":
 			config.Hoarder = &commonIface.ClientConfig{}
-		case "console":
-			config.Console = &commonIface.ClientConfig{}
 		}
 	}
 	return config
@@ -69,7 +67,6 @@ func (u *Universe) CreateSimpleNode(name string, config *common.SimpleConfig) (p
 		"tns":     config.Clients.TNS,
 		"monkey":  config.Clients.Monkey,
 		"hoarder": config.Clients.Hoarder,
-		"console": config.Clients.Console,
 	}
 	for clientType, config := range clientConfigs {
 		if config == nil {

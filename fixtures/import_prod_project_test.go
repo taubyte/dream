@@ -3,7 +3,6 @@ package fixtures
 import (
 	"testing"
 
-	_ "bitbucket.org/taubyte/console/ui/service"
 	commonDreamland "github.com/taubyte/dreamland/core/common"
 	dreamland "github.com/taubyte/dreamland/core/services"
 	"github.com/taubyte/dreamland/helpers"
@@ -30,7 +29,6 @@ func TestImportProdProject(t *testing.T) {
 			"monkey":  {},
 			"patrick": {},
 			"hoarder": {},
-			"console": {},
 		},
 		Simples: map[string]commonDreamland.SimpleConfig{
 			"client": {

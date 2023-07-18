@@ -21,15 +21,6 @@ func Start(m common.Multiverse) (err error) {
 
 	setUpHttpRoutes()
 
-	api.ServeAssets(&httpIface.AssetsDefinition{
-		Path: "/",
-		HeadlessAssetsDefinition: httpIface.HeadlessAssetsDefinition{
-			Directory:             "dist",
-			SinglePageApplication: true,
-			FileSystem:            m.Ui(),
-		},
-	})
-
 	api.Start()
 
 	time.Sleep(300 * time.Millisecond)

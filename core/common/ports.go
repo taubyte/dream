@@ -7,7 +7,6 @@ var (
 	DefaultPatrickPort = 184
 	DefaultSeerPort    = 205
 	DefaultTNSPort     = 226
-	DefaultConsolePort = 260
 	DefaultNodePort    = 282
 	DefaultDnsPort     = 304
 
@@ -15,7 +14,6 @@ var (
 	DefaultPatrickHttpPort = 424
 	DefaultAuthHttpPort    = 445
 	DefaultTNSHttpPort     = 466
-	DefaultConsoleHttpPort = 508
 	DefaultNodeHttpPort    = 529
 
 	DreamlandApiListen = DefaultURL + ":1421"

@@ -6,7 +6,6 @@ import (
 	"github.com/taubyte/dreamland/core/common"
 	commonIface "github.com/taubyte/go-interfaces/common"
 	"github.com/taubyte/go-interfaces/services/auth"
-	"github.com/taubyte/go-interfaces/services/console"
 	"github.com/taubyte/go-interfaces/services/hoarder"
 	"github.com/taubyte/go-interfaces/services/monkey"
 	"github.com/taubyte/go-interfaces/services/patrick"
@@ -127,16 +126,4 @@ func (b *basicMultiverse) Tns() (common.Universe, tns.Client, error) {
 	}
 
 	return b.multiverse, simple.TNS(), nil
-}
-
-func (b *basicMultiverse) Console() (common.Universe, console.Client, error) {
-	b.Service("console")
-	b.clients.Console = &commonIface.ClientConfig{}
-
-	simple, err := b.start()
-	if err != nil {
-		return nil, nil, fmt.Errorf("getting %s client failed with: %s", "console", err)
-	}
-
-	return b.multiverse, simple.Console(), nil
 }

@@ -20,11 +20,11 @@ var (
 )
 
 func ValidServices() []string {
-	return []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "node", "console"}
+	return []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "node"}
 }
 
 func ValidClients() []string {
-	return []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "console"}
+	return []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder"}
 }
 
 func (u *Universe) toClose(c ifaceCommon.Service) {

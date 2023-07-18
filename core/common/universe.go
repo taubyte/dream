@@ -6,7 +6,6 @@ import (
 	commonIface "github.com/taubyte/go-interfaces/common"
 	"github.com/taubyte/go-interfaces/p2p/peer"
 	authIface "github.com/taubyte/go-interfaces/services/auth"
-	consoleIface "github.com/taubyte/go-interfaces/services/console"
 	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
 	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
 	patrickIface "github.com/taubyte/go-interfaces/services/patrick"
@@ -36,7 +35,6 @@ type SimpleConfigClients struct {
 	Monkey  *commonIface.ClientConfig
 	Hoarder *commonIface.ClientConfig
 	Node    *commonIface.ClientConfig
-	Console *commonIface.ClientConfig
 }
 
 type Config struct {
@@ -55,7 +53,6 @@ type Universe interface {
 	Monkey() monkeyIface.Service
 	Hoarder() hoarderIface.Service
 	Node() nodeIface.Service
-	Console() consoleIface.Service
 	Context() context.Context
 	Stop()
 	// If no simple defined, starts one named StartAllDefaultSimple.
@@ -83,7 +80,6 @@ type Universe interface {
 	MonkeyByPid(pid string) (monkeyIface.Service, bool)
 	HoarderByPid(pid string) (hoarderIface.Service, bool)
 	NodeByPid(pid string) (nodeIface.Service, bool)
-	ConsoleByPid(pid string) (consoleIface.Service, bool)
 	ListNumber(name string) int
 	GetServicePids(name string) ([]string, error)
 }
@@ -102,7 +98,5 @@ type Simple interface {
 	Monkey() monkeyIface.Client
 	CreateHoarderClient(config *commonIface.ClientConfig) error
 	Hoarder() hoarderIface.Client
-	CreateConsoleClient(config *commonIface.ClientConfig) error
-	Console() consoleIface.Client
 	Provides(clients ...string) error
 }

@@ -168,14 +168,6 @@ func importProdProject(u commonDreamland.Universe, params ...interface{}) error 
 		}
 	}
 
-	// Notify user we are waiting for all jobs to finish, and where they can see the status
-	consoleURL, err := u.GetURLHttp(u.Console().Node())
-	if err == nil {
-		fmt.Printf("\n\nWaiting for all jobs to be complete, check the status at: %s\n\n", consoleURL)
-	} else {
-		fmt.Printf("\n\nWaiting for all jobs to be complete\n\n")
-	}
-
 	var patrickJobs []string
 
 	// Wait for all jobs to be on patrick

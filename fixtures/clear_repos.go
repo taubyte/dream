@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"strings"
 
 	"github.com/google/go-github/github"
@@ -36,7 +36,7 @@ func clearRepos(u common.Universe, params ...interface{}) error {
 	}
 	defer res.Close()
 
-	body, err := ioutil.ReadAll(res)
+	body, err := io.ReadAll(res)
 	if err != nil {
 		return err
 	}

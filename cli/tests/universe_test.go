@@ -5,8 +5,6 @@ import (
 	"testing"
 	"time"
 
-	_ "bitbucket.org/taubyte/console/api/p2p"
-	_ "bitbucket.org/taubyte/console/ui/service"
 	cliCommon "github.com/taubyte/dreamland/cli/common"
 	_ "github.com/taubyte/odo/clients/p2p/auth"
 	_ "github.com/taubyte/odo/protocols/auth/service"
@@ -28,7 +26,7 @@ import (
 	_ "github.com/taubyte/odo/protocols/tns/service"
 )
 
-var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "node", "console"}
+var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "node"}
 
 func TestKillService(t *testing.T) {
 	t.Skip("this test needs to be redone")
@@ -239,10 +237,6 @@ func TestUniverseAll(t *testing.T) {
 		t.Error("Hoarder || HoarderClient == nil")
 		return
 	}
-	if u.Console() == nil || simple.Console() == nil {
-		t.Error("Console || ConsoleClient == nil")
-		return
-	}
 
 	// Wait for seer announce
 	time.Sleep(time.Second * 5)
@@ -260,7 +254,6 @@ func TestMultipleServices(t *testing.T) {
 			"monkey":  {Others: map[string]int{"copies": 3}},
 			"hoarder": {Others: map[string]int{"copies": 3}},
 			"node":    {Others: map[string]int{"copies": 3}},
-			"console": {Others: map[string]int{"copies": 3}},
 		},
 	})
 	if err != nil {

@@ -6,7 +6,6 @@ import (
 	"github.com/taubyte/dreamland/core/common"
 	p2p "github.com/taubyte/go-interfaces/p2p/peer"
 	authIface "github.com/taubyte/go-interfaces/services/auth"
-	consoleIface "github.com/taubyte/go-interfaces/services/console"
 	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
 	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
 	patrickIface "github.com/taubyte/go-interfaces/services/patrick"
@@ -23,7 +22,6 @@ type Simple struct {
 		tns     tnsIface.Client
 		monkey  monkeyIface.Client
 		hoarder hoarderIface.Client
-		console consoleIface.Client
 	}
 }
 
@@ -54,10 +52,6 @@ func (s *Simple) Patrick() patrickIface.Client {
 
 func (s *Simple) TNS() tnsIface.Client {
 	return s.Clients.tns
-}
-
-func (s *Simple) Console() consoleIface.Client {
-	return s.Clients.console
 }
 
 func (s *Simple) Monkey() monkeyIface.Client {

@@ -47,7 +47,6 @@ func (u *Universe) createService(name string, config *commonIface.ServiceConfig)
 		"patrick": u.CreatePatrickService,
 		"seer":    u.CreateSeerService,
 		"tns":     u.CreateTNSService,
-		"console": u.CreateConsoleService,
 		"node":    u.CreateNodeService,
 	}
 
@@ -125,8 +124,6 @@ func getHttpPort(name string) int {
 	switch name {
 	case "auth":
 		return common.DefaultAuthHttpPort
-	case "console":
-		return common.DefaultConsoleHttpPort
 	case "node":
 		return common.DefaultNodeHttpPort
 	case "patrick":
@@ -143,8 +140,6 @@ func getP2pPort(name string) int {
 	switch name {
 	case "auth":
 		return common.DefaultAuthPort
-	case "console":
-		return common.DefaultConsolePort
 	case "hoarder":
 		return common.DefaultHoarderPort
 	case "monkey":

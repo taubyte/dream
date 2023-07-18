@@ -4,7 +4,6 @@ import (
 	"context"
 	"log"
 	"os"
-	"os/signal"
 	"time"
 
 	// Relative
@@ -22,8 +21,6 @@ import (
 	"github.com/urfave/cli/v2"
 
 	// Empty imports for initializing fixtures, and client/service run methods"
-	_ "bitbucket.org/taubyte/console/api/p2p"
-	_ "bitbucket.org/taubyte/console/ui/service"
 	_ "github.com/taubyte/dreamland/fixtures"
 	_ "github.com/taubyte/odo/clients/p2p/auth"
 	_ "github.com/taubyte/odo/clients/p2p/hoarder"
@@ -77,15 +74,4 @@ func defineCLI(ctx *common.Context) *(cli.App) {
 	}
 
 	return app
-}
-
-func setupTrap(ctxC context.CancelFunc) {
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, os.Interrupt, os.Kill)
-	go func() {
-		for range c {
-			ctxC()
-			// sig is a ^C, handle it
-		}
-	}()
 }

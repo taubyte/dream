@@ -8,7 +8,6 @@ import (
 	commonIface "github.com/taubyte/go-interfaces/common"
 	peer "github.com/taubyte/go-interfaces/p2p/peer"
 	authIface "github.com/taubyte/go-interfaces/services/auth"
-	consoleIface "github.com/taubyte/go-interfaces/services/console"
 	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
 	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
 	patrickIface "github.com/taubyte/go-interfaces/services/patrick"
@@ -146,18 +145,6 @@ func (u *Universe) Node() nodeIface.Service {
 
 func (u *Universe) NodeByPid(pid string) (nodeIface.Service, bool) {
 	return byId[nodeIface.Service](u, u.service["node"].nodes, pid)
-}
-
-func (u *Universe) Console() consoleIface.Service {
-	ret, ok := first[consoleIface.Service](u, u.service["console"].nodes)
-	if !ok {
-		return nil
-	}
-	return ret
-}
-
-func (u *Universe) ConsoleByPid(pid string) (consoleIface.Service, bool) {
-	return byId[consoleIface.Service](u, u.service["console"].nodes, pid)
 }
 
 func byId[T any](u *Universe, i map[string]commonIface.Service, pid string) (T, bool) {
