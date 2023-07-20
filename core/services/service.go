@@ -7,7 +7,7 @@ import (
 
 	"github.com/taubyte/dreamland/core/common"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	peer "github.com/taubyte/go-interfaces/p2p/peer"
+	peer "github.com/taubyte/p2p/peer"
 )
 
 func (u *Universe) createService(name string, config *commonIface.ServiceConfig) error {

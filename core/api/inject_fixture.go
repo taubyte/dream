@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/taubyte/dreamland/core/common"
-	httpIface "github.com/taubyte/go-interfaces/services/http"
+	httpIface "github.com/taubyte/http"
 )
 
 func fixtureHttp() {

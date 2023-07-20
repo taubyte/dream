@@ -4,7 +4,6 @@ import (
 	"context"
 
 	commonIface "github.com/taubyte/go-interfaces/common"
-	"github.com/taubyte/go-interfaces/p2p/peer"
 	authIface "github.com/taubyte/go-interfaces/services/auth"
 	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
 	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
@@ -12,6 +11,7 @@ import (
 	seerIface "github.com/taubyte/go-interfaces/services/seer"
 	nodeIface "github.com/taubyte/go-interfaces/services/substrate"
 	tnsIface "github.com/taubyte/go-interfaces/services/tns"
+	"github.com/taubyte/p2p/peer"
 )
 
 type ClientCreationMethod func(*commonIface.ClientConfig) error

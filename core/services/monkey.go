@@ -5,8 +5,8 @@ import (
 
 	"github.com/taubyte/dreamland/core/registry"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	peer "github.com/taubyte/go-interfaces/p2p/peer"
 	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
+	peer "github.com/taubyte/p2p/peer"
 )
 
 func (u *Universe) CreateMonkeyService(config *commonIface.ServiceConfig) (peer.Node, error) {

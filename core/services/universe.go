@@ -7,12 +7,12 @@ import (
 	"os"
 	"sync"
 
-	p2pPeer "bitbucket.org/taubyte/p2p/peer"
 	logging "github.com/ipfs/go-log/v2"
 	"github.com/taubyte/dreamland/core/common"
 	"github.com/taubyte/dreamland/core/registry"
 	ifaceCommon "github.com/taubyte/go-interfaces/common"
-	peer "github.com/taubyte/go-interfaces/p2p/peer"
+	protocols "github.com/taubyte/odo/protocols/common"
+	peer "github.com/taubyte/p2p/peer"
 )
 
 var (
@@ -138,7 +138,7 @@ func (u *Universe) StartWithConfig(mainConfig *common.Config) error {
 
 		config.PrivateKey = privKey
 		config.PublicKey = pubKey
-		config.SwarmKey = p2pPeer.DefaultSwarmKey()
+		config.SwarmKey = protocols.SwarmKey()
 
 		wg.Add(1)
 		go func(service string, config ifaceCommon.ServiceConfig) {

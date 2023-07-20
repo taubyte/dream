@@ -7,11 +7,10 @@ import (
 	"path"
 	"sync"
 
-	peer "bitbucket.org/taubyte/p2p/peer"
 	"github.com/taubyte/dreamland/core/api"
 	"github.com/taubyte/dreamland/core/common"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	peerIface "github.com/taubyte/go-interfaces/p2p/peer"
+	peerIface "github.com/taubyte/p2p/peer"
 	"github.com/taubyte/utils/id"
 )
 
@@ -48,7 +47,6 @@ func BigBang() error {
 
 // create or fetch a universe with a specific id
 func MultiverseWithConfig(config UniverseConfig) common.Universe {
-	peer.DevMode = true
 	// see if we have a ticket
 	if config.Id == "" {
 		config.Id = id.Generate()
@@ -119,8 +117,6 @@ func MultiverseWithConfig(config UniverseConfig) common.Universe {
 
 // create or fetch a universe
 func Multiverse(name string) common.Universe {
-	peer.DevMode = true
-
 	// see if we have a ticket
 
 	universesLock.Lock()

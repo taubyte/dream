@@ -6,7 +6,7 @@ import (
 
 	peercore "github.com/libp2p/go-libp2p/core/peer"
 	"github.com/taubyte/dreamland/core/common"
-	peer "github.com/taubyte/go-interfaces/p2p/peer"
+	peer "github.com/taubyte/p2p/peer"
 )
 
 func (u *Universe) Mesh(newNodes ...peer.Node) {
