@@ -1060,8 +1060,6 @@ github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7 h1:epCh84lMvA70
 github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07/go.mod h1:kDXzergiv9cbyO7IOYJZWg1U88JhDg3PB6klq9Hg2pA=
 github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29 h1:3YjOrKOx3wSNqtSJz2dfJqmfgsAqd90JSzhD3QMWwbE=
 github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29/go.mod h1:McWLSLqcH2HnovV6uzeBb4EwceMaA5y/n0xCptkZuQM=
-github.com/taubyte/config-compiler v0.0.0-20230718195145-c00201cfb4b2 h1:NQn2NN3czTcFS5SGLCwsixkCja4HSUPzJvlJNE4vMGE=
-github.com/taubyte/config-compiler v0.0.0-20230718195145-c00201cfb4b2/go.mod h1:NyRPPi7TDRRfusSGjHAUyjNeKNeeCZ4muBAanSlwbDo=
 github.com/taubyte/domain-validation v1.0.0 h1:yUt6y7b/3PC9aocvl7s8cBKG4ieN35zQqVQIywGUg4o=
 github.com/taubyte/domain-validation v1.0.0/go.mod h1:/X3yd7sBjnE323rA8I9PiUt5+NlKU4I02nQik25Vqe8=
 github.com/taubyte/go-project-schema v0.9.3 h1:2H0ClUZq7f97OgtL0FUe9tv2v12wOmnTAIiJGLei/gU=

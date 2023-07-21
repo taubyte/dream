@@ -5,6 +5,7 @@ go 1.19
 replace github.com/ipfs/go-block-format => github.com/ipfs/go-block-format v0.1.1
 
 replace (
+	github.com/taubyte/config-compiler => /home/tafkhan/Documents/Work/Taubyte/new/config-compiler
 	github.com/taubyte/dreamland => /home/tafkhan/Documents/Work/Taubyte/new/dreamland
 	github.com/taubyte/go-interfaces => /home/tafkhan/Documents/Work/Taubyte/Repos/go-interfaces
 	github.com/taubyte/http => /home/tafkhan/Documents/Work/Taubyte/Repos/http

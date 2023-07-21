@@ -200,6 +200,7 @@ func (u *Universe) Cleanup() {
 	for _, c := range u.closables {
 		go func(_c ifaceCommon.Service) {
 			_c.Close()
+			_c.Node().Close()
 			closeableWg.Done()
 		}(c)
 	}
@@ -209,6 +210,7 @@ func (u *Universe) Cleanup() {
 	for _, s := range u.simples {
 		go func(_s *Simple) {
 			_s.Close()
+			_s.GetNode().Close()
 			simpleWg.Done()
 		}(s)
 	}

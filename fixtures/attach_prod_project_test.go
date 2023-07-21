@@ -3,6 +3,7 @@ package fixtures
 import (
 	"testing"
 
+	logging "github.com/ipfs/go-log/v2"
 	commonDreamland "github.com/taubyte/dreamland/core/common"
 	dreamland "github.com/taubyte/dreamland/core/services"
 	"github.com/taubyte/dreamland/helpers"
@@ -15,6 +16,7 @@ import (
 )
 
 func TestAttachProdProject(t *testing.T) {
+	logging.SetLogLevel("basic.http", "DEBUG")
 	u := dreamland.Multiverse("testrunlibrary")
 	defer u.Stop()
 
