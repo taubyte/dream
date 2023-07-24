@@ -11,7 +11,7 @@ import (
 
 func (u *Universe) CreateTNSService(config *commonIface.ServiceConfig) (peer.Node, error) {
 	if registry.Registry.TNS.Service == nil {
-		return nil, fmt.Errorf(`Service is nil, have you imported _ "github.com/taubyte/odo/protocols/tns/service"`)
+		return nil, fmt.Errorf(`Service is nil, have you imported _ "github.com/taubyte/odo/protocols/tns"`)
 	}
 
 	tns, err := registry.Registry.TNS.Service(u.ctx, config)

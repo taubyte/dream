@@ -8,10 +8,10 @@ import (
 	"github.com/taubyte/dreamland/helpers"
 	commonIface "github.com/taubyte/go-interfaces/common"
 	spec "github.com/taubyte/go-specs/common"
-	_ "github.com/taubyte/odo/protocols/auth/service"
-	_ "github.com/taubyte/odo/protocols/monkey/service"
-	_ "github.com/taubyte/odo/protocols/patrick/service"
-	_ "github.com/taubyte/odo/protocols/tns/service"
+	_ "github.com/taubyte/odo/protocols/auth"
+	_ "github.com/taubyte/odo/protocols/monkey"
+	_ "github.com/taubyte/odo/protocols/patrick"
+	_ "github.com/taubyte/odo/protocols/tns"
 )
 
 func TestImportProdProject(t *testing.T) {

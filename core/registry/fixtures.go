@@ -21,10 +21,10 @@ type FixtureDefinition struct {
 }
 
 var FixtureMap = map[string]FixtureDefinition{
-	"createProjectWithJobs": {Description: "creates jobs for code and config repos", ImportRef: "patrick/service"},
+	"createProjectWithJobs": {Description: "creates jobs for code and config repos", ImportRef: "patrick"},
 	"pushAll": {
 		Description: "pushes all ",
-		ImportRef:   "patrick/service",
+		ImportRef:   "patrick",
 		Variables: []FixtureVariable{
 			{
 				Name:     "project-id",
@@ -38,15 +38,15 @@ var FixtureMap = map[string]FixtureDefinition{
 			},
 		},
 	},
-	"pushConfig":   {Description: "pushes into config repo", ImportRef: "patrick/service"},
-	"pushCode":     {Description: "pushes into code repo", ImportRef: "patrick/service"},
-	"pushWebsite":  {Description: "pushes website repo", ImportRef: "patrick/service"},
-	"pushLibrary":  {Description: "pushes library repo", ImportRef: "patrick/service"},
-	"attachDomain": {Description: "attaches default FQDN", ImportRef: "node/service"},
+	"pushConfig":   {Description: "pushes into config repo", ImportRef: "patrick"},
+	"pushCode":     {Description: "pushes into code repo", ImportRef: "patrick"},
+	"pushWebsite":  {Description: "pushes website repo", ImportRef: "patrick"},
+	"pushLibrary":  {Description: "pushes library repo", ImportRef: "patrick"},
+	"attachDomain": {Description: "attaches default FQDN", ImportRef: "substrate"},
 	"clearRepos":   {Description: "delete all unused repos", ImportRef: "dreamland-test/fixtures"},
 	"attachPlugin": {
 		Description: "inject a plugin binary built using VM-Orbit",
-		ImportRef:   "node/service",
+		ImportRef:   "substrate",
 		Variables: []FixtureVariable{
 			{
 				Name:        "paths",
@@ -58,7 +58,7 @@ var FixtureMap = map[string]FixtureDefinition{
 	},
 	"pushSpecific": {
 		Description: "pushes specific repos",
-		ImportRef:   "patrick/service",
+		ImportRef:   "patrick",
 		Variables: []FixtureVariable{
 			{
 				Name:     "repository-id",

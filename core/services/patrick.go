@@ -13,7 +13,7 @@ func (u *Universe) CreatePatrickService(config *commonIface.ServiceConfig) (peer
 	var err error
 
 	if registry.Registry.Patrick.Service == nil {
-		return nil, fmt.Errorf(`Service is nil, have you imported _ "github.com/taubyte/odo/protocols/patrick/service"`)
+		return nil, fmt.Errorf(`Service is nil, have you imported _ "github.com/taubyte/odo/protocols/patrick"`)
 	}
 
 	patrick, err := registry.Registry.Patrick.Service(u.ctx, config)

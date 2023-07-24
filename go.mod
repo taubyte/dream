@@ -2,7 +2,10 @@ module github.com/taubyte/dreamland
 
 go 1.19
 
-// replace github.com/ipfs/go-block-format => github.com/ipfs/go-block-format v0.1.1
+replace github.com/taubyte/dreamland => /home/tafkhan/Documents/Work/Taubyte/new/dreamland
+replace github.com/taubyte/config-compiler => /home/tafkhan/Documents/Work/Taubyte/new/config-compiler
+replace github.com/taubyte/odo => /home/tafkhan/Documents/Work/Taubyte/new/odo
+replace github.com/taubyte/vm => /home/tafkhan/Documents/Work/Taubyte/Repos/vm
 
 require (
 	github.com/google/go-github v17.0.0+incompatible
@@ -213,7 +216,7 @@ require (
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/spf13/afero v1.9.5 // indirect
 	github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29 // indirect
-	github.com/taubyte/config-compiler v0.0.0-20230724195442-6377ab4dc792 // indirect
+	github.com/taubyte/config-compiler v0.4.3 // indirect
 	github.com/taubyte/domain-validation v1.0.0 // indirect
 	github.com/taubyte/go-project-schema v0.9.3 // indirect
 	github.com/taubyte/go-sdk v0.3.8 // indirect
