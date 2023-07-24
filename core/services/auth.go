@@ -5,8 +5,8 @@ import (
 
 	"github.com/taubyte/dreamland/core/registry"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	peer "github.com/taubyte/go-interfaces/p2p/peer"
 	authIface "github.com/taubyte/go-interfaces/services/auth"
+	peer "github.com/taubyte/p2p/peer"
 )
 
 func (u *Universe) CreateAuthService(config *commonIface.ServiceConfig) (peer.Node, error) {

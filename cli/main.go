@@ -15,7 +15,6 @@ import (
 
 	// Actual imports
 
-	"bitbucket.org/taubyte/p2p/peer"
 	"github.com/taubyte/dreamland/core/services"
 	client "github.com/taubyte/dreamland/http"
 	"github.com/urfave/cli/v2"
@@ -39,7 +38,6 @@ import (
 )
 
 func main() {
-	peer.DevMode = true
 	ctx, ctxC := context.WithCancel(context.Background())
 
 	defer func() {

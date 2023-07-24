@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	commonIface "github.com/taubyte/go-interfaces/common"
-	httpIface "github.com/taubyte/go-interfaces/services/http"
+	httpIface "github.com/taubyte/http"
 )
 
 func injectServiceHttp() {

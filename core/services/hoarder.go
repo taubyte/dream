@@ -6,8 +6,8 @@ import (
 	"github.com/taubyte/dreamland/core/common"
 	"github.com/taubyte/dreamland/core/registry"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	peer "github.com/taubyte/go-interfaces/p2p/peer"
 	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
+	peer "github.com/taubyte/p2p/peer"
 )
 
 func (u *Universe) CreateHoarderService(config *commonIface.ServiceConfig) (peer.Node, error) {

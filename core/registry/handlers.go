@@ -7,7 +7,7 @@ import (
 
 	"github.com/taubyte/dreamland/core/common"
 	iface "github.com/taubyte/go-interfaces/common"
-	"github.com/taubyte/go-interfaces/p2p/peer"
+	"github.com/taubyte/p2p/peer"
 )
 
 type Handlers struct {

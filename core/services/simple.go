@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"time"
 
-	"bitbucket.org/taubyte/p2p/keypair"
-	peer "bitbucket.org/taubyte/p2p/peer"
 	"github.com/taubyte/dreamland/core/common"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	p2p "github.com/taubyte/go-interfaces/p2p/peer"
+	protocols "github.com/taubyte/odo/protocols/common"
+	"github.com/taubyte/p2p/keypair"
+	peer "github.com/taubyte/p2p/peer"
 )
 
 func ClientsWithDefaults(names ...string) common.SimpleConfigClients {
@@ -32,7 +32,7 @@ func ClientsWithDefaults(names ...string) common.SimpleConfigClients {
 	return config
 }
 
-func (u *Universe) CreateSimpleNode(name string, config *common.SimpleConfig) (p2p.Node, error) {
+func (u *Universe) CreateSimpleNode(name string, config *common.SimpleConfig) (peer.Node, error) {
 	var err error
 
 	if _, exists := u.simples[name]; exists {
@@ -47,7 +47,7 @@ func (u *Universe) CreateSimpleNode(name string, config *common.SimpleConfig) (p
 		u.ctx,
 		fmt.Sprintf("%s/simple-%s-%d", u.root, name, config.Port),
 		keypair.NewRaw(),
-		peer.DefaultSwarmKey(),
+		protocols.SwarmKey(),
 		[]string{fmt.Sprintf(common.DefaultP2PListenFormat, config.Port)},
 		[]string{fmt.Sprintf(common.DefaultP2PListenFormat, config.Port)},
 		false,

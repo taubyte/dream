@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/taubyte/dreamland/core/common"
-	httpIface "github.com/taubyte/go-interfaces/services/http"
+	httpIface "github.com/taubyte/http"
 	http "github.com/taubyte/http/basic"
 	"github.com/taubyte/http/options"
 )

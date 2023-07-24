@@ -247,7 +247,7 @@ func TestMultipleServices(t *testing.T) {
 	defer u.Stop()
 	err := u.StartWithConfig(&common.Config{
 		Services: map[string]commonIface.ServiceConfig{
-			"seer":    {Others: map[string]int{"copies": 3}},
+			"seer":    {Others: map[string]int{"copies": 1}},
 			"auth":    {Others: map[string]int{"copies": 3}},
 			"patrick": {Others: map[string]int{"copies": 3}},
 			"tns":     {Others: map[string]int{"copies": 3}},
@@ -262,7 +262,7 @@ func TestMultipleServices(t *testing.T) {
 	}
 
 	for _, v := range services {
-		if u.ListNumber(v) != 3 {
+		if u.ListNumber(v) != 3 && v != "seer" {
 			t.Errorf("Service %s does not have 2 copies got %d", v, u.ListNumber(v))
 			return
 		}

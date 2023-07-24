@@ -3,7 +3,7 @@ package services
 import (
 	"fmt"
 
-	peer "github.com/taubyte/go-interfaces/p2p/peer"
+	peer "github.com/taubyte/p2p/peer"
 )
 
 func (u *Universe) Kill(name string) error {

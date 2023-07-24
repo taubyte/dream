@@ -1,7 +1,7 @@
 package api
 
 import (
-	httpIface "github.com/taubyte/go-interfaces/services/http"
+	httpIface "github.com/taubyte/http"
 )
 
 func validFixtures() {
