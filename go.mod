@@ -16,7 +16,6 @@ replace (
 )
 
 require (
-	bitbucket.org/taubyte/p2p v0.8.2
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/ipfs/go-log/v2 v2.5.1
 	github.com/jedib0t/go-pretty/v6 v6.4.6

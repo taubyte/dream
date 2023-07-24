@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"bitbucket.org/taubyte/p2p/keypair"
 	"github.com/taubyte/dreamland/core/common"
 	commonIface "github.com/taubyte/go-interfaces/common"
 	protocols "github.com/taubyte/odo/protocols/common"
+	"github.com/taubyte/p2p/keypair"
 	peer "github.com/taubyte/p2p/peer"
 )
 
