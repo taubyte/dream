@@ -12,7 +12,7 @@ require (
 	github.com/taubyte/go-simple-git v0.2.5
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/odo v0.0.0-20230725154041-eefce2f54b2b
+	github.com/taubyte/odo v0.0.0-20230725213128-02ebb87bd623
 	github.com/taubyte/p2p v0.9.1
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
@@ -25,7 +25,6 @@ require (
 	atomicgo.dev/cursor v0.1.1 // indirect
 	atomicgo.dev/keyboard v0.2.9 // indirect
 	atomicgo.dev/schedule v0.0.2 // indirect
-	bitbucket.org/taubyte/cors_jwt v0.0.0-20230320193005-fe981677d292 // indirect
 	github.com/CAFxX/httpcompression v0.0.8 // indirect
 	github.com/DataDog/zstd v1.5.2 // indirect
 	github.com/Microsoft/go-winio v0.5.2 // indirect
@@ -210,7 +209,7 @@ require (
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/spf13/afero v1.9.5 // indirect
 	github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29 // indirect
-	github.com/taubyte/config-compiler v0.4.3 // indirect
+	github.com/taubyte/config-compiler v0.4.4 // indirect
 	github.com/taubyte/domain-validation v1.0.0 // indirect
 	github.com/taubyte/go-project-schema v0.9.3 // indirect
 	github.com/taubyte/go-sdk v0.3.8 // indirect
@@ -220,7 +219,7 @@ require (
 	github.com/taubyte/tau v0.1.6 // indirect
 	github.com/taubyte/vm v1.0.2 // indirect
 	github.com/taubyte/vm-core-plugins v0.3.2 // indirect
-	github.com/taubyte/vm-orbit v0.1.1 // indirect
+	github.com/taubyte/vm-orbit v1.0.0 // indirect
 	github.com/tetratelabs/wazero v1.0.3 // indirect
 	github.com/tklauser/go-sysconf v0.3.11 // indirect
 	github.com/tklauser/numcpus v0.6.0 // indirect
