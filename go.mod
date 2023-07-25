@@ -2,8 +2,6 @@ module github.com/taubyte/dreamland
 
 go 1.19
 
-// replace github.com/taubyte/config-compiler => /home/tafkhan/Documents/Work/Taubyte/new/config-compiler
-
 require (
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/ipfs/go-log/v2 v2.5.1
