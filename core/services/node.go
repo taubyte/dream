@@ -13,7 +13,7 @@ func (u *Universe) CreateNodeService(config *commonIface.ServiceConfig) (peer.No
 	var err error
 
 	if registry.Registry.Node.Service == nil {
-		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/node/service"`)
+		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/substrate"`)
 	}
 
 	node, err := registry.Registry.Node.Service(u.ctx, config)

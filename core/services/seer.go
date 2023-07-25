@@ -11,7 +11,7 @@ import (
 
 func (u *Universe) CreateSeerService(config *commonIface.ServiceConfig) (peer.Node, error) {
 	if registry.Registry.Seer.Service == nil {
-		return nil, fmt.Errorf(`Service is nil, have you imported _ "github.com/taubyte/odo/protocols/seer/service"`)
+		return nil, fmt.Errorf(`Service is nil, have you imported _ "github.com/taubyte/odo/protocols/seer"`)
 	}
 
 	seer, err := registry.Registry.Seer.Service(u.ctx, config)

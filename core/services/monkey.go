@@ -11,7 +11,7 @@ import (
 
 func (u *Universe) CreateMonkeyService(config *commonIface.ServiceConfig) (peer.Node, error) {
 	if registry.Registry.Monkey.Service == nil {
-		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/monkey/service"`)
+		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/monkey"`)
 	}
 
 	monkey, err := registry.Registry.Monkey.Service(u.ctx, config)

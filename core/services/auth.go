@@ -13,7 +13,7 @@ func (u *Universe) CreateAuthService(config *commonIface.ServiceConfig) (peer.No
 	var err error
 
 	if registry.Registry.Auth.Service == nil {
-		return nil, fmt.Errorf("service is nil, have you imported _ \"github.com/taubyte/odo/protocols/auth/service\"")
+		return nil, fmt.Errorf("service is nil, have you imported _ \"github.com/taubyte/odo/protocols/auth\"")
 	}
 
 	auth, err := registry.Registry.Auth.Service(u.ctx, config)

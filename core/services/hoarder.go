@@ -18,7 +18,7 @@ func (u *Universe) CreateHoarderService(config *commonIface.ServiceConfig) (peer
 	}
 
 	if registry.Registry.Hoarder.Service == nil {
-		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/hoarder/service"`)
+		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/hoarder"`)
 	}
 
 	hoarder, err := registry.Registry.Hoarder.Service(u.ctx, config)

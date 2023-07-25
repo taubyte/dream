@@ -27,14 +27,14 @@ import (
 	_ "github.com/taubyte/odo/clients/p2p/patrick"
 	_ "github.com/taubyte/odo/clients/p2p/seer"
 	_ "github.com/taubyte/odo/clients/p2p/tns"
-	_ "github.com/taubyte/odo/protocols/auth/service"
-	_ "github.com/taubyte/odo/protocols/hoarder/service"
+	_ "github.com/taubyte/odo/protocols/auth"
+	_ "github.com/taubyte/odo/protocols/hoarder"
+	_ "github.com/taubyte/odo/protocols/monkey"
 	_ "github.com/taubyte/odo/protocols/monkey/fixtures/compile"
-	_ "github.com/taubyte/odo/protocols/monkey/service"
-	_ "github.com/taubyte/odo/protocols/node/service"
-	_ "github.com/taubyte/odo/protocols/patrick/service"
-	_ "github.com/taubyte/odo/protocols/seer/service"
-	_ "github.com/taubyte/odo/protocols/tns/service"
+	_ "github.com/taubyte/odo/protocols/patrick"
+	_ "github.com/taubyte/odo/protocols/seer"
+	_ "github.com/taubyte/odo/protocols/substrate"
+	_ "github.com/taubyte/odo/protocols/tns"
 )
 
 func main() {

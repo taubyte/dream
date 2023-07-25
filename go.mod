@@ -2,19 +2,17 @@ module github.com/taubyte/dreamland
 
 go 1.19
 
-// replace github.com/ipfs/go-block-format => github.com/ipfs/go-block-format v0.1.1
-
 require (
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/ipfs/go-log/v2 v2.5.1
 	github.com/jedib0t/go-pretty/v6 v6.4.6
 	github.com/libp2p/go-libp2p v0.29.0
 	github.com/pterm/pterm v0.12.62
-	github.com/taubyte/go-interfaces v0.2.6
+	github.com/taubyte/go-interfaces v0.2.7
 	github.com/taubyte/go-simple-git v0.2.5
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/odo v0.0.0-20230724195614-f30996c53092
+	github.com/taubyte/odo v0.0.0-20230725154041-eefce2f54b2b
 	github.com/taubyte/p2p v0.9.1
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
@@ -28,7 +26,6 @@ require (
 	atomicgo.dev/keyboard v0.2.9 // indirect
 	atomicgo.dev/schedule v0.0.2 // indirect
 	bitbucket.org/taubyte/cors_jwt v0.0.0-20230320193005-fe981677d292 // indirect
-	bitbucket.org/taubyte/go-moody-blues v0.1.34 // indirect
 	github.com/CAFxX/httpcompression v0.0.8 // indirect
 	github.com/DataDog/zstd v1.5.2 // indirect
 	github.com/Microsoft/go-winio v0.5.2 // indirect
@@ -213,7 +210,7 @@ require (
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/spf13/afero v1.9.5 // indirect
 	github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29 // indirect
-	github.com/taubyte/config-compiler v0.0.0-20230724195442-6377ab4dc792 // indirect
+	github.com/taubyte/config-compiler v0.4.3 // indirect
 	github.com/taubyte/domain-validation v1.0.0 // indirect
 	github.com/taubyte/go-project-schema v0.9.3 // indirect
 	github.com/taubyte/go-sdk v0.3.8 // indirect
@@ -221,7 +218,7 @@ require (
 	github.com/taubyte/go-seer v1.0.6 // indirect
 	github.com/taubyte/go-simple-container v0.4.2 // indirect
 	github.com/taubyte/tau v0.1.6 // indirect
-	github.com/taubyte/vm v1.0.1 // indirect
+	github.com/taubyte/vm v1.0.2 // indirect
 	github.com/taubyte/vm-core-plugins v0.3.2 // indirect
 	github.com/taubyte/vm-orbit v0.1.1 // indirect
 	github.com/tetratelabs/wazero v1.0.3 // indirect
