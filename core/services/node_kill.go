@@ -38,7 +38,7 @@ func (u *Universe) killSimpleByNameId(name, id string) error {
 	simple.Close()
 	delete(u.simples, name)
 	delete(u.lookups, id)
-	u.discardNode(simple.GetNode(), false)
+	u.discardNode(simple.PeerNode(), false)
 
 	return nil
 }

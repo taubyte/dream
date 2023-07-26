@@ -16,13 +16,13 @@ type Handlers struct {
 }
 
 var Registry = struct {
-	Auth    Handlers
-	Hoarder Handlers
-	Monkey  Handlers
-	Patrick Handlers
-	Seer    Handlers
-	TNS     Handlers
-	Node    Handlers
+	Auth      Handlers
+	Hoarder   Handlers
+	Monkey    Handlers
+	Patrick   Handlers
+	Seer      Handlers
+	TNS       Handlers
+	Substrate Handlers
 }{}
 
 // Order of params important!

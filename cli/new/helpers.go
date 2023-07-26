@@ -239,12 +239,12 @@ func startEmptyUniverses(c *cli.Context) (err error) {
 
 func getFilledClientConfig() commonDreamland.SimpleConfigClients {
 	return commonDreamland.SimpleConfigClients{
-		Seer:    &commonIface.ClientConfig{},
-		Auth:    &commonIface.ClientConfig{},
-		Patrick: &commonIface.ClientConfig{},
-		TNS:     &commonIface.ClientConfig{},
-		Monkey:  &commonIface.ClientConfig{},
-		Hoarder: &commonIface.ClientConfig{},
-		Node:    &commonIface.ClientConfig{},
+		Seer:      &commonIface.ClientConfig{},
+		Auth:      &commonIface.ClientConfig{},
+		Patrick:   &commonIface.ClientConfig{},
+		TNS:       &commonIface.ClientConfig{},
+		Monkey:    &commonIface.ClientConfig{},
+		Hoarder:   &commonIface.ClientConfig{},
+		Substrate: &commonIface.ClientConfig{},
 	}
 }

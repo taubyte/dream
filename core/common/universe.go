@@ -3,21 +3,21 @@ package common
 import (
 	"context"
 
-	commonIface "github.com/taubyte/go-interfaces/common"
-	authIface "github.com/taubyte/go-interfaces/services/auth"
-	hoarderIface "github.com/taubyte/go-interfaces/services/hoarder"
-	monkeyIface "github.com/taubyte/go-interfaces/services/monkey"
-	patrickIface "github.com/taubyte/go-interfaces/services/patrick"
-	seerIface "github.com/taubyte/go-interfaces/services/seer"
-	nodeIface "github.com/taubyte/go-interfaces/services/substrate"
-	tnsIface "github.com/taubyte/go-interfaces/services/tns"
+	"github.com/taubyte/go-interfaces/common"
+	"github.com/taubyte/go-interfaces/services/auth"
+	"github.com/taubyte/go-interfaces/services/hoarder"
+	"github.com/taubyte/go-interfaces/services/monkey"
+	"github.com/taubyte/go-interfaces/services/patrick"
+	"github.com/taubyte/go-interfaces/services/seer"
+	"github.com/taubyte/go-interfaces/services/substrate"
+	"github.com/taubyte/go-interfaces/services/tns"
 	"github.com/taubyte/p2p/peer"
 )
 
-type ClientCreationMethod func(*commonIface.ClientConfig) error
+type ClientCreationMethod func(*common.ClientConfig) error
 
 type SimpleConfig struct {
-	commonIface.CommonConfig
+	common.CommonConfig
 	Clients SimpleConfigClients
 }
 
@@ -28,31 +28,31 @@ type NodeInfo struct {
 }
 
 type SimpleConfigClients struct {
-	Seer    *commonIface.ClientConfig
-	Auth    *commonIface.ClientConfig
-	Patrick *commonIface.ClientConfig
-	TNS     *commonIface.ClientConfig
-	Monkey  *commonIface.ClientConfig
-	Hoarder *commonIface.ClientConfig
-	Node    *commonIface.ClientConfig
+	Seer      *common.ClientConfig
+	Auth      *common.ClientConfig
+	Patrick   *common.ClientConfig
+	TNS       *common.ClientConfig
+	Monkey    *common.ClientConfig
+	Hoarder   *common.ClientConfig
+	Substrate *common.ClientConfig
 }
 
 type Config struct {
-	Services map[string]commonIface.ServiceConfig
-	Clients  map[string]commonIface.ClientConfig
+	Services map[string]common.ServiceConfig
+	Clients  map[string]common.ClientConfig
 	Simples  map[string]SimpleConfig
 }
 type Universe interface {
 	Id() string
 	Name() string
 	Root() string // copy | just in case modified accidently
-	Seer() seerIface.Service
-	Auth() authIface.Service
-	Patrick() patrickIface.Service
-	TNS() tnsIface.Service
-	Monkey() monkeyIface.Service
-	Hoarder() hoarderIface.Service
-	Node() nodeIface.Service
+	Seer() seer.Service
+	Auth() auth.Service
+	Patrick() patrick.Service
+	TNS() tns.Service
+	Monkey() monkey.Service
+	Hoarder() hoarder.Service
+	Substrate() substrate.Service
 	Context() context.Context
 	Stop()
 	// If no simple defined, starts one named StartAllDefaultSimple.
@@ -70,33 +70,33 @@ type Universe interface {
 	Register(node peer.Node, name string, ports map[string]int)
 	Lookup(id string) (*NodeInfo, bool)
 	Mesh(newNodes ...peer.Node)
-	Service(name string, config *commonIface.ServiceConfig) error
+	Service(name string, config *common.ServiceConfig) error
 	Provides(services ...string) error
 	// Calls to grab services by pid
-	SeerByPid(pid string) (seerIface.Service, bool)
-	AuthByPid(pid string) (authIface.Service, bool)
-	PatrickByPid(pid string) (patrickIface.Service, bool)
-	TnsByPid(pid string) (tnsIface.Service, bool)
-	MonkeyByPid(pid string) (monkeyIface.Service, bool)
-	HoarderByPid(pid string) (hoarderIface.Service, bool)
-	NodeByPid(pid string) (nodeIface.Service, bool)
+	SeerByPid(pid string) (seer.Service, bool)
+	AuthByPid(pid string) (auth.Service, bool)
+	PatrickByPid(pid string) (patrick.Service, bool)
+	TnsByPid(pid string) (tns.Service, bool)
+	MonkeyByPid(pid string) (monkey.Service, bool)
+	HoarderByPid(pid string) (hoarder.Service, bool)
+	SubstrateByPid(pid string) (substrate.Service, bool)
 	ListNumber(name string) int
 	GetServicePids(name string) ([]string, error)
 }
 
 type Simple interface {
-	GetNode() peer.Node
-	CreateSeerClient(config *commonIface.ClientConfig) error
-	Seer() seerIface.Client
-	CreateAuthClient(config *commonIface.ClientConfig) error
-	Auth() authIface.Client
-	CreatePatrickClient(config *commonIface.ClientConfig) error
-	Patrick() patrickIface.Client
-	CreateTNSClient(config *commonIface.ClientConfig) error
-	TNS() tnsIface.Client
-	CreateMonkeyClient(config *commonIface.ClientConfig) error
-	Monkey() monkeyIface.Client
-	CreateHoarderClient(config *commonIface.ClientConfig) error
-	Hoarder() hoarderIface.Client
+	PeerNode() peer.Node
+	CreateSeerClient(config *common.ClientConfig) error
+	Seer() seer.Client
+	CreateAuthClient(config *common.ClientConfig) error
+	Auth() auth.Client
+	CreatePatrickClient(config *common.ClientConfig) error
+	Patrick() patrick.Client
+	CreateTNSClient(config *common.ClientConfig) error
+	TNS() tns.Client
+	CreateMonkeyClient(config *common.ClientConfig) error
+	Monkey() monkey.Client
+	CreateHoarderClient(config *common.ClientConfig) error
+	Hoarder() hoarder.Client
 	Provides(clients ...string) error
 }

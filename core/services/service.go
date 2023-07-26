@@ -41,13 +41,13 @@ func (u *Universe) createService(name string, config *commonIface.ServiceConfig)
 	}
 
 	all := map[string]func(*commonIface.ServiceConfig) (peer.Node, error){
-		"auth":    u.CreateAuthService,
-		"hoarder": u.CreateHoarderService,
-		"monkey":  u.CreateMonkeyService,
-		"patrick": u.CreatePatrickService,
-		"seer":    u.CreateSeerService,
-		"tns":     u.CreateTNSService,
-		"node":    u.CreateNodeService,
+		"auth":      u.CreateAuthService,
+		"hoarder":   u.CreateHoarderService,
+		"monkey":    u.CreateMonkeyService,
+		"patrick":   u.CreatePatrickService,
+		"seer":      u.CreateSeerService,
+		"tns":       u.CreateTNSService,
+		"substrate": u.CreateSubstrateService,
 	}
 
 	handle, ok := all[name]
@@ -124,8 +124,8 @@ func getHttpPort(name string) int {
 	switch name {
 	case "auth":
 		return common.DefaultAuthHttpPort
-	case "node":
-		return common.DefaultNodeHttpPort
+	case "substrate":
+		return common.DefaultSubstrateHttpPort
 	case "patrick":
 		return common.DefaultPatrickHttpPort
 	case "seer":
@@ -144,8 +144,8 @@ func getP2pPort(name string) int {
 		return common.DefaultHoarderPort
 	case "monkey":
 		return common.DefaultMonkeyPort
-	case "node":
-		return common.DefaultNodePort
+	case "substrate":
+		return common.DefaultSubstratePort
 	case "patrick":
 		return common.DefaultPatrickPort
 	case "seer":

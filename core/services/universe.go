@@ -20,7 +20,7 @@ var (
 )
 
 func ValidServices() []string {
-	return []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "node"}
+	return []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "substrate"}
 }
 
 func ValidClients() []string {
@@ -210,7 +210,7 @@ func (u *Universe) Cleanup() {
 	for _, s := range u.simples {
 		go func(_s *Simple) {
 			_s.Close()
-			_s.GetNode().Close()
+			_s.PeerNode().Close()
 			simpleWg.Done()
 		}(s)
 	}

@@ -39,8 +39,8 @@ func (u *Universe) provided(_service string) bool {
 		s = u.Seer()
 	case "tns":
 		s = u.TNS()
-	case "node":
-		s = u.Node()
+	case "substrate":
+		s = u.Substrate()
 	default:
 		return false
 	}

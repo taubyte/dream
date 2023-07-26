@@ -34,7 +34,7 @@ func (u *Universe) Simple(name string) (common.Simple, error) {
 	return simple, nil
 }
 
-func (s *Simple) GetNode() p2p.Node {
+func (s *Simple) PeerNode() p2p.Node {
 	return s.Node
 }
 

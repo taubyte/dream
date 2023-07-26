@@ -12,7 +12,7 @@ require (
 	github.com/taubyte/go-simple-git v0.2.5
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/odo v0.0.0-20230726160728-95648f9e3444
+	github.com/taubyte/odo v0.0.0-20230726163841-c252d274aca1
 	github.com/taubyte/p2p v0.9.1
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
