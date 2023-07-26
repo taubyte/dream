@@ -8,11 +8,11 @@ require (
 	github.com/jedib0t/go-pretty/v6 v6.4.6
 	github.com/libp2p/go-libp2p v0.29.0
 	github.com/pterm/pterm v0.12.62
-	github.com/taubyte/go-interfaces v0.2.7
+	github.com/taubyte/go-interfaces v0.2.8
 	github.com/taubyte/go-simple-git v0.2.5
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/odo v0.0.0-20230725213128-02ebb87bd623
+	github.com/taubyte/odo v0.0.0-20230726160728-95648f9e3444
 	github.com/taubyte/p2p v0.9.1
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
@@ -218,7 +218,7 @@ require (
 	github.com/taubyte/go-simple-container v0.4.2 // indirect
 	github.com/taubyte/tau v0.1.6 // indirect
 	github.com/taubyte/vm v1.0.2 // indirect
-	github.com/taubyte/vm-core-plugins v0.3.2 // indirect
+	github.com/taubyte/vm-core-plugins v0.3.3 // indirect
 	github.com/taubyte/vm-orbit v1.0.0 // indirect
 	github.com/tetratelabs/wazero v1.0.3 // indirect
 	github.com/tklauser/go-sysconf v0.3.11 // indirect

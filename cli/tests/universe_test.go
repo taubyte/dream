@@ -6,24 +6,12 @@ import (
 	"time"
 
 	cliCommon "github.com/taubyte/dreamland/cli/common"
-	_ "github.com/taubyte/odo/clients/p2p/auth"
-	_ "github.com/taubyte/odo/protocols/auth"
 
 	common "github.com/taubyte/dreamland/core/common"
 	dreamland "github.com/taubyte/dreamland/core/services"
 	client "github.com/taubyte/dreamland/http"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	_ "github.com/taubyte/odo/clients/p2p/hoarder"
-	_ "github.com/taubyte/odo/clients/p2p/monkey"
-	_ "github.com/taubyte/odo/clients/p2p/patrick"
-	_ "github.com/taubyte/odo/clients/p2p/seer"
-	_ "github.com/taubyte/odo/clients/p2p/tns"
-	_ "github.com/taubyte/odo/protocols/hoarder"
-	_ "github.com/taubyte/odo/protocols/monkey"
-	_ "github.com/taubyte/odo/protocols/patrick"
-	_ "github.com/taubyte/odo/protocols/seer"
-	_ "github.com/taubyte/odo/protocols/substrate"
-	_ "github.com/taubyte/odo/protocols/tns"
+	_ "github.com/taubyte/odo/utils/dreamland"
 )
 
 var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "node"}

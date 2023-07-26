@@ -113,6 +113,7 @@ github.com/cenkalti/backoff v2.2.1+incompatible h1:tNowT99t7UNflLxfYYSlKYsBpXdEe
 github.com/cenkalti/backoff v2.2.1+incompatible/go.mod h1:90ReRw6GdpyfrHakVjL/QHaoyV4aDUVVkXQJJJ3NXXM=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/cespare/cp v0.1.0 h1:SE+dxFebS7Iik5LK0tsi1k9ZCxEaFX4AjQmoyA+1dJk=
+github.com/cespare/xxhash v1.1.0 h1:a6HrQnmkObjyL+Gs60czilIUGqrzKutQD6XZog3p+ko=
 github.com/cespare/xxhash/v2 v2.2.0 h1:DC2CZ1Ep5Y4k3ZQ899DldepgrayRUGE6BBZ/cd9Cj44=
 github.com/cespare/xxhash/v2 v2.2.0/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=
@@ -171,7 +172,7 @@ github.com/decred/dcrd/dcrec/secp256k1/v4 v4.2.0 h1:8UrgZ3GkP4i/CLijOJx79Yu+etly
 github.com/decred/dcrd/dcrec/secp256k1/v4 v4.2.0/go.mod h1:v57UDF4pDQJcEfFUCRop3lJL149eHGSe9Jvczhzjo/0=
 github.com/dgraph-io/badger v1.6.0/go.mod h1:zwt7syl517jmP8s94KqSxTlM6IMsdhYy6psNgSztDR4=
 github.com/dgraph-io/badger v1.6.2 h1:mNw0qs90GVgGGWylh0umH5iag1j6n/PeJtNvL6KY/x8=
-github.com/dgraph-io/ristretto v0.1.1 h1:6CWw5tJNgpegArSHpNHJKldNeq03FQCwYvfMVWajOK8=
+github.com/dgraph-io/ristretto v0.0.2 h1:a5WaUrDa0qm0YrAAS1tUykT5El3kt62KNZZeMxQn3po=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumCAMpl/TFQ4/5kLM=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/dgryski/go-farm v0.0.0-20190423205320-6a90982ecee2/go.mod h1:SqUrOPUnsFjfmXRMNPybcSiG0BgUW2AuFH8PAnS2iTw=
@@ -282,7 +283,6 @@ github.com/golang-jwt/jwt v3.2.2+incompatible h1:IfV12K8xAKAnZqdXVzCZ+TOjboZ2keL
 github.com/golang-jwt/jwt v3.2.2+incompatible/go.mod h1:8pz2t5EyA70fFQQSrl6XZXzqecmYZeUEB8OUGHkxJ+I=
 github.com/golang-jwt/jwt/v4 v4.3.0 h1:kHL1vqdqWNfATmA0FNMdmZNMyZI1U6O31X4rlIPoBog=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
-github.com/golang/glog v1.1.0 h1:/d3pCKDPWNnvIWe0vVUpNP32qc8U3PDVxySP/y360qE=
 github.com/golang/groupcache v0.0.0-20190702054246-869f871628b6/go.mod h1:cIg4eruTrX1D+g88fzRXU5OdNfaM+9IcxsU14FzY7Hc=
 github.com/golang/groupcache v0.0.0-20191227052852-215e87163ea7/go.mod h1:cIg4eruTrX1D+g88fzRXU5OdNfaM+9IcxsU14FzY7Hc=
 github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e/go.mod h1:cIg4eruTrX1D+g88fzRXU5OdNfaM+9IcxsU14FzY7Hc=
@@ -881,8 +881,8 @@ github.com/taubyte/config-compiler v0.4.4 h1:/0XnrEc08wvzBCBigFjnyZjWfp4tF7IfCs+
 github.com/taubyte/config-compiler v0.4.4/go.mod h1:a2J00DWUx/MsagVg6+Z1cHq3u+XzMBbzZb199tl2Yx0=
 github.com/taubyte/domain-validation v1.0.0 h1:yUt6y7b/3PC9aocvl7s8cBKG4ieN35zQqVQIywGUg4o=
 github.com/taubyte/domain-validation v1.0.0/go.mod h1:/X3yd7sBjnE323rA8I9PiUt5+NlKU4I02nQik25Vqe8=
-github.com/taubyte/go-interfaces v0.2.7 h1:NAr+WvPuHK7kc7Pzo2vw2bFX+ErYJ9Ao60xkshanIko=
-github.com/taubyte/go-interfaces v0.2.7/go.mod h1:mJQCOPZnCK7bG1wR3KG64lmJ2rzaTrydwifxBR4XPqk=
+github.com/taubyte/go-interfaces v0.2.8 h1:MDgBOs0fIafcw5JuXrg2xleGwWYKHIw1x0dpWI+jTMk=
+github.com/taubyte/go-interfaces v0.2.8/go.mod h1:mJQCOPZnCK7bG1wR3KG64lmJ2rzaTrydwifxBR4XPqk=
 github.com/taubyte/go-project-schema v0.9.3 h1:2H0ClUZq7f97OgtL0FUe9tv2v12wOmnTAIiJGLei/gU=
 github.com/taubyte/go-project-schema v0.9.3/go.mod h1:8Rt5zsVfj8qbYCT+7++oax/nFVKvVfAepzVkqXrNTs8=
 github.com/taubyte/go-sdk v0.3.8 h1:RIg7N+ccIwTwqPopRMCrKgGhVigN1tPTCi1JG/mm4fg=
@@ -899,8 +899,8 @@ github.com/taubyte/go-specs v0.10.5 h1:R3eli3cpiw5WKMoO8MzO0+sk72LGTQXWSxUoWN7vs
 github.com/taubyte/go-specs v0.10.5/go.mod h1:HWMNhpmQzy/1Eg6s5TICKl+/talTXLX6jYEUuWCsaGg=
 github.com/taubyte/http v0.10.3 h1:UUfDVllEgDE7qD0CPPBXd2+jjbTH5If2f/1G3//9d7A=
 github.com/taubyte/http v0.10.3/go.mod h1:iYTdJl6dk3m1tC6H5WAJRX/R81ROwy7cg++zazkOqcY=
-github.com/taubyte/odo v0.0.0-20230725213128-02ebb87bd623 h1:jBxDW2eotOzt7kesEyVozH/7jMeQLcHA4yhbb1e/Kg4=
-github.com/taubyte/odo v0.0.0-20230725213128-02ebb87bd623/go.mod h1:EbftHT/w3Z0X3gOszZaCxFyg6AxggQn8Q372D6oysVg=
+github.com/taubyte/odo v0.0.0-20230726160728-95648f9e3444 h1:jVREcrCazjYX99dGNM5OOUjtyuOKTctEBlM6aoM5nHg=
+github.com/taubyte/odo v0.0.0-20230726160728-95648f9e3444/go.mod h1:VbwBfltszeEKj7/cyDeqZSPK/AXxNoBaZaXB1Tp+Lz4=
 github.com/taubyte/p2p v0.9.1 h1:W8whhWbYO5oCqOSUM+gNKCERtVGmTJHTZuTw+MJuswg=
 github.com/taubyte/p2p v0.9.1/go.mod h1:0vWZjiX8yNT3VwZO2x+mgRdEDCbwzSPOyyfBU3UEiTk=
 github.com/taubyte/tau v0.1.6 h1:trzExS7eC4aK3mX/6MZiCPciP/cLwB6npy4ic7eDLOk=
@@ -909,8 +909,8 @@ github.com/taubyte/utils v0.1.6 h1:bRSJZW/8E/wpT3wwyU3C97M9ddAJ52AfXFeP47JRGsY=
 github.com/taubyte/utils v0.1.6/go.mod h1:b/tKY1xKIxLH5ixFRTsrdz+vGhmiOcR9SpdVYiJDpsI=
 github.com/taubyte/vm v1.0.2 h1:obWrHnx6IgMUyk1NNH3+2Lp/ixXEbZRDfKnsoe5kJzc=
 github.com/taubyte/vm v1.0.2/go.mod h1:9Wm/Ojv2uefz1Wl7fSuQxNzrmSrIYCuLFE6A/Yk556g=
-github.com/taubyte/vm-core-plugins v0.3.2 h1:sp2Y4MKH0sG33QwOn/6onFqOBWo1ikA5GtIyxUXiZhc=
-github.com/taubyte/vm-core-plugins v0.3.2/go.mod h1:4IY/p4YUBcEzgIikPbGJf+v1SA38jmUKEb+GzXT81og=
+github.com/taubyte/vm-core-plugins v0.3.3 h1:PldACzf0TL5kVbCCrEyxaGnlUZP9jD+Lqmr02Ins7iQ=
+github.com/taubyte/vm-core-plugins v0.3.3/go.mod h1:5rCJkfZRWhSL4Q1T/pjxwGTyDUgtyCe+jxRHUfqvCYc=
 github.com/taubyte/vm-orbit v1.0.0 h1:oSzlnGUTJWItGoz9WTS6nW68sh0zcllOOQkLtbc0LkU=
 github.com/taubyte/vm-orbit v1.0.0/go.mod h1:VlAJlncXNzlpMvXzdEin46iOFKrtQB56TU0TOqR8Xu8=
 github.com/tetratelabs/wazero v1.0.3 h1:IWmaxc/5vKg71DE+c0SLjjLFAA3u3tD/Zegpgif2Wpo=
