@@ -235,13 +235,13 @@ func TestMultipleServices(t *testing.T) {
 	defer u.Stop()
 	err := u.StartWithConfig(&common.Config{
 		Services: map[string]commonIface.ServiceConfig{
-			"seer":    {Others: map[string]int{"copies": 1}},
-			"auth":    {Others: map[string]int{"copies": 3}},
-			"patrick": {Others: map[string]int{"copies": 3}},
-			"tns":     {Others: map[string]int{"copies": 3}},
-			"monkey":  {Others: map[string]int{"copies": 3}},
-			"hoarder": {Others: map[string]int{"copies": 3}},
-			"node":    {Others: map[string]int{"copies": 3}},
+			"seer":      {Others: map[string]int{"copies": 1}},
+			"auth":      {Others: map[string]int{"copies": 3}},
+			"patrick":   {Others: map[string]int{"copies": 3}},
+			"tns":       {Others: map[string]int{"copies": 3}},
+			"monkey":    {Others: map[string]int{"copies": 3}},
+			"hoarder":   {Others: map[string]int{"copies": 3}},
+			"substrate": {Others: map[string]int{"copies": 3}},
 		},
 	})
 	if err != nil {

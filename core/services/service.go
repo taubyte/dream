@@ -7,6 +7,7 @@ import (
 
 	"github.com/taubyte/dreamland/core/common"
 	commonIface "github.com/taubyte/go-interfaces/common"
+	"github.com/taubyte/odo/pkgs/kvdb"
 	peer "github.com/taubyte/p2p/peer"
 )
 
@@ -63,6 +64,8 @@ func (u *Universe) createService(name string, config *commonIface.ServiceConfig)
 	if err != nil {
 		return err
 	}
+
+	config.Databases = kvdb.New(node)
 
 	// we mesh first
 	u.Mesh(node)
