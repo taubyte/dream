@@ -4,6 +4,7 @@ import (
 	"context"
 
 	"github.com/taubyte/go-interfaces/common"
+	"github.com/taubyte/go-interfaces/kvdb"
 	"github.com/taubyte/go-interfaces/services/auth"
 	"github.com/taubyte/go-interfaces/services/hoarder"
 	"github.com/taubyte/go-interfaces/services/monkey"
@@ -22,9 +23,10 @@ type SimpleConfig struct {
 }
 
 type NodeInfo struct {
-	Node  peer.Node
-	Name  string
-	Ports map[string]int
+	DbFactory kvdb.Factory
+	Node      peer.Node
+	Name      string
+	Ports     map[string]int
 }
 
 type SimpleConfigClients struct {

@@ -2,6 +2,10 @@ module github.com/taubyte/dreamland
 
 go 1.19
 
+replace github.com/taubyte/odo => /home/tafkhan/Documents/Work/Taubyte/new/odo
+
+replace github.com/taubyte/go-interfaces => /home/tafkhan/Documents/Work/Taubyte/Repos/go-interfaces
+
 require (
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/ipfs/go-log/v2 v2.5.1
