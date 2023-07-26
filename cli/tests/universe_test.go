@@ -14,7 +14,7 @@ import (
 	_ "github.com/taubyte/odo/utils/dreamland"
 )
 
-var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "node"}
+var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "substrate"}
 
 func TestKillService(t *testing.T) {
 	t.Skip("this test needs to be redone")
@@ -126,7 +126,7 @@ func TestKillSimple(t *testing.T) {
 		return
 	}
 
-	err = u.KillNodeByNameID("client", simple.GetNode().ID().Pretty())
+	err = u.KillNodeByNameID("client", simple.PeerNode().ID().Pretty())
 	if err != nil {
 		t.Error(err)
 		return
@@ -197,8 +197,8 @@ func TestUniverseAll(t *testing.T) {
 		return
 	}
 
-	if u.Node() == nil {
-		t.Error("Node is nil")
+	if u.Substrate() == nil {
+		t.Error("Substrate is nil")
 		return
 	}
 	if u.Seer() == nil || simple.Seer() == nil {
