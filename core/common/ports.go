@@ -16,11 +16,11 @@ var (
 	DefaultTNSHttpPort     = 466
 	DefaultNodeHttpPort    = 529
 
-	DreamlandApiListen = DefaultURL + ":1421"
+	DreamlandApiListen = DefaultHost + ":1421"
 )
 
 var (
-	DefaultURL              string = "127.0.0.1"
-	DefaultP2PListenFormat  string = "/ip4/" + DefaultURL + "/tcp/%d"
-	DefaultHTTPListenFormat string = "%s://" + DefaultURL + ":%d"
+	DefaultHost             string = "127.0.0.1"
+	DefaultP2PListenFormat  string = "/ip4/" + DefaultHost + "/tcp/%d"
+	DefaultHTTPListenFormat string = "%s://" + DefaultHost + ":%d"
 )

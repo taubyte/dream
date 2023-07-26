@@ -82,7 +82,7 @@ func runMultiverse(multiverse *client.Client) cli.ActionFunc {
 		spec.DefaultBranch = c.String("branch")
 
 		if c.Bool("listen-on-all") {
-			commonDreamland.DefaultURL = "0.0.0.0"
+			commonDreamland.DefaultHost = "0.0.0.0"
 		}
 
 		// Set default universe name if no names provided

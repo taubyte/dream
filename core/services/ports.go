@@ -33,7 +33,7 @@ func LastUniversePortShift() int {
 	lastUniversePortShiftLock.Lock()
 	defer lastUniversePortShiftLock.Unlock()
 	for {
-		l, err := net.Listen("tcp", fmt.Sprintf("%s:%d", common.DefaultURL, lastUniversePortShift))
+		l, err := net.Listen("tcp", fmt.Sprintf("%s:%d", common.DefaultHost, lastUniversePortShift))
 		if err != nil {
 			break
 		}

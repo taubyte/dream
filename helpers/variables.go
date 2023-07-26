@@ -8,7 +8,7 @@ import (
 	dreamlandCommon "github.com/taubyte/dreamland/core/common"
 )
 
-var UrlPrefix = "http://" + dreamlandCommon.DefaultURL
+var UrlPrefix = "http://" + dreamlandCommon.DefaultHost
 
 //go:embed payloads/config-payload.json
 var ConfigPayload []byte

@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	DefaultDreamlandURL = "http://" + dreamlandCommon.DefaultURL + ":1421"
+	DefaultDreamlandURL = "http://" + dreamlandCommon.DreamlandApiListen
 	BigBangStarted      = false
 	DefaultUniverseName = "blackhole"
 	DefaultClientName   = "client"

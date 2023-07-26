@@ -73,7 +73,7 @@ func runService(name string, multiverse *client.Client) cli.ActionFunc {
 			if secure == 1 {
 				protocol = "https"
 			}
-			fmt.Printf("\n@ %s://%s:%d\n\n", protocol, commonDreamland.DefaultURL, http)
+			fmt.Printf("\n@ %s://%s:%d\n\n", protocol, commonDreamland.DefaultHost, http)
 		}
 
 		t.Render()
