@@ -9,11 +9,8 @@ import (
 	"github.com/taubyte/dreamland/service/api"
 	"github.com/taubyte/dreamland/service/inject"
 	commonIface "github.com/taubyte/go-interfaces/common"
-<<<<<<< HEAD:service/universe_test.go
 	commonDreamland "github.com/taubyte/tau/libdream/common"
 	dreamland "github.com/taubyte/tau/libdream/services"
-=======
->>>>>>> main:http/universe_test.go
 	_ "github.com/taubyte/tau/protocols/auth"
 
 	_ "github.com/taubyte/tau/protocols/hoarder"

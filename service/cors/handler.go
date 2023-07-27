@@ -2,7 +2,7 @@ package cors
 
 import (
 	"encoding/base64"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"strings"
@@ -73,7 +73,7 @@ func handleResponse(request *http.Request, w http.ResponseWriter) {
 		}
 	}
 
-	body, err := ioutil.ReadAll(response.Body)
+	body, err := io.ReadAll(response.Body)
 	if err != nil {
 		OutError(w, http.StatusInternalServerError, err.Error())
 		return
@@ -113,6 +113,4 @@ func ProxyHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Handle response
 	handleResponse(request, w)
-
-	return
 }

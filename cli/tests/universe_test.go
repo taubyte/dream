@@ -10,12 +10,9 @@ import (
 
 	client "github.com/taubyte/dreamland/service"
 	commonIface "github.com/taubyte/go-interfaces/common"
-<<<<<<< HEAD
 	common "github.com/taubyte/tau/libdream/common"
 	dreamland "github.com/taubyte/tau/libdream/services"
 
-=======
->>>>>>> main
 	_ "github.com/taubyte/tau/utils/dreamland"
 )
 
