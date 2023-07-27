@@ -2,6 +2,8 @@ module github.com/taubyte/dreamland
 
 go 1.19
 
+replace github.com/taubyte/odo => ../mono-odo
+
 require (
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/ipfs/go-log/v2 v2.5.1
@@ -12,7 +14,7 @@ require (
 	github.com/taubyte/go-simple-git v0.2.5
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/odo v0.0.0-20230726225800-aad1ece7fbb4
+	github.com/taubyte/odo v0.0.0-20230727154809-0688a5d7674b
 	github.com/taubyte/p2p v0.9.1
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
