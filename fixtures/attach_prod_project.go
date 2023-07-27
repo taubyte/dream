@@ -8,11 +8,11 @@ import (
 	"strings"
 
 	"github.com/google/go-github/github"
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	dreamlandRegistry "github.com/taubyte/dreamland/core/registry"
-	"github.com/taubyte/dreamland/helpers"
-	httpAuthClient "github.com/taubyte/odo/clients/http/auth"
-	commonAuth "github.com/taubyte/odo/protocols/common"
+	httpAuthClient "github.com/taubyte/tau/clients/http/auth"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream/helpers"
+	dreamlandRegistry "github.com/taubyte/tau/libdream/registry"
+	commonAuth "github.com/taubyte/tau/protocols/common"
 	"golang.org/x/oauth2"
 )
 

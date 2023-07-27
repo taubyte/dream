@@ -3,8 +3,8 @@ package new
 import (
 	"github.com/taubyte/dreamland/cli/command"
 	"github.com/taubyte/dreamland/cli/common"
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
 	"github.com/urfave/cli/v2"
 )
 

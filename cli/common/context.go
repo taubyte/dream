@@ -3,7 +3,7 @@ package common
 import (
 	"context"
 
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
 )
 
 type Context struct {

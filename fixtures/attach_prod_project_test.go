@@ -3,15 +3,15 @@ package fixtures
 import (
 	"testing"
 
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	dreamland "github.com/taubyte/dreamland/core/services"
-	"github.com/taubyte/dreamland/helpers"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	_ "github.com/taubyte/odo/protocols/auth"
-	_ "github.com/taubyte/odo/protocols/hoarder"
-	_ "github.com/taubyte/odo/protocols/monkey"
-	_ "github.com/taubyte/odo/protocols/patrick"
-	_ "github.com/taubyte/odo/protocols/tns"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream/helpers"
+	dreamland "github.com/taubyte/tau/libdream/services"
+	_ "github.com/taubyte/tau/protocols/auth"
+	_ "github.com/taubyte/tau/protocols/hoarder"
+	_ "github.com/taubyte/tau/protocols/monkey"
+	_ "github.com/taubyte/tau/protocols/patrick"
+	_ "github.com/taubyte/tau/protocols/tns"
 )
 
 func TestAttachProdProject(t *testing.T) {

@@ -1,7 +1,7 @@
 package common
 
 import (
-	dreamlandCommon "github.com/taubyte/dreamland/core/common"
+	dreamlandCommon "github.com/taubyte/tau/libdream/common"
 )
 
 var (

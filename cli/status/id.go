@@ -4,8 +4,8 @@ import (
 	"github.com/pterm/pterm"
 	"github.com/taubyte/dreamland/cli/command"
 	"github.com/taubyte/dreamland/cli/common"
-	"github.com/taubyte/dreamland/core/api"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
+	"github.com/taubyte/dreamland/service/api"
 	"github.com/urfave/cli/v2"
 )
 

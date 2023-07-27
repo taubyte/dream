@@ -3,10 +3,10 @@ package new
 import (
 	"github.com/pterm/pterm"
 	"github.com/taubyte/dreamland/cli/common"
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	"github.com/taubyte/dreamland/core/services"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
+	"github.com/taubyte/dreamland/service/api"
 	spec "github.com/taubyte/go-specs/common"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
 	"github.com/urfave/cli/v2"
 )
 
@@ -95,7 +95,7 @@ func runMultiverse(multiverse *client.Client) cli.ActionFunc {
 		}
 
 		if c.Bool("empty") {
-			err = services.BigBang()
+			err = api.BigBang()
 			if err != nil {
 				return err
 			}
@@ -109,9 +109,7 @@ func runMultiverse(multiverse *client.Client) cli.ActionFunc {
 			if c.Bool("daemon") {
 				common.DoDaemon = true
 			} else {
-				select {
-				case <-c.Done():
-				}
+				<-c.Done()
 			}
 
 			return
@@ -127,7 +125,7 @@ func runMultiverse(multiverse *client.Client) cli.ActionFunc {
 		}
 
 		// Start API
-		err = services.BigBang()
+		err = api.BigBang()
 		if err != nil {
 			return err
 		}
@@ -148,9 +146,7 @@ func runMultiverse(multiverse *client.Client) cli.ActionFunc {
 		if c.Bool("daemon") {
 			common.DoDaemon = true
 		} else {
-			select {
-			case <-c.Done():
-			}
+			<-c.Done()
 		}
 
 		return

@@ -2,8 +2,8 @@ package kill
 
 import (
 	"github.com/taubyte/dreamland/cli/command"
-	dreamland "github.com/taubyte/dreamland/core/services"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
+	dreamland "github.com/taubyte/tau/libdream/services"
 	"github.com/urfave/cli/v2"
 )
 

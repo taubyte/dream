@@ -6,7 +6,7 @@ import (
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/taubyte/dreamland/cli/command"
 	"github.com/taubyte/dreamland/cli/common"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
 	"github.com/urfave/cli/v2"
 )
 

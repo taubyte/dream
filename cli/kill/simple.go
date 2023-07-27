@@ -3,7 +3,7 @@ package kill
 import (
 	"github.com/taubyte/dreamland/cli/command"
 	"github.com/taubyte/dreamland/cli/common"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
 	"github.com/urfave/cli/v2"
 )
 

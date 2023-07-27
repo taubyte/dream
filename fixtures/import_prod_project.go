@@ -7,11 +7,11 @@ import (
 	"sync"
 	"time"
 
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	dreamlandRegistry "github.com/taubyte/dreamland/core/registry"
-	"github.com/taubyte/dreamland/helpers"
 	"github.com/taubyte/go-interfaces/services/patrick"
 	spec "github.com/taubyte/go-specs/common"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream/helpers"
+	dreamlandRegistry "github.com/taubyte/tau/libdream/registry"
 )
 
 func init() {

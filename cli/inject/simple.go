@@ -6,10 +6,10 @@ import (
 
 	"github.com/taubyte/dreamland/cli/command"
 	"github.com/taubyte/dreamland/cli/common"
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	dreamland "github.com/taubyte/dreamland/core/services"
-	client "github.com/taubyte/dreamland/http"
-	"github.com/taubyte/dreamland/http/inject"
+	client "github.com/taubyte/dreamland/service"
+	"github.com/taubyte/dreamland/service/inject"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
+	dreamland "github.com/taubyte/tau/libdream/services"
 	"github.com/urfave/cli/v2"
 )
 
