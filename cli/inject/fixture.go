@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/taubyte/dreamland/cli/command"
-	dreamlandRegistry "github.com/taubyte/dreamland/core/registry"
-	client "github.com/taubyte/dreamland/http"
-	"github.com/taubyte/dreamland/http/inject"
+	client "github.com/taubyte/dreamland/service"
+	"github.com/taubyte/dreamland/service/inject"
+	dreamlandRegistry "github.com/taubyte/tau/libdream/registry"
 	"github.com/urfave/cli/v2"
 )
 

@@ -15,8 +15,8 @@ import (
 
 	// Actual imports
 
-	"github.com/taubyte/dreamland/core/services"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
+	"github.com/taubyte/tau/libdream/services"
 	"github.com/urfave/cli/v2"
 
 	// Empty imports for initializing fixtures, and client/service run methods"

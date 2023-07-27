@@ -4,20 +4,17 @@ go 1.19
 
 require (
 	github.com/google/go-github v17.0.0+incompatible
-	github.com/ipfs/go-log/v2 v2.5.1
 	github.com/jedib0t/go-pretty/v6 v6.4.6
-	github.com/libp2p/go-libp2p v0.29.0
 	github.com/pterm/pterm v0.12.62
+	github.com/spf13/afero v1.9.5
+	github.com/taubyte/config-compiler v0.4.5
 	github.com/taubyte/go-interfaces v0.2.9
-	github.com/taubyte/go-simple-git v0.2.5
+	github.com/taubyte/go-project-schema v0.9.3
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/p2p v0.9.1
-	github.com/taubyte/tau v0.0.0-20230727213527-9b6b719303f8
+	github.com/taubyte/tau v0.1.0
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
-	golang.org/x/crypto v0.11.0
-	golang.org/x/exp v0.0.0-20230713183714-613f0c0eb8a1
 	golang.org/x/oauth2 v0.10.0
 )
 
@@ -118,6 +115,7 @@ require (
 	github.com/ipfs/go-ipld-format v0.4.0 // indirect
 	github.com/ipfs/go-ipld-legacy v0.1.1 // indirect
 	github.com/ipfs/go-log v1.0.5 // indirect
+	github.com/ipfs/go-log/v2 v2.5.1 // indirect
 	github.com/ipfs/go-metrics-interface v0.0.1 // indirect
 	github.com/ipfs/go-peertaskqueue v0.8.1 // indirect
 	github.com/ipld/go-codec-dagpb v1.6.0 // indirect
@@ -139,6 +137,7 @@ require (
 	github.com/libp2p/go-buffer-pool v0.1.0 // indirect
 	github.com/libp2p/go-cidranger v1.1.0 // indirect
 	github.com/libp2p/go-flow-metrics v0.1.0 // indirect
+	github.com/libp2p/go-libp2p v0.29.0 // indirect
 	github.com/libp2p/go-libp2p-asn-util v0.3.0 // indirect
 	github.com/libp2p/go-libp2p-core v0.20.1 // indirect
 	github.com/libp2p/go-libp2p-kad-dht v0.22.0 // indirect
@@ -207,15 +206,14 @@ require (
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
-	github.com/spf13/afero v1.9.5 // indirect
 	github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29 // indirect
-	github.com/taubyte/config-compiler v0.4.4 // indirect
 	github.com/taubyte/domain-validation v1.0.0 // indirect
-	github.com/taubyte/go-project-schema v0.9.3 // indirect
 	github.com/taubyte/go-sdk v0.3.8 // indirect
 	github.com/taubyte/go-sdk-smartops v0.1.3 // indirect
 	github.com/taubyte/go-seer v1.0.6 // indirect
 	github.com/taubyte/go-simple-container v0.4.2 // indirect
+	github.com/taubyte/go-simple-git v0.2.5 // indirect
+	github.com/taubyte/p2p v0.9.1 // indirect
 	github.com/taubyte/tau-cli v0.1.8 // indirect
 	github.com/taubyte/vm v1.0.3 // indirect
 	github.com/taubyte/vm-core-plugins v0.3.3 // indirect
@@ -242,6 +240,8 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.24.0 // indirect
 	go4.org v0.0.0-20230225012048-214862532bf5 // indirect
+	golang.org/x/crypto v0.11.0 // indirect
+	golang.org/x/exp v0.0.0-20230713183714-613f0c0eb8a1 // indirect
 	golang.org/x/mod v0.12.0 // indirect
 	golang.org/x/net v0.12.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect

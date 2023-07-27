@@ -8,9 +8,9 @@ import (
 	"strings"
 
 	"github.com/google/go-github/github"
-	"github.com/taubyte/dreamland/core/common"
-	dreamlandRegistry "github.com/taubyte/dreamland/core/registry"
-	commonTest "github.com/taubyte/dreamland/helpers"
+	"github.com/taubyte/tau/libdream/common"
+	commonTest "github.com/taubyte/tau/libdream/helpers"
+	dreamlandRegistry "github.com/taubyte/tau/libdream/registry"
 	"golang.org/x/oauth2"
 )
 

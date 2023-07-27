@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/taubyte/dreamland/cli/command"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
 	"github.com/urfave/cli/v2"
 )
 

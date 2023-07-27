@@ -7,9 +7,9 @@ import (
 
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/taubyte/dreamland/cli/command"
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	dreamland "github.com/taubyte/dreamland/core/services"
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
+	dreamland "github.com/taubyte/tau/libdream/services"
 	"github.com/urfave/cli/v2"
 )
 

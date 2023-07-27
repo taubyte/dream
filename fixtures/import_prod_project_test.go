@@ -3,11 +3,11 @@ package fixtures
 import (
 	"testing"
 
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	dreamland "github.com/taubyte/dreamland/core/services"
-	"github.com/taubyte/dreamland/helpers"
 	commonIface "github.com/taubyte/go-interfaces/common"
 	spec "github.com/taubyte/go-specs/common"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream/helpers"
+	dreamland "github.com/taubyte/tau/libdream/services"
 	_ "github.com/taubyte/tau/protocols/auth"
 	_ "github.com/taubyte/tau/protocols/monkey"
 	_ "github.com/taubyte/tau/protocols/patrick"

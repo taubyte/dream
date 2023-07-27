@@ -85,7 +85,7 @@ func TestBuildServiceConfig(t *testing.T) {
 	}
 
 	// Should fail to bind disabled
-	c, err = buildServiceConfig(
+	_, err = buildServiceConfig(
 		enable(),              // Enable
 		disable("tns"),        // Disable
 		bind("tns@4040/http"), // Bind
@@ -96,7 +96,7 @@ func TestBuildServiceConfig(t *testing.T) {
 	}
 
 	// Should fail to bind not enabled
-	c, err = buildServiceConfig(
+	_, err = buildServiceConfig(
 		enable("seer"),        // Enable
 		disable(),             // Disable
 		bind("tns@4040/http"), // Bind
@@ -124,7 +124,7 @@ func TestBuildServiceConfig(t *testing.T) {
 	}
 
 	// Shouldn't be able to bind the same port on a single service
-	c, err = buildServiceConfig(
+	_, err = buildServiceConfig(
 		enable(),  // Enable
 		disable(), // Disable
 		bind("tns@4040/http", "seer@4040/p2p", "tns@4042"), // Bind

@@ -7,11 +7,11 @@ import (
 	"strings"
 
 	"github.com/taubyte/dreamland/cli/common"
-	commonDreamland "github.com/taubyte/dreamland/core/common"
-	"github.com/taubyte/dreamland/core/services"
-	client "github.com/taubyte/dreamland/http"
-	"github.com/taubyte/dreamland/http/inject"
+	client "github.com/taubyte/dreamland/service"
+	"github.com/taubyte/dreamland/service/inject"
 	commonIface "github.com/taubyte/go-interfaces/common"
+	commonDreamland "github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream/services"
 	slices "github.com/taubyte/utils/slices/string"
 	"github.com/urfave/cli/v2"
 )
@@ -21,7 +21,7 @@ func buildServiceConfig(enable, disable, binds []string) (map[string]commonIface
 
 	// Validation
 	if len(disable) != 0 && len(enable) != 0 {
-		return nil, errors.New("Can't set enable and disable flags")
+		return nil, errors.New("can't set enable and disable flags")
 	}
 
 	valid := services.ValidServices()
@@ -40,13 +40,9 @@ func buildServiceConfig(enable, disable, binds []string) (map[string]commonIface
 		}
 
 	} else if len(enable) > 0 {
-		for _, s := range enable {
-			_services = append(_services, s)
-		}
+		_services = append(_services, enable...)
 	} else {
-		for _, s := range valid {
-			_services = append(_services, s)
-		}
+		_services = append(_services, valid...)
 	}
 
 	config, err := bindConfigServices(binds, _services)
@@ -66,13 +62,13 @@ func bindConfigServices(_binds []string, _services []string) (map[string]commonI
 
 		_def := strings.Split(bind, "@")
 		if len(_def) != 1 && len(_def) != 2 {
-			return nil, fmt.Errorf("Processing bindings for `%s` failed", bind)
+			return nil, fmt.Errorf("processing bindings for `%s` failed", bind)
 		}
 
 		// grab the name
 		name := _def[0]
-		if len(name) == 0 || slices.Contains(_services, name) == false {
-			return nil, fmt.Errorf("Could not bind port of service `%s`: disabled", name)
+		if len(name) == 0 || !slices.Contains(_services, name) {
+			return nil, fmt.Errorf("could not bind port of service `%s`: disabled", name)
 		}
 
 		sub := ""
@@ -87,7 +83,7 @@ func bindConfigServices(_binds []string, _services []string) (map[string]commonI
 			if len(_portDef) == 2 {
 				valid_subs := common.ValidSubBinds
 				sub = _portDef[1]
-				if slices.Contains(valid_subs, sub) == false {
+				if !slices.Contains(valid_subs, sub) {
 					return nil, fmt.Errorf("`%s` not valid, should be one of: %s", sub, valid_subs)
 				}
 			} else {
@@ -96,7 +92,7 @@ func bindConfigServices(_binds []string, _services []string) (map[string]commonI
 		}
 
 		// define
-		if _, exists := binds[name]; exists == false {
+		if _, exists := binds[name]; !exists {
 			binds[name] = make(map[string]int)
 		}
 		if sub == "https" {
@@ -120,7 +116,7 @@ func bindConfigServices(_binds []string, _services []string) (map[string]commonI
 						errIdx = idx
 					}
 				}
-				return nil, fmt.Errorf("Attempted duplicate port bindings [%s@%d/%s] and [%s@%d/%s]", _used, port, errIdx, _service, port, portIdx)
+				return nil, fmt.Errorf("attempted duplicate port bindings [%s@%d/%s] and [%s@%d/%s]", _used, port, errIdx, _service, port, portIdx)
 			}
 			used[port] = _service
 		}
@@ -133,8 +129,8 @@ func bindConfigServices(_binds []string, _services []string) (map[string]commonI
 	for _, s := range _services {
 		port := 0
 		bind, ok := binds[s]
-		if ok == true {
-			port, _ = bind["main"] // if not defined port == 0
+		if ok {
+			port = bind["main"] // if not defined port == 0
 		}
 
 		config[s] = commonIface.ServiceConfig{
@@ -191,7 +187,7 @@ func runFixtures(c *cli.Context, multiverse *client.Client, universes []string) 
 	for _, universe := range universes {
 		err := multiverse.Universe(universe).Inject(fixtures...)
 		if err != nil {
-			return fmt.Errorf("Injecting fixtures into `%s` failed with: %w", universe, err)
+			return fmt.Errorf("injecting fixtures into `%s` failed with: %w", universe, err)
 		}
 	}
 

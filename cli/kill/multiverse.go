@@ -1,7 +1,7 @@
 package kill
 
 import (
-	client "github.com/taubyte/dreamland/http"
+	client "github.com/taubyte/dreamland/service"
 	"github.com/urfave/cli/v2"
 )
 
