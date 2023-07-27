@@ -1,9 +1,5 @@
 module github.com/taubyte/dreamland
 
-replace github.com/taubyte/tau => /home/tafkhan/Documents/Work/Taubyte/Repos/tau
-
-replace github.com/taubyte/config-compiler => /home/tafkhan/Documents/Work/Taubyte/Repos/config-compiler
-
 go 1.19
 
 require (
@@ -11,12 +7,12 @@ require (
 	github.com/jedib0t/go-pretty/v6 v6.4.6
 	github.com/pterm/pterm v0.12.62
 	github.com/spf13/afero v1.9.5
-	github.com/taubyte/config-compiler v0.4.4
+	github.com/taubyte/config-compiler v0.4.5
 	github.com/taubyte/go-interfaces v0.2.9
 	github.com/taubyte/go-project-schema v0.9.3
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/tau v0.0.0-20230727213527-9b6b719303f8
+	github.com/taubyte/tau v0.1.0
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
 	golang.org/x/oauth2 v0.10.0
