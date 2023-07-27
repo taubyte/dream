@@ -23,7 +23,7 @@ func BigBang() error {
 
 func Start(m common.Multiverse) (err error) {
 	mv = m
-	serviceApi, err = http.New(m.Context(), options.Listen(common.DreamlandApiListen))
+	serviceApi, err = http.New(m.Context(), options.Listen(common.DreamlandApiListen), options.AllowedOrigins(true, []string{".*"}))
 	if err != nil {
 		return
 	}
