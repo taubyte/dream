@@ -4,9 +4,12 @@ import (
 	"context"
 	"log"
 	"os"
+	"os/signal"
+	"syscall"
 	"time"
 
 	// Relative
+	"github.com/pterm/pterm"
 	"github.com/taubyte/dreamland/cli/common"
 	inject "github.com/taubyte/dreamland/cli/inject"
 	"github.com/taubyte/dreamland/cli/kill"
@@ -39,6 +42,17 @@ import (
 
 func main() {
 	ctx, ctxC := context.WithCancel(context.Background())
+
+	signals := make(chan os.Signal, 1)
+	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
+	go func() {
+		sig := <-signals
+		switch sig {
+		case os.Interrupt, syscall.SIGTERM:
+			pterm.Info.Println("Received signal... Shutting down.")
+			ctxC()
+		}
+	}()
 
 	defer func() {
 		if common.DoDaemon {
