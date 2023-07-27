@@ -11,7 +11,7 @@ import (
 
 func (u *Universe) CreateMonkeyService(config *commonIface.ServiceConfig) (peer.Node, error) {
 	if registry.Registry.Monkey.Service == nil {
-		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/monkey"`)
+		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/tau/protocols/monkey"`)
 	}
 
 	monkey, err := registry.Registry.Monkey.Service(u.ctx, config)
@@ -32,7 +32,7 @@ func (u *Universe) CreateMonkeyService(config *commonIface.ServiceConfig) (peer.
 
 func (s *Simple) CreateMonkeyClient(config *commonIface.ClientConfig) error {
 	if registry.Registry.Monkey.Client == nil {
-		return fmt.Errorf(`client is nil, have you imported _ "github.com/taubyte/odo/clients/p2p/monkey"`)
+		return fmt.Errorf(`client is nil, have you imported _ "github.com/taubyte/tau/clients/p2p/monkey"`)
 	}
 
 	_monkey, err := registry.Registry.Monkey.Client(s.Node, config)

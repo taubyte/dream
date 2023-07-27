@@ -13,7 +13,7 @@ func (u *Universe) CreateSubstrateService(config *commonIface.ServiceConfig) (pe
 	var err error
 
 	if registry.Registry.Substrate.Service == nil {
-		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/odo/protocols/substrate"`)
+		return nil, fmt.Errorf(`service is nil, have you imported _ "github.com/taubyte/tau/protocols/substrate"`)
 	}
 
 	substrateNode, err := registry.Registry.Substrate.Service(u.ctx, config)

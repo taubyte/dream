@@ -11,8 +11,8 @@ import (
 	"github.com/taubyte/dreamland/core/common"
 	"github.com/taubyte/dreamland/core/registry"
 	ifaceCommon "github.com/taubyte/go-interfaces/common"
-	protocols "github.com/taubyte/odo/protocols/common"
 	peer "github.com/taubyte/p2p/peer"
+	protocols "github.com/taubyte/tau/protocols/common"
 )
 
 var (

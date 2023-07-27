@@ -11,7 +11,7 @@ import (
 	dreamland "github.com/taubyte/dreamland/core/services"
 	client "github.com/taubyte/dreamland/http"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	_ "github.com/taubyte/odo/utils/dreamland"
+	_ "github.com/taubyte/tau/utils/dreamland"
 )
 
 var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "substrate"}

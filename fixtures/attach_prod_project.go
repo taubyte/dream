@@ -11,8 +11,8 @@ import (
 	commonDreamland "github.com/taubyte/dreamland/core/common"
 	dreamlandRegistry "github.com/taubyte/dreamland/core/registry"
 	"github.com/taubyte/dreamland/helpers"
-	httpAuthClient "github.com/taubyte/odo/clients/http/auth"
-	commonAuth "github.com/taubyte/odo/protocols/common"
+	httpAuthClient "github.com/taubyte/tau/clients/http/auth"
+	commonAuth "github.com/taubyte/tau/protocols/common"
 	"golang.org/x/oauth2"
 )
 

@@ -2,8 +2,8 @@ package services
 
 import (
 	"github.com/taubyte/dreamland/core/common"
-	"github.com/taubyte/odo/pkgs/kvdb"
 	peer "github.com/taubyte/p2p/peer"
+	"github.com/taubyte/tau/pkgs/kvdb"
 )
 
 func (u *Universe) Register(node peer.Node, name string, ports map[string]int) {
