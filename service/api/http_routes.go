@@ -1,6 +1,8 @@
 package api
 
 func setUpHttpRoutes() {
+	corsHttp()
+
 	statusHttp()
 	lesMiesrablesHttp()
 	fixtureHttp()

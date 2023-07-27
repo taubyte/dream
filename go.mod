@@ -16,7 +16,8 @@ require (
 	github.com/taubyte/go-project-schema v0.9.3
 	github.com/taubyte/go-specs v0.10.5
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/tau v0.1.6
+	github.com/taubyte/p2p v0.9.1
+	github.com/taubyte/tau v0.0.0-20230727213527-9b6b719303f8
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
 	golang.org/x/oauth2 v0.10.0
@@ -216,8 +217,6 @@ require (
 	github.com/taubyte/go-sdk-smartops v0.1.3 // indirect
 	github.com/taubyte/go-seer v1.0.6 // indirect
 	github.com/taubyte/go-simple-container v0.4.2 // indirect
-	github.com/taubyte/go-simple-git v0.2.5 // indirect
-	github.com/taubyte/p2p v0.9.1 // indirect
 	github.com/taubyte/tau-cli v0.1.8 // indirect
 	github.com/taubyte/vm v1.0.3 // indirect
 	github.com/taubyte/vm-core-plugins v0.3.3 // indirect
