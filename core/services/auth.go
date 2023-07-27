@@ -13,7 +13,7 @@ func (u *Universe) CreateAuthService(config *commonIface.ServiceConfig) (peer.No
 	var err error
 
 	if registry.Registry.Auth.Service == nil {
-		return nil, fmt.Errorf("service is nil, have you imported _ \"github.com/taubyte/odo/protocols/auth\"")
+		return nil, fmt.Errorf("service is nil, have you imported _ \"github.com/taubyte/tau/protocols/auth\"")
 	}
 
 	auth, err := registry.Registry.Auth.Service(u.ctx, config)
@@ -34,7 +34,7 @@ func (u *Universe) CreateAuthService(config *commonIface.ServiceConfig) (peer.No
 
 func (s *Simple) CreateAuthClient(config *commonIface.ClientConfig) error {
 	if registry.Registry.Auth.Client == nil {
-		return fmt.Errorf("client is nil, have you imported _ \"github.com/taubyte/odo/clients/p2p/auth\"")
+		return fmt.Errorf("client is nil, have you imported _ \"github.com/taubyte/tau/clients/p2p/auth\"")
 	}
 
 	_auth, err := registry.Registry.Auth.Client(s.Node, config)

@@ -6,9 +6,9 @@ import (
 
 	"github.com/taubyte/dreamland/core/common"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	protocols "github.com/taubyte/odo/protocols/common"
 	"github.com/taubyte/p2p/keypair"
 	peer "github.com/taubyte/p2p/peer"
+	protocols "github.com/taubyte/tau/protocols/common"
 )
 
 func ClientsWithDefaults(names ...string) common.SimpleConfigClients {
