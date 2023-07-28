@@ -16,7 +16,7 @@ import (
 
 func TestUpdate(t *testing.T) {
 	t.Skip("needs to be reimplemented")
-	u := services.Multiverse("single_e2e")
+	u := services.Multiverse(services.UniverseConfig{Name: "single_e2e"})
 	defer u.Stop()
 
 	err := u.StartWithConfig(&commonDreamland.Config{

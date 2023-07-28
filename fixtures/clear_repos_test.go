@@ -9,7 +9,7 @@ import (
 )
 
 func TestClearRepos(t *testing.T) {
-	u := dreamland.Multiverse("TestImportProdProject")
+	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: "TestImportProdProject"})
 	defer u.Stop()
 
 	err := u.StartWithConfig(&commonDreamland.Config{

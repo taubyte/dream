@@ -19,7 +19,7 @@ func TestImportProdProject(t *testing.T) {
 
 	spec.DefaultBranch = "master_test"
 
-	u := dreamland.Multiverse("TestImportProdProject")
+	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: "TestImportProdProject"})
 	defer u.Stop()
 
 	err := u.StartWithConfig(&commonDreamland.Config{

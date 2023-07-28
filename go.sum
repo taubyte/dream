@@ -902,8 +902,8 @@ github.com/taubyte/http v0.10.3/go.mod h1:iYTdJl6dk3m1tC6H5WAJRX/R81ROwy7cg++zaz
 github.com/taubyte/odo v0.0.0-20230727154809-0688a5d7674b h1:2Jt0GOC/2OoSG8R+SG8ctWD1m8XVla3IMb4Z69QIZLg=
 github.com/taubyte/p2p v0.9.1 h1:W8whhWbYO5oCqOSUM+gNKCERtVGmTJHTZuTw+MJuswg=
 github.com/taubyte/p2p v0.9.1/go.mod h1:0vWZjiX8yNT3VwZO2x+mgRdEDCbwzSPOyyfBU3UEiTk=
-github.com/taubyte/tau v0.1.0 h1:wpyNNZa6lHYiTyd2u+jh6574NUhkgzP5BZuUAOC0Rt4=
-github.com/taubyte/tau v0.1.0/go.mod h1:Oz3n9Zn5HaHUFRXjxP0dhdjeeL11HCHTJbjHybx0h6M=
+github.com/taubyte/tau v0.0.0-20230728185337-876124b14a81 h1:QAGlsOqq6VRWHZjQH1P0q5NRQfpeSeaH5p/BJ26p+Sc=
+github.com/taubyte/tau v0.0.0-20230728185337-876124b14a81/go.mod h1:Oz3n9Zn5HaHUFRXjxP0dhdjeeL11HCHTJbjHybx0h6M=
 github.com/taubyte/tau-cli v0.1.8 h1:81VcK9ZfKoAwzjwhnxQkxXa/kjv9fyb4kUephaqcxa0=
 github.com/taubyte/tau-cli v0.1.8/go.mod h1:4BC0INT2qB3RnDVooAPuc8XWu7trU4smhJ/XdhKjYkA=
 github.com/taubyte/utils v0.1.6 h1:bRSJZW/8E/wpT3wwyU3C97M9ddAJ52AfXFeP47JRGsY=

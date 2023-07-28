@@ -15,7 +15,7 @@ import (
 )
 
 func TestAttachProdProject(t *testing.T) {
-	u := dreamland.Multiverse("testrunlibrary")
+	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: "testrunlibrary"})
 	defer u.Stop()
 
 	err := u.StartWithConfig(&commonDreamland.Config{
