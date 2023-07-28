@@ -200,18 +200,13 @@ func startUniverses(c *cli.Context) (err error) {
 		return err
 	}
 
-	uid := c.String("id")
 	for _, universe := range c.StringSlice("universes") {
 		var u commonDreamland.Universe
-		if uid == "" {
-			u = services.Multiverse(universe)
-		} else {
-			u = services.MultiverseWithConfig(services.UniverseConfig{
-				Name:     universe,
-				KeepRoot: c.Bool("keep"),
-				Id:       uid,
-			})
-		}
+		u = services.Multiverse(services.UniverseConfig{
+			Name:     universe,
+			Id:       c.String("id"),
+			KeepRoot: c.Bool("keep"),
+		})
 		err = u.StartWithConfig(config)
 		if err != nil {
 			return err
@@ -223,7 +218,7 @@ func startUniverses(c *cli.Context) (err error) {
 
 func startEmptyUniverses(c *cli.Context) (err error) {
 	for _, universe := range c.StringSlice("universes") {
-		u := services.Multiverse(universe)
+		u := services.Multiverse(services.UniverseConfig{Name: universe})
 		err = u.StartWithConfig(&commonDreamland.Config{})
 		if err != nil {
 			return err

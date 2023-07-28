@@ -2,6 +2,8 @@ module github.com/taubyte/dreamland
 
 go 1.19
 
+replace github.com/taubyte/tau => ../mono-odo
+
 require (
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/jedib0t/go-pretty/v6 v6.4.6
