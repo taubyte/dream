@@ -21,7 +21,7 @@ var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "
 func TestKillService(t *testing.T) {
 	t.Skip("this test needs to be redone")
 	api.BigBang()
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: "KillService"})
+	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
 	err := u.StartWithConfig(&common.Config{
 		Services: map[string]commonIface.ServiceConfig{},
 		Clients:  map[string]commonIface.ClientConfig{},
@@ -88,7 +88,7 @@ func TestKillSimple(t *testing.T) {
 	statusName := fmt.Sprintf("%s@%s", testSimpleName, universeName)
 
 	api.BigBang()
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: universeName})
+	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
 	err := u.StartWithConfig(&common.Config{
 		Clients: map[string]commonIface.ClientConfig{},
 		Simples: map[string]common.SimpleConfig{
@@ -185,7 +185,7 @@ func TestKillSimple(t *testing.T) {
 }
 
 func TestUniverseAll(t *testing.T) {
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: "single"})
+	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
 	defer u.Stop()
 	err := u.StartAll()
 	if err != nil {
@@ -233,7 +233,7 @@ func TestUniverseAll(t *testing.T) {
 }
 
 func TestMultipleServices(t *testing.T) {
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: "multiple"})
+	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
 	defer u.Stop()
 	err := u.StartWithConfig(&common.Config{
 		Services: map[string]commonIface.ServiceConfig{
