@@ -6,20 +6,20 @@ import (
 	httpIface "github.com/taubyte/http"
 )
 
-func killSimpleHttp() {
+func (srv *multiverseService) killSimpleHttp() {
 	// Path to delete simples in a universe
-	serviceApi.DELETE(&httpIface.RouteDefinition{
+	srv.rest.DELETE(&httpIface.RouteDefinition{
 		Path: "/simple/{universe}/{name}",
 		Vars: httpIface.Variables{
 			Required: []string{"universe", "name"},
 		},
-		Handler: killSimple,
+		Handler: srv.killSimple,
 	})
 }
 
-func killSimple(ctx httpIface.Context) (interface{}, error) {
+func (srv *multiverseService) killSimple(ctx httpIface.Context) (interface{}, error) {
 	// Grab the universe
-	universe, err := getUniverse(ctx)
+	universe, err := srv.getUniverse(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("killing simple failed with: %s", err.Error())
 	}

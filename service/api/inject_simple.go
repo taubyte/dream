@@ -7,20 +7,20 @@ import (
 	"github.com/taubyte/tau/libdream/common"
 )
 
-func injectSimpleHttp() {
+func (srv *multiverseService) injectSimpleHttp() {
 	// Path to create simples in a universe
-	serviceApi.POST(&httpIface.RouteDefinition{
+	srv.rest.POST(&httpIface.RouteDefinition{
 		Path: "/simple/{universe}/{name}",
 		Vars: httpIface.Variables{
 			Required: []string{"universe", "name", "config"},
 		},
-		Handler: apiHandlerSimple,
+		Handler: srv.apiHandlerSimple,
 	})
 }
 
-func apiHandlerSimple(ctx httpIface.Context) (interface{}, error) {
+func (srv *multiverseService) apiHandlerSimple(ctx httpIface.Context) (interface{}, error) {
 	// Grab the universe
-	universe, err := getUniverse(ctx)
+	universe, err := srv.getUniverse(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("killing simple failed with: %s", err.Error())
 	}

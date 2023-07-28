@@ -8,17 +8,17 @@ import (
 	"github.com/taubyte/tau/libdream/common"
 )
 
-func fixtureHttp() {
-	serviceApi.POST(&httpIface.RouteDefinition{
+func (srv *multiverseService) fixtureHttp() {
+	srv.rest.POST(&httpIface.RouteDefinition{
 		Path: "/fixture/{universe}/{fixture}",
 		Vars: httpIface.Variables{
 			Required: []string{"universe", "fixture", "params"},
 		},
-		Handler: apiHandlerFixture,
+		Handler: srv.apiHandlerFixture,
 	})
 }
 
-func apiHandlerFixture(ctx httpIface.Context) (interface{}, error) {
+func (srv *multiverseService) apiHandlerFixture(ctx httpIface.Context) (interface{}, error) {
 	// Grab fixture to run
 	fixture, err := ctx.GetStringVariable("fixture")
 	if err != nil {
@@ -26,7 +26,7 @@ func apiHandlerFixture(ctx httpIface.Context) (interface{}, error) {
 	}
 
 	var found bool
-	fixtures := mv.ValidFixtures()
+	fixtures := srv.ValidFixtures()
 	for _, _fixture := range fixtures {
 		if fixture == _fixture {
 			found = true
@@ -43,9 +43,9 @@ func apiHandlerFixture(ctx httpIface.Context) (interface{}, error) {
 		return nil, fmt.Errorf("failed getting universe name error %w", err)
 	}
 
-	exist := mv.Exist(_name)
+	exist := srv.Exist(_name)
 	if exist {
-		universe = mv.Universe(_name)
+		universe = srv.Universe(_name)
 	} else {
 		return nil, fmt.Errorf("universe %s does not exist", _name)
 	}

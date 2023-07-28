@@ -6,13 +6,13 @@ import (
 	httpIface "github.com/taubyte/http"
 )
 
-func lesMiesrablesHttp() {
-	serviceApi.GET(&httpIface.RouteDefinition{
+func (srv *multiverseService) lesMiesrablesHttp() {
+	srv.rest.GET(&httpIface.RouteDefinition{
 		Path: "/les/miserables/{universe}",
 		Vars: httpIface.Variables{
 			Required: []string{"universe"},
 		},
-		Handler: apiHandlerLesMiesrable,
+		Handler: srv.apiHandlerLesMiesrable,
 	})
 }
 
@@ -38,17 +38,17 @@ type Echart struct {
 	Categories []*EchartCat   `json:"categories"`
 }
 
-func apiHandlerLesMiesrable(ctx httpIface.Context) (interface{}, error) {
+func (srv *multiverseService) apiHandlerLesMiesrable(ctx httpIface.Context) (interface{}, error) {
 	universeName, err := ctx.GetStringVariable("universe")
 	if err != nil {
 		return nil, err
 	}
 
-	exists := mv.Exist(universeName)
+	exists := srv.Exist(universeName)
 	if !exists {
 		return nil, fmt.Errorf("universe `%s` does not exit", universeName)
 	}
-	u := mv.Universe(universeName)
+	u := srv.Universe(universeName)
 
 	ret := &Echart{
 		Nodes:      make([]*EchartNode, 0),

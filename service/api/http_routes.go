@@ -1,26 +1,33 @@
 package api
 
-func setUpHttpRoutes() {
-	corsHttp()
+import httpIface "github.com/taubyte/http"
 
-	statusHttp()
-	lesMiesrablesHttp()
-	fixtureHttp()
-	idHttp()
+func (srv *multiverseService) setUpHttpRoutes() httpIface.Service {
+	srv.corsHttp()
+
+	srv.statusHttp()
+	srv.lesMiesrablesHttp()
+	srv.fixtureHttp()
+	srv.idHttp()
 
 	// Inject
-	injectSimpleHttp()
-	injectServiceHttp()
-	injectUniverseHttp()
+	srv.injectSimpleHttp()
+	srv.injectServiceHttp()
+	srv.injectUniverseHttp()
 
 	// Kill
-	killServiceHttp()
-	killSimpleHttp()
-	killNodeIdHttp()
-	killUniverseHttp()
+	srv.killServiceHttp()
+	srv.killSimpleHttp()
+	srv.killNodeIdHttp()
+	srv.killUniverseHttp()
 
 	// Get
-	validClients()
-	validServices()
-	validFixtures()
+	srv.validClients()
+	srv.validServices()
+	srv.validFixtures()
+
+	//ping
+	srv.pingHttp()
+
+	return srv.rest
 }

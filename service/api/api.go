@@ -1,8 +1,12 @@
 package api
 
 import (
+	"context"
 	"time"
 
+	goHttp "net/http"
+
+	"github.com/pterm/pterm"
 	httpIface "github.com/taubyte/http"
 	http "github.com/taubyte/http/basic"
 	"github.com/taubyte/http/options"
@@ -10,31 +14,42 @@ import (
 	"github.com/taubyte/tau/libdream/services"
 )
 
-var serviceApi httpIface.Service
-var mv common.Multiverse
+type multiverseService struct {
+	rest httpIface.Service
+	common.Multiverse
+}
 
 func BigBang() error {
-	err := Start(services.NewMultiVerse())
+	var err error
+
+	srv := &multiverseService{
+		Multiverse: services.NewMultiVerse(),
+	}
+
+	srv.rest, err = http.New(srv.Context(), options.Listen(common.DreamlandApiListen), options.AllowedOrigins(true, []string{".*"}))
 	if err != nil {
 		return err
 	}
-	return nil
-}
 
-func Start(m common.Multiverse) (err error) {
-	mv = m
-	serviceApi, err = http.New(m.Context(), options.Listen(common.DreamlandApiListen), options.AllowedOrigins(true, []string{".*"}))
-	if err != nil {
-		return
+	srv.setUpHttpRoutes().Start()
+
+	waitCtx, waitCtxC := context.WithTimeout(srv.Context(), 10*time.Second)
+	defer waitCtxC()
+
+	for {
+		select {
+		case <-waitCtx.Done():
+			return waitCtx.Err()
+		case <-time.After(100 * time.Millisecond):
+			if srv.rest.Error() != nil {
+				pterm.Error.Println("Dreamland failed to start")
+				return srv.rest.Error()
+			}
+			_, err := goHttp.Get("http://" + common.DreamlandApiListen)
+			if err == nil {
+				pterm.Info.Println("Dreamland ready")
+				return nil
+			}
+		}
 	}
-
-	setUpHttpRoutes()
-
-	serviceApi.Start()
-
-	time.Sleep(300 * time.Millisecond)
-
-	err = serviceApi.Error()
-
-	return
 }
