@@ -32,7 +32,7 @@ func TestRoutes(t *testing.T) {
 		return
 	}
 
-	u := dreamland.Multiverse("dreamland-http")
+	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
 	defer u.Stop()
 
 	err = u.StartWithConfig(&commonDreamland.Config{

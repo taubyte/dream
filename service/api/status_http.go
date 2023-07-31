@@ -4,13 +4,11 @@ import (
 	httpIface "github.com/taubyte/http"
 )
 
-func statusHttp() {
-	serviceApi.GET(&httpIface.RouteDefinition{
-		Path:    "/status",
-		Handler: statusHandler,
+func (srv *multiverseService) statusHttp() {
+	srv.rest.GET(&httpIface.RouteDefinition{
+		Path: "/status",
+		Handler: func(ctx httpIface.Context) (interface{}, error) {
+			return srv.Status(), nil
+		},
 	})
-}
-
-func statusHandler(ctx httpIface.Context) (interface{}, error) {
-	return mv.Status(), nil
 }

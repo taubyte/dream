@@ -3,19 +3,14 @@ module github.com/taubyte/dreamland
 go 1.19
 
 require (
-	github.com/google/go-github v17.0.0+incompatible
 	github.com/jedib0t/go-pretty/v6 v6.4.6
 	github.com/pterm/pterm v0.12.62
-	github.com/spf13/afero v1.9.5
-	github.com/taubyte/config-compiler v0.4.5
-	github.com/taubyte/go-interfaces v0.2.9
-	github.com/taubyte/go-project-schema v0.9.3
-	github.com/taubyte/go-specs v0.10.5
+	github.com/taubyte/go-interfaces v0.2.11
+	github.com/taubyte/go-specs v0.10.6
 	github.com/taubyte/http v0.10.3
-	github.com/taubyte/tau v0.1.0
+	github.com/taubyte/tau v1.0.0
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
-	golang.org/x/oauth2 v0.10.0
 )
 
 require (
@@ -78,6 +73,7 @@ require (
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/golang/snappy v0.0.5-0.20220116011046-fa5810519dcb // indirect
+	github.com/google/go-github v17.0.0+incompatible // indirect
 	github.com/google/go-github/v32 v32.1.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/gopacket v1.1.19 // indirect
@@ -206,9 +202,12 @@ require (
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
-	github.com/taubyte/builder v0.0.0-20230714181048-6ea47db67d29 // indirect
+	github.com/spf13/afero v1.9.5 // indirect
+	github.com/taubyte/builder v0.2.0 // indirect
+	github.com/taubyte/config-compiler v0.4.6 // indirect
 	github.com/taubyte/domain-validation v1.0.0 // indirect
-	github.com/taubyte/go-sdk v0.3.8 // indirect
+	github.com/taubyte/go-project-schema v0.9.3 // indirect
+	github.com/taubyte/go-sdk v0.3.9 // indirect
 	github.com/taubyte/go-sdk-smartops v0.1.3 // indirect
 	github.com/taubyte/go-seer v1.0.6 // indirect
 	github.com/taubyte/go-simple-container v0.4.2 // indirect
@@ -244,6 +243,7 @@ require (
 	golang.org/x/exp v0.0.0-20230713183714-613f0c0eb8a1 // indirect
 	golang.org/x/mod v0.12.0 // indirect
 	golang.org/x/net v0.12.0 // indirect
+	golang.org/x/oauth2 v0.10.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
 	golang.org/x/sys v0.10.0 // indirect
 	golang.org/x/term v0.10.0 // indirect

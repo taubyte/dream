@@ -7,25 +7,25 @@ import (
 	"github.com/taubyte/tau/libdream/common"
 )
 
-func injectUniverseHttp() {
+func (srv *multiverseService) injectUniverseHttp() {
 	// Path to create simples in a universe
-	serviceApi.POST(&httpIface.RouteDefinition{
+	srv.rest.POST(&httpIface.RouteDefinition{
 		Path: "/universe/{universe}",
 		Vars: httpIface.Variables{
 			Required: []string{"universe", "config"},
 		},
-		Handler: apiHandlerUniverse,
+		Handler: srv.apiHandlerUniverse,
 	})
 }
 
-func apiHandlerUniverse(ctx httpIface.Context) (interface{}, error) {
+func (srv *multiverseService) apiHandlerUniverse(ctx httpIface.Context) (interface{}, error) {
 	name, err := ctx.GetStringVariable("universe")
 	if err != nil {
 		return nil, fmt.Errorf("failed getting name with: %w", err)
 	}
 
 	// Grab the universe
-	exist := mv.Exist(name)
+	exist := srv.Exist(name)
 	if exist {
 		return nil, fmt.Errorf("universe `%s` already exists", name)
 	}
@@ -39,6 +39,6 @@ func apiHandlerUniverse(ctx httpIface.Context) (interface{}, error) {
 		return nil, err
 	}
 
-	u := mv.Universe(name)
+	u := srv.Universe(name)
 	return nil, u.StartWithConfig(config.Config)
 }
