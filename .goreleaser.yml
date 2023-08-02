@@ -47,15 +47,42 @@ release:
   # Since: v1.11.
   # Templateable since: v1.15.
   skip_upload: false
-
+  
 builds:
-  -
-    ignore:
-    - goos: darwin
-    - goos: windows
+  - main: "main.go"
+    id: linux
+    binary: "dreamland"
+    goos: 
+      - linux
+    goarch: 
+      - amd64
+      - arm64
     env:
       - CGO_ENABLED=0
       - GOAMD64=v2
+  - main: "main.go"
+    id: darwin
+    binary: "dreamland"
+    goos: 
+      - darwin
+    env:
+      - CGO_ENABLED=0
+      - GOAMD64=v2
+    tags:
+      - darwin
+      - odo
+  - main: "main.go"
+    id: windows
+    binary: "dreamland"
+    goos: 
+      - windows
+    goarch: 
+      - amd64
+    env:
+      - CGO_ENABLED=0
+      - GOAMD64=v2
+    tags:
+      - windows 
 
 changelog:
   skip: true
