@@ -2,6 +2,8 @@ package inject
 
 import (
 	"fmt"
+	"regexp"
+	"strings"
 
 	"github.com/taubyte/dreamland/cli/command"
 	client "github.com/taubyte/dreamland/service"
@@ -9,6 +11,15 @@ import (
 	dreamlandRegistry "github.com/taubyte/tau/libdream/registry"
 	"github.com/urfave/cli/v2"
 )
+
+var noCamelRegEx = regexp.MustCompile(`(^|[a-z])([A-Z])`)
+
+// turns camel-cased fixture name into something that looks better on command line
+func noCamel(name string) string {
+	ret := noCamelRegEx.ReplaceAllString(name, "${1}-${2}")
+	ret = strings.ToLower(ret)
+	return strings.TrimPrefix(ret, "-")
+}
 
 func fixture(multiverse *client.Client) []*cli.Command {
 	commands := make([]*cli.Command, 0)
@@ -20,7 +31,7 @@ func fixture(multiverse *client.Client) []*cli.Command {
 		}
 
 		c := &cli.Command{
-			Name:        fixtureName,
+			Name:        noCamel(fixtureName),
 			Description: obj.Description,
 			Usage:       obj.Description,
 			Action:      runFixture(multiverse),
