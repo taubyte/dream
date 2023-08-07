@@ -8,6 +8,8 @@ import (
 	commonDreamland "github.com/taubyte/tau/libdream/common"
 )
 
+var Dev bool
+
 type Client struct {
 	client      *http.Client
 	token       string
