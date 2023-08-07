@@ -8,12 +8,10 @@ require (
 	github.com/taubyte/go-interfaces v0.2.12
 	github.com/taubyte/go-specs v0.10.6
 	github.com/taubyte/http v0.10.4
-	github.com/taubyte/tau v1.0.0
+	github.com/taubyte/tau v1.0.3
 	github.com/taubyte/utils v0.1.6
 	github.com/urfave/cli/v2 v2.25.7
 )
-
-replace github.com/taubyte/tau => ../tau
 
 require (
 	atomicgo.dev/cursor v0.1.1 // indirect
