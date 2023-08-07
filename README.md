@@ -5,7 +5,7 @@
 [![GoDoc](https://godoc.org/github.com/taubyte/dreamland?status.svg)](https://pkg.go.dev/github.com/taubyte/dreamland)
 [![Discord](https://img.shields.io/discord/973677117722202152?color=%235865f2&label=discord)](https://discord.gg/taubyte)
 
-`Dreamland` is a local development tool that lets you simulate a full-fledged Taubyte-based Cloud on your machine. For documentation, visit [https://tau.how](https://tau.how).
+`Dreamland` is a local development tool that lets you run a full-fledged Taubyte-based Cloud on your machine. For documentation, visit [https://tau.how](https://tau.how).
 
 ## Installation
 
