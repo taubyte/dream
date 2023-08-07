@@ -29,7 +29,7 @@ $ source ~/.bashrc
 
 ## Usage
 
-Dreamland can simulate multiple Taubyte networks, each referred to as a 'universe.' You can start a new universe (default name is "blackhole") with the following command:
+Dreamland can simulate multiple Taubyte networks, each referred to as a 'universe'. You can start a new universe (default name is "blackhole") with the following command:
 
 ```bash
 $ dream new multiverse 
@@ -41,7 +41,7 @@ You can interact with Dreamland using the Web Console. Dreamland can be selected
 
 ## Connecting Console to Dreamland
 Similarly to when selecting a network on web console ([console.taubyte.com](https://console.taubyte.com)), dreamland can be selected from the network selection dropdown 
-If dreamland is active locally, then a selection option for dreamland will appear in the network selection
+If dreamland is active, then a selection option for dreamland will appear in the network selection
 ![](images/web-console-login.png)
 
 
