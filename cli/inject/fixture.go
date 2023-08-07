@@ -19,6 +19,10 @@ func fixture(multiverse *client.Client) []*cli.Command {
 			continue
 		}
 
+		if !client.Dev && obj.Internal {
+			continue
+		}
+
 		c := &cli.Command{
 			Name:        fixtureName,
 			Description: obj.Description,

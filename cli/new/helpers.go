@@ -201,8 +201,7 @@ func startUniverses(c *cli.Context) (err error) {
 	}
 
 	for _, universe := range c.StringSlice("universes") {
-		var u commonDreamland.Universe
-		u = services.Multiverse(services.UniverseConfig{
+		u := services.Multiverse(services.UniverseConfig{
 			Name:     universe,
 			Id:       c.String("id"),
 			KeepRoot: c.Bool("keep"),

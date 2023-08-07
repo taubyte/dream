@@ -61,7 +61,8 @@ func main() {
 		}
 	}()
 
-	multiverse, err := client.New(ctx, client.URL(common.DefaultDreamlandURL), client.Timeout(300*time.Second))
+	ops := []client.Option{client.URL(common.DefaultDreamlandURL), client.Timeout(300 * time.Second)}
+	multiverse, err := client.New(ctx, ops...)
 	if err != nil {
 		log.Fatalf("Starting new dreamland client failed with: %s", err.Error())
 	}
