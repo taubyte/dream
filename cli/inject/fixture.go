@@ -38,7 +38,7 @@ func fixture(multiverse *client.Client) []*cli.Command {
 			Name:        noCamel(fixtureName),
 			Description: obj.Description,
 			Usage:       obj.Description,
-			Action:      runFixture(multiverse),
+			Action:      runFixture(fixtureName, multiverse),
 		}
 		command.Universe0(c)
 
@@ -62,7 +62,7 @@ func fixture(multiverse *client.Client) []*cli.Command {
 	return commands
 }
 
-func runFixture(multiverse *client.Client) cli.ActionFunc {
+func runFixture(name string, multiverse *client.Client) cli.ActionFunc {
 	return func(c *cli.Context) (err error) {
 		universeName := c.String("universe")
 		sendParams := make([]string, 0)
@@ -77,6 +77,6 @@ func runFixture(multiverse *client.Client) cli.ActionFunc {
 		}
 
 		universe := multiverse.Universe(universeName)
-		return universe.Inject(inject.Fixture(c.Command.Name, sendParams))
+		return universe.Inject(inject.Fixture(name, sendParams))
 	}
 }
