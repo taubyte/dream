@@ -12,7 +12,7 @@
 First, use Go to install `dreamland`:
 
 ```bash
-$ go install https://github.com/taubyte/dreamland
+$ go install github.com/taubyte/dreamland
 ```
 
 Then, you can create a symbolic link or an alias for the `dreamland` command:
