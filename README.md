@@ -9,6 +9,15 @@
 
 ## Installation
 
+## Binary
+Run:
+
+```bash
+$ curl https://get.tau.link/dream | sh
+```
+
+
+## Source
 First, use Go to install `dreamland`:
 
 ```bash
