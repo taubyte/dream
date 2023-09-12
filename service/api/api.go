@@ -1,5 +1,7 @@
 package api
+//main landing page calling other services from here
 
+//importing dependencies
 import (
 	"context"
 	"time"
@@ -14,6 +16,7 @@ import (
 	"github.com/taubyte/tau/libdream/services"
 )
 
+//creating a sstruct 
 type multiverseService struct {
 	rest httpIface.Service
 	common.Multiverse
@@ -22,10 +25,11 @@ type multiverseService struct {
 func BigBang() error {
 	var err error
 
+	//creating an instance
 	srv := &multiverseService{
 		Multiverse: services.NewMultiVerse(),
 	}
-
+	//listening to the server 
 	srv.rest, err = http.New(srv.Context(), options.Listen(common.DreamlandApiListen), options.AllowedOrigins(true, []string{".*"}))
 	if err != nil {
 		return err
@@ -35,7 +39,7 @@ func BigBang() error {
 
 	waitCtx, waitCtxC := context.WithTimeout(srv.Context(), 10*time.Second)
 	defer waitCtxC()
-
+//infinite loop to report server status and check if the server is working or not 
 	for {
 		select {
 		case <-waitCtx.Done():
