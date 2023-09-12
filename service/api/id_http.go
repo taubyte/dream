@@ -9,7 +9,7 @@ import (
 type UniverseInfo struct {
 	Id string `json:"id"`
 }
-
+//passing a get request with path var and handler requests
 func (srv *multiverseService) idHttp() {
 	srv.rest.GET(&httpIface.RouteDefinition{
 		Path: "/id/{universe}",
