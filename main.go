@@ -44,7 +44,7 @@ func main() {
 	//Create a new context for the Dreamland application
 	ctx, ctxC := context.WithCancel(context.Background())
 
-	
+
 	// Set up signal handling to gracefully shut down the application.
 	signals := make(chan os.Signal, 1)
 	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
@@ -58,24 +58,29 @@ func main() {
 	}()
 
 	defer func() {
+		// Perform cleanup and shutdown if the application is running as a daemon
 		if common.DoDaemon {
 			ctxC()
 			services.Zeno()
 		}
 	}()
 
+	// Initialize the Dreamland client
 	ops := []client.Option{client.URL(common.DefaultDreamlandURL), client.Timeout(300 * time.Second)}
 	multiverse, err := client.New(ctx, ops...)
 	if err != nil {
 		log.Fatalf("Starting new dreamland client failed with: %s", err.Error())
 	}
 
+	// Define and run the command-line interface
 	err = defineCLI(&common.Context{Ctx: ctx, Multiverse: multiverse}).RunContext(ctx, os.Args)
 	if err != nil {
 		log.Fatal(err)
 	}
 }
 
+// defineCLI function defines the command-line interface using the urfave/cli package.
+// It configures available commands and their behaviors based on the provided context.
 func defineCLI(ctx *common.Context) *(cli.App) {
 	app := &cli.App{
 		UseShortOptionHandling: true,
