@@ -8,8 +8,8 @@ import (
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/taubyte/dreamland/cli/command"
 	client "github.com/taubyte/dreamland/service"
+	dreamland "github.com/taubyte/tau/libdream"
 	commonDreamland "github.com/taubyte/tau/libdream/common"
-	dreamland "github.com/taubyte/tau/libdream/services"
 	"github.com/urfave/cli/v2"
 )
 

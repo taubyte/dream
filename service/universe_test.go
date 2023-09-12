@@ -9,8 +9,8 @@ import (
 	"github.com/taubyte/dreamland/service/api"
 	"github.com/taubyte/dreamland/service/inject"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	commonDreamland "github.com/taubyte/tau/libdream/common"
-	dreamland "github.com/taubyte/tau/libdream/services"
+	"github.com/taubyte/tau/libdream"
+	dreamland "github.com/taubyte/tau/libdream"
 	_ "github.com/taubyte/tau/protocols/auth"
 
 	_ "github.com/taubyte/tau/protocols/hoarder"
@@ -32,10 +32,10 @@ func TestRoutes(t *testing.T) {
 		return
 	}
 
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
+	u := dreamland.New(dreamland.UniverseConfig{Name: t.Name()})
 	defer u.Stop()
 
-	err = u.StartWithConfig(&commonDreamland.Config{
+	err = u.StartWithConfig(&dreamland.Config{
 		Services: map[string]commonIface.ServiceConfig{
 			"monkey":  {},
 			"auth":    {},
@@ -44,9 +44,9 @@ func TestRoutes(t *testing.T) {
 			"hoarder": {},
 			"tns":     {},
 		},
-		Simples: map[string]commonDreamland.SimpleConfig{
+		Simples: map[string]dreamland.SimpleConfig{
 			"client": {
-				Clients: commonDreamland.SimpleConfigClients{
+				Clients: dreamland.SimpleConfigClients{
 					Monkey:  &commonIface.ClientConfig{},
 					Patrick: &commonIface.ClientConfig{},
 					TNS:     &commonIface.ClientConfig{},
@@ -72,7 +72,7 @@ func TestRoutes(t *testing.T) {
 	universe := client.Universe("dreamland-http")
 
 	// Create simple called test1
-	err = universe.Inject(inject.Simple("test1", &commonDreamland.SimpleConfig{}))
+	err = universe.Inject(inject.Simple("test1", &libdream.SimpleConfig{}))
 	if err != nil {
 		t.Errorf("Failed simples call with error: %v", err)
 		return

@@ -8,7 +8,7 @@ import (
 	"github.com/taubyte/dreamland/cli/command"
 	client "github.com/taubyte/dreamland/service"
 	"github.com/taubyte/dreamland/service/inject"
-	dreamlandRegistry "github.com/taubyte/tau/libdream/registry"
+	"github.com/taubyte/tau/libdream"
 	"github.com/urfave/cli/v2"
 )
 
@@ -25,7 +25,7 @@ func fixture(multiverse *client.Client) []*cli.Command {
 	commands := make([]*cli.Command, 0)
 
 	var idx int
-	for fixtureName, obj := range dreamlandRegistry.FixtureMap {
+	for fixtureName, obj := range libdream.FixtureMap {
 		if obj.BlockCLI {
 			continue
 		}

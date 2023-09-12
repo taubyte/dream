@@ -10,8 +10,7 @@ import (
 	client "github.com/taubyte/dreamland/service"
 	"github.com/taubyte/dreamland/service/inject"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	commonDreamland "github.com/taubyte/tau/libdream/common"
-	"github.com/taubyte/tau/libdream/services"
+	"github.com/taubyte/tau/libdream"
 	slices "github.com/taubyte/utils/slices/string"
 	"github.com/urfave/cli/v2"
 )
@@ -24,7 +23,7 @@ func buildServiceConfig(enable, disable, binds []string) (map[string]commonIface
 		return nil, errors.New("can't set enable and disable flags")
 	}
 
-	valid := services.ValidServices()
+	valid := libdream.ValidServices()
 	if len(disable) > 0 {
 
 		for _, s := range valid {
@@ -145,7 +144,7 @@ func bindConfigServices(_binds []string, _services []string) (map[string]commonI
 	return config, nil
 }
 
-func buildConfig(c *cli.Context) (*commonDreamland.Config, error) {
+func buildConfig(c *cli.Context) (*dreamland.Config, error) {
 	serviceConfig, err := buildServiceConfig(
 		c.StringSlice("enable"),
 		c.StringSlice("disable"),
@@ -160,16 +159,16 @@ func buildConfig(c *cli.Context) (*commonDreamland.Config, error) {
 		return nil, err
 	}
 
-	return &commonDreamland.Config{
+	return &dreamland.Config{
 		Services: serviceConfig,
 		Simples:  simpleConfig,
 	}, nil
 }
 
-func buildSimpleConfig(simples []string) (map[string]commonDreamland.SimpleConfig, error) {
-	config := make(map[string]commonDreamland.SimpleConfig, len(simples))
+func buildSimpleConfig(simples []string) (map[string]dreamland.SimpleConfig, error) {
+	config := make(map[string]dreamland.SimpleConfig, len(simples))
 	for _, simple := range simples {
-		config[simple] = commonDreamland.SimpleConfig{
+		config[simple] = dreamland.SimpleConfig{
 			Clients: getFilledClientConfig(),
 		}
 	}
@@ -201,7 +200,7 @@ func startUniverses(c *cli.Context) (err error) {
 	}
 
 	for _, universe := range c.StringSlice("universes") {
-		u := services.Multiverse(services.UniverseConfig{
+		u := libdream.Multiverse(libdream.UniverseConfig{
 			Name:     universe,
 			Id:       c.String("id"),
 			KeepRoot: c.Bool("keep"),
@@ -217,8 +216,8 @@ func startUniverses(c *cli.Context) (err error) {
 
 func startEmptyUniverses(c *cli.Context) (err error) {
 	for _, universe := range c.StringSlice("universes") {
-		u := services.Multiverse(services.UniverseConfig{Name: universe})
-		err = u.StartWithConfig(&commonDreamland.Config{})
+		u := libdream.Multiverse(libdream.UniverseConfig{Name: universe})
+		err = u.StartWithConfig(&dreamland.Config{})
 		if err != nil {
 			return err
 		}
@@ -227,8 +226,8 @@ func startEmptyUniverses(c *cli.Context) (err error) {
 	return
 }
 
-func getFilledClientConfig() commonDreamland.SimpleConfigClients {
-	return commonDreamland.SimpleConfigClients{
+func getFilledClientConfig() dreamland.SimpleConfigClients {
+	return dreamland.SimpleConfigClients{
 		Seer:      &commonIface.ClientConfig{},
 		Auth:      &commonIface.ClientConfig{},
 		Patrick:   &commonIface.ClientConfig{},

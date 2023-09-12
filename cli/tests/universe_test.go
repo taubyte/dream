@@ -10,8 +10,9 @@ import (
 
 	client "github.com/taubyte/dreamland/service"
 	commonIface "github.com/taubyte/go-interfaces/common"
+	"github.com/taubyte/tau/libdream"
+	dreamland "github.com/taubyte/tau/libdream"
 	common "github.com/taubyte/tau/libdream/common"
-	dreamland "github.com/taubyte/tau/libdream/services"
 
 	_ "github.com/taubyte/tau/utils/dreamland"
 )
@@ -21,11 +22,11 @@ var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "
 func TestKillService(t *testing.T) {
 	t.Skip("this test needs to be redone")
 	api.BigBang()
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
-	err := u.StartWithConfig(&common.Config{
+	u := dreamland.New(dreamland.UniverseConfig{Name: t.Name()})
+	err := u.StartWithConfig(&libdream.Config{
 		Services: map[string]commonIface.ServiceConfig{},
 		Clients:  map[string]commonIface.ClientConfig{},
-		Simples:  map[string]common.SimpleConfig{},
+		Simples:  map[string]libdream.SimpleConfig{},
 	})
 
 	if err != nil {
@@ -88,10 +89,10 @@ func TestKillSimple(t *testing.T) {
 	statusName := fmt.Sprintf("%s@%s", testSimpleName, universeName)
 
 	api.BigBang()
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
-	err := u.StartWithConfig(&common.Config{
+	u := dreamland.New(dreamland.UniverseConfig{Name: t.Name()})
+	err := u.StartWithConfig(&libdream.Config{
 		Clients: map[string]commonIface.ClientConfig{},
-		Simples: map[string]common.SimpleConfig{
+		Simples: map[string]libdream.SimpleConfig{
 			testSimpleName: {},
 		},
 	})
@@ -157,9 +158,9 @@ func TestKillSimple(t *testing.T) {
 	}
 
 	// Create another with same name
-	_, err = u.CreateSimpleNode("client", &common.SimpleConfig{
+	_, err = u.CreateSimpleNode("client", &libdream.SimpleConfig{
 		CommonConfig: commonIface.CommonConfig{},
-		Clients:      common.SimpleConfigClients{},
+		Clients:      libdream.SimpleConfigClients{},
 	})
 	if err != nil {
 		t.Error(err)
@@ -185,7 +186,7 @@ func TestKillSimple(t *testing.T) {
 }
 
 func TestUniverseAll(t *testing.T) {
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
+	u := dreamland.New(dreamland.UniverseConfig{Name: t.Name()})
 	defer u.Stop()
 	err := u.StartAll()
 	if err != nil {
@@ -233,9 +234,9 @@ func TestUniverseAll(t *testing.T) {
 }
 
 func TestMultipleServices(t *testing.T) {
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
+	u := dreamland.New(dreamland.UniverseConfig{Name: t.Name()})
 	defer u.Stop()
-	err := u.StartWithConfig(&common.Config{
+	err := u.StartWithConfig(&libdream.Config{
 		Services: map[string]commonIface.ServiceConfig{
 			"seer":      {Others: map[string]int{"copies": 1}},
 			"auth":      {Others: map[string]int{"copies": 3}},

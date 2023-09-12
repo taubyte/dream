@@ -8,8 +8,7 @@ import (
 	"github.com/taubyte/dreamland/cli/common"
 	client "github.com/taubyte/dreamland/service"
 	"github.com/taubyte/dreamland/service/inject"
-	commonDreamland "github.com/taubyte/tau/libdream/common"
-	dreamland "github.com/taubyte/tau/libdream/services"
+	dreamland "github.com/taubyte/tau/libdream"
 	"github.com/urfave/cli/v2"
 )
 
@@ -47,7 +46,7 @@ func runSimple(multiverse *client.Client) cli.ActionFunc {
 
 		validClients := dreamland.ValidClients()
 
-		config := &commonDreamland.SimpleConfig{}
+		config := &dreamland.SimpleConfig{}
 		if !c.Bool("empty") {
 			if len(enabled) != 0 && len(disabled) != 0 {
 				return errors.New("enable and disable flags cannot be paired")

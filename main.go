@@ -19,7 +19,7 @@ import (
 	// Actual imports
 
 	client "github.com/taubyte/dreamland/service"
-	"github.com/taubyte/tau/libdream/services"
+	"github.com/taubyte/tau/libdream"
 	"github.com/urfave/cli/v2"
 
 	// Empty imports for initializing fixtures, and client/service run methods"
@@ -29,7 +29,7 @@ import (
 	_ "github.com/taubyte/tau/clients/p2p/patrick"
 	_ "github.com/taubyte/tau/clients/p2p/seer"
 	_ "github.com/taubyte/tau/clients/p2p/tns"
-	_ "github.com/taubyte/tau/libdream/common/fixtures"
+	_ "github.com/taubyte/tau/libdream/fixtures"
 	_ "github.com/taubyte/tau/protocols/auth"
 	_ "github.com/taubyte/tau/protocols/hoarder"
 	_ "github.com/taubyte/tau/protocols/monkey"
@@ -57,7 +57,7 @@ func main() {
 	defer func() {
 		if common.DoDaemon {
 			ctxC()
-			services.Zeno()
+			libdream.Zeno()
 		}
 	}()
 

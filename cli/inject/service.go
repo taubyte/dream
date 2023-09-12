@@ -5,7 +5,7 @@ import (
 	client "github.com/taubyte/dreamland/service"
 	"github.com/taubyte/dreamland/service/inject"
 	"github.com/taubyte/go-interfaces/common"
-	dreamland "github.com/taubyte/tau/libdream/services"
+	dreamland "github.com/taubyte/tau/libdream"
 	"github.com/urfave/cli/v2"
 )
 

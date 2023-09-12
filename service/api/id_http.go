@@ -1,9 +1,8 @@
 package api
 
 import (
-	"fmt"
-
 	httpIface "github.com/taubyte/http"
+	"github.com/taubyte/tau/libdream"
 )
 
 type UniverseInfo struct {
@@ -22,12 +21,11 @@ func (srv *multiverseService) idHttp() {
 				return nil, err
 			}
 
-			exists := srv.Exist(universeName)
-			if !exists {
-				return nil, fmt.Errorf("universe `%s` does not exit", universeName)
+			u, err := libdream.GetUniverse(universeName)
+			if err != nil {
+				return nil, err
 			}
 
-			u := srv.Universe(universeName)
 			return UniverseInfo{Id: u.Id()}, nil
 		},
 	})
