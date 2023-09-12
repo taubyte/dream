@@ -41,8 +41,11 @@ import (
 )
 
 func main() {
+	//Create a new context for the Dreamland application
 	ctx, ctxC := context.WithCancel(context.Background())
 
+	
+	// Set up signal handling to gracefully shut down the application.
 	signals := make(chan os.Signal, 1)
 	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
 	go func() {

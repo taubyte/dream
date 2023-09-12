@@ -7,8 +7,14 @@ import (
 	"github.com/taubyte/dreamland/service/inject"
 )
 
+// Inject performs injections into the Universe.
+// It takes a variadic list of Injectable operations and executes them.
+// If any of the injections fail, it returns an error.
+
 func (u *Universe) Inject(ops ...inject.Injectable) error {
 	for _, op := range ops {
+
+		// Execute the injection operation for the current Universe.
 		err := u.client.runInjection(u.Name, op)
 		if err != nil {
 			return fmt.Errorf("Injection `%s` failed with error: %w", op.Name, err)
