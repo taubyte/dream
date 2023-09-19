@@ -12,7 +12,7 @@ import (
 
 // Attaches universe argument parsing to a command.
 // `pos` is position of the universe argument, expected to be 0 or 1.
-func UniverseAtPos(c *cli.Command, pos int) {
+func universeAtPos(c *cli.Command, pos int) {
 	c.Flags = append(c.Flags, &flags.Universe)
 
 	// Add arg name to command's ArgUsage based on arg position
