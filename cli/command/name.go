@@ -31,9 +31,17 @@ func attachName(c *cli.Command, flag cli.Flag) {
 		c.ArgsUsage = "name," + c.ArgsUsage
 	}
 
-	c.Action = prependArgParsingToAction(c, "name", func(ctx *cli.Context) (string, error) {
-		return getName(ctx)
-	})
+	originalAction := c.Action
+	c.Action = func(ctx *cli.Context) error {
+		name, err := getName(ctx)
+		if err != nil {
+			return err
+		}
+		ctx.Set("name", name)
+
+		// execute the original action at the end
+		return originalAction(ctx)
+	}
 
 }
 

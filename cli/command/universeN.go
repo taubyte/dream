@@ -30,9 +30,16 @@ func UniverseAtPos(c *cli.Command, pos int) {
 		}
 	}
 
-	c.Action = prependArgParsingToAction(c, "universe", func(ctx *cli.Context) (string, error) {
-		return getUniverseAtPos(ctx, pos)
-	})
+	originalAction := c.Action
+	c.Action = func(ctx *cli.Context) error {
+		universe, err := getUniverseAtPos(ctx, pos)
+		if err != nil {
+			return err
+		}
+		ctx.Set("universe", universe)
+		// execute the original action at the end
+		return originalAction(ctx)
+	}
 }
 
 // get the universe from the flag or the argument at position `pos`
