@@ -6,7 +6,7 @@ import (
 	client "github.com/taubyte/dreamland/service"
 	"github.com/taubyte/dreamland/service/api"
 	spec "github.com/taubyte/go-specs/common"
-	commonDreamland "github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream"
 	"github.com/urfave/cli/v2"
 )
 
@@ -82,7 +82,7 @@ func runMultiverse(multiverse *client.Client) cli.ActionFunc {
 		spec.DefaultBranch = c.String("branch")
 
 		if c.Bool("listen-on-all") {
-			commonDreamland.DefaultHost = "0.0.0.0"
+			libdream.DefaultHost = "0.0.0.0"
 		}
 
 		// Set default universe name if no names provided

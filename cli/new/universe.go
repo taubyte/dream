@@ -4,6 +4,7 @@ import (
 	"github.com/taubyte/dreamland/cli/command"
 	"github.com/taubyte/dreamland/cli/common"
 	client "github.com/taubyte/dreamland/service"
+	"github.com/taubyte/tau/libdream"
 	"github.com/urfave/cli/v2"
 )
 
@@ -49,7 +50,7 @@ func universe(multiverse *client.Client) *cli.Command {
 func runUniverse(multiverse *client.Client) cli.ActionFunc {
 	return func(c *cli.Context) (err error) {
 		if c.Bool("empty") {
-			err = multiverse.StartUniverseWithConfig(c.String("name"), &dreamland.Config{})
+			err = multiverse.StartUniverseWithConfig(c.String("name"), &libdream.Config{})
 			if err != nil {
 				return err
 			}

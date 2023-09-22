@@ -5,12 +5,13 @@ import (
 	client "github.com/taubyte/dreamland/service"
 	"github.com/taubyte/dreamland/service/inject"
 	"github.com/taubyte/go-interfaces/common"
-	dreamland "github.com/taubyte/tau/libdream"
+	specs "github.com/taubyte/go-specs/common"
+
 	"github.com/urfave/cli/v2"
 )
 
 func service(multiverse *client.Client) []*cli.Command {
-	validServices := dreamland.ValidServices()
+	validServices := specs.Protocols
 	commands := make([]*cli.Command, len(validServices))
 
 	for idx, _service := range validServices {

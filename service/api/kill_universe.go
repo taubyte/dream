@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	httpIface "github.com/taubyte/http"
+	"github.com/taubyte/tau/libdream"
 )
 
 func (srv *multiverseService) killUniverseHttp() {
@@ -24,16 +25,12 @@ func (srv *multiverseService) killUniverse(ctx httpIface.Context) (interface{}, 
 		return nil, fmt.Errorf("failed getting name error %w", err)
 	}
 
-	if !srv.Exist(name) {
+	u, err := libdream.GetUniverse(name)
+	if err != nil {
 		return nil, fmt.Errorf("universe `%s` does not exist", name)
 	}
 
-	universe, err := srv.getUniverse(ctx)
-	if err != nil {
-		return nil, fmt.Errorf("killing universe `%s` failed with: %s", name, err.Error())
-	}
-
-	universe.Stop()
+	u.Stop()
 
 	return nil, nil
 }

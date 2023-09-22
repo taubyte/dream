@@ -10,7 +10,6 @@ import (
 	"github.com/taubyte/dreamland/service/inject"
 	commonIface "github.com/taubyte/go-interfaces/common"
 	"github.com/taubyte/tau/libdream"
-	dreamland "github.com/taubyte/tau/libdream"
 	_ "github.com/taubyte/tau/protocols/auth"
 
 	_ "github.com/taubyte/tau/protocols/hoarder"
@@ -32,10 +31,10 @@ func TestRoutes(t *testing.T) {
 		return
 	}
 
-	u := dreamland.New(dreamland.UniverseConfig{Name: t.Name()})
+	u := libdream.New(libdream.UniverseConfig{Name: t.Name()})
 	defer u.Stop()
 
-	err = u.StartWithConfig(&dreamland.Config{
+	err = u.StartWithConfig(&libdream.Config{
 		Services: map[string]commonIface.ServiceConfig{
 			"monkey":  {},
 			"auth":    {},
@@ -44,13 +43,13 @@ func TestRoutes(t *testing.T) {
 			"hoarder": {},
 			"tns":     {},
 		},
-		Simples: map[string]dreamland.SimpleConfig{
+		Simples: map[string]libdream.SimpleConfig{
 			"client": {
-				Clients: dreamland.SimpleConfigClients{
+				Clients: libdream.SimpleConfigClients{
 					Monkey:  &commonIface.ClientConfig{},
 					Patrick: &commonIface.ClientConfig{},
 					TNS:     &commonIface.ClientConfig{},
-				},
+				}.Compat(),
 			},
 		},
 	})

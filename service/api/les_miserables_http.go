@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	httpIface "github.com/taubyte/http"
+	"github.com/taubyte/tau/libdream"
 )
 
 func (srv *multiverseService) lesMiesrablesHttp() {
@@ -44,11 +45,10 @@ func (srv *multiverseService) apiHandlerLesMiesrable(ctx httpIface.Context) (int
 		return nil, err
 	}
 
-	exists := srv.Exist(universeName)
-	if !exists {
+	u, err := libdream.GetUniverse(universeName)
+	if err != nil {
 		return nil, fmt.Errorf("universe `%s` does not exit", universeName)
 	}
-	u := srv.Universe(universeName)
 
 	ret := &Echart{
 		Nodes:      make([]*EchartNode, 0),

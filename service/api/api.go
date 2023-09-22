@@ -15,14 +15,14 @@ import (
 
 type multiverseService struct {
 	rest httpIface.Service
-	*libdream.Universe
+	*libdream.Multiverse
 }
 
 func BigBang() error {
 	var err error
 
 	srv := &multiverseService{
-		Universe: libdream.NewMultiVerse(),
+		Multiverse: libdream.MultiVerse(),
 	}
 
 	srv.rest, err = http.New(srv.Context(), options.Listen(libdream.DreamlandApiListen), options.AllowedOrigins(true, []string{".*"}))

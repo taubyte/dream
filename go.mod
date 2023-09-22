@@ -2,15 +2,13 @@ module github.com/taubyte/dreamland
 
 go 1.19
 
-replace github.com/taubyte/tau => ../tau
-
 require (
 	github.com/jedib0t/go-pretty/v6 v6.4.6
 	github.com/pterm/pterm v0.12.65
-	github.com/taubyte/go-interfaces v0.2.14-0.20230901215338-f4991db4f44d
-	github.com/taubyte/go-specs v0.10.7
+	github.com/taubyte/go-interfaces v0.2.14-0.20230921175616-0dd966927da2
+	github.com/taubyte/go-specs v0.10.8-0.20230912140105-e8d804edc77c
 	github.com/taubyte/http v0.10.5
-	github.com/taubyte/tau v1.0.6
+	github.com/taubyte/tau v1.0.11-0.20230921211832-eff68721994c
 	github.com/taubyte/utils v0.1.7
 	github.com/urfave/cli/v2 v2.25.7
 )
@@ -213,9 +211,9 @@ require (
 	github.com/taubyte/go-sdk v0.3.9 // indirect
 	github.com/taubyte/go-sdk-smartops v0.1.3 // indirect
 	github.com/taubyte/go-seer v1.0.6 // indirect
-	github.com/taubyte/go-simple-container v0.4.3 // indirect
+	github.com/taubyte/go-simple-container v0.4.4 // indirect
 	github.com/taubyte/go-simple-git v0.2.5 // indirect
-	github.com/taubyte/p2p v0.9.1 // indirect
+	github.com/taubyte/p2p v0.10.1-0.20230919152907-f26fd82a39d3 // indirect
 	github.com/taubyte/vm v1.0.3 // indirect
 	github.com/taubyte/vm-core-plugins v0.3.4 // indirect
 	github.com/taubyte/vm-orbit v1.0.0 // indirect

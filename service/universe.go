@@ -11,7 +11,7 @@ func (u *Universe) Inject(ops ...inject.Injectable) error {
 	for _, op := range ops {
 		err := u.client.runInjection(u.Name, op)
 		if err != nil {
-			return fmt.Errorf("Injection `%s` failed with error: %w", op.Name, err)
+			return fmt.Errorf("injection `%s` failed with: %w", op.Name, err)
 		}
 	}
 
@@ -33,7 +33,7 @@ func (c *Client) runInjection(universe string, op inject.Injectable) (err error)
 		err = c.post(op.Run(universe), ret, nil)
 
 	default:
-		err = errors.New("Method not supported " + op.Method.String())
+		err = errors.New("method not supported " + op.Method.String())
 	}
 
 	return

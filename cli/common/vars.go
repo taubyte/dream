@@ -1,12 +1,11 @@
 package common
 
 import (
-	dreamlandCommon "github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream"
 )
 
 var (
-	DefaultDreamlandURL = "http://" + dreamlandCommon.DreamlandApiListen
-	BigBangStarted      = false
+	DefaultDreamlandURL = "http://" + libdream.DreamlandApiListen
 	DefaultUniverseName = "blackhole"
 	DefaultClientName   = "client"
 	DoDaemon            = false

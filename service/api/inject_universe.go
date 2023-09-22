@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	httpIface "github.com/taubyte/http"
-	"github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream"
 )
 
 func (srv *multiverseService) injectUniverseHttp() {
@@ -25,13 +25,13 @@ func (srv *multiverseService) apiHandlerUniverse(ctx httpIface.Context) (interfa
 	}
 
 	// Grab the universe
-	exist := srv.Exist(name)
-	if exist {
+	_, err = libdream.GetUniverse(name)
+	if err == nil {
 		return nil, fmt.Errorf("universe `%s` already exists", name)
 	}
 
 	config := struct {
-		Config *common.Config
+		Config *libdream.Config
 	}{}
 
 	err = ctx.ParseBody(&config)
@@ -39,6 +39,8 @@ func (srv *multiverseService) apiHandlerUniverse(ctx httpIface.Context) (interfa
 		return nil, err
 	}
 
-	u := srv.Universe(name)
+	u := libdream.New(libdream.UniverseConfig{
+		Name: name,
+	})
 	return nil, u.StartWithConfig(config.Config)
 }

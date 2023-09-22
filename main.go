@@ -31,6 +31,7 @@ import (
 	_ "github.com/taubyte/tau/clients/p2p/tns"
 	_ "github.com/taubyte/tau/libdream/fixtures"
 	_ "github.com/taubyte/tau/protocols/auth"
+	_ "github.com/taubyte/tau/protocols/gateway"
 	_ "github.com/taubyte/tau/protocols/hoarder"
 	_ "github.com/taubyte/tau/protocols/monkey"
 	_ "github.com/taubyte/tau/protocols/monkey/fixtures/compile"

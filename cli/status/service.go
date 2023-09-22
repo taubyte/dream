@@ -8,13 +8,13 @@ import (
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/taubyte/dreamland/cli/command"
 	client "github.com/taubyte/dreamland/service"
-	dreamland "github.com/taubyte/tau/libdream"
-	commonDreamland "github.com/taubyte/tau/libdream/common"
+	specs "github.com/taubyte/go-specs/common"
+	"github.com/taubyte/tau/libdream"
 	"github.com/urfave/cli/v2"
 )
 
 func service(multiverse *client.Client) []*cli.Command {
-	validServices := dreamland.ValidServices()
+	validServices := specs.Protocols
 	commands := make([]*cli.Command, len(validServices))
 
 	for idx, _service := range validServices {
@@ -45,11 +45,11 @@ func runService(name string, multiverse *client.Client) cli.ActionFunc {
 		var http, secure int
 		var found bool
 		for _, cat := range chart.Nodes {
-			if found == true {
+			if found {
 				break
 			}
 			for protocol, port := range cat.Value {
-				if strings.Contains(cat.Name, name) == true {
+				if strings.Contains(cat.Name, name) {
 					switch protocol {
 					case "http":
 						http = port
@@ -62,8 +62,8 @@ func runService(name string, multiverse *client.Client) cli.ActionFunc {
 				}
 			}
 		}
-		if found == false {
-			return fmt.Errorf("Failed getting service name '%s'", name)
+		if !found {
+			return fmt.Errorf("failed getting service name '%s'", name)
 		}
 		t.SetStyle(table.StyleLight)
 
@@ -73,7 +73,7 @@ func runService(name string, multiverse *client.Client) cli.ActionFunc {
 			if secure == 1 {
 				protocol = "https"
 			}
-			fmt.Printf("\n@ %s://%s:%d\n\n", protocol, commonDreamland.DefaultHost, http)
+			fmt.Printf("\n@ %s://%s:%d\n\n", protocol, libdream.DefaultHost, http)
 		}
 
 		t.Render()
