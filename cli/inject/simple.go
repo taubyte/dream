@@ -8,8 +8,9 @@ import (
 	"github.com/taubyte/dreamland/cli/common"
 	client "github.com/taubyte/dreamland/service"
 	"github.com/taubyte/dreamland/service/inject"
-	commonDreamland "github.com/taubyte/tau/libdream/common"
-	dreamland "github.com/taubyte/tau/libdream/services"
+	commonIface "github.com/taubyte/go-interfaces/common"
+	specs "github.com/taubyte/go-specs/common"
+	"github.com/taubyte/tau/libdream"
 	"github.com/urfave/cli/v2"
 )
 
@@ -45,9 +46,11 @@ func runSimple(multiverse *client.Client) cli.ActionFunc {
 		enabled := c.StringSlice("enable")
 		disabled := c.StringSlice("disable")
 
-		validClients := dreamland.ValidClients()
+		validClients := specs.P2PStreamProtocols
 
-		config := &commonDreamland.SimpleConfig{}
+		config := &libdream.SimpleConfig{
+			Clients: make(map[string]*commonIface.ClientConfig),
+		}
 		if !c.Bool("empty") {
 			if len(enabled) != 0 && len(disabled) != 0 {
 				return errors.New("enable and disable flags cannot be paired")
@@ -55,7 +58,9 @@ func runSimple(multiverse *client.Client) cli.ActionFunc {
 
 			// Add all valid clients
 			if len(enabled) == 0 && len(disabled) == 0 {
-				config.Clients = dreamland.ClientsWithDefaults(validClients...)
+				for _, client := range validClients {
+					config.Clients[client] = &commonIface.ClientConfig{}
+				}
 
 				// Add only enabled clients
 			} else if len(enabled) != 0 {
@@ -64,7 +69,9 @@ func runSimple(multiverse *client.Client) cli.ActionFunc {
 					return err
 				}
 
-				config.Clients = dreamland.ClientsWithDefaults(enabled...)
+				for _, client := range enabled {
+					config.Clients[client] = &commonIface.ClientConfig{}
+				}
 
 				// Add disabled clients
 			} else /* if len(disabled) != 0 */ {
@@ -87,7 +94,9 @@ func runSimple(multiverse *client.Client) cli.ActionFunc {
 					}
 				}
 
-				config.Clients = dreamland.ClientsWithDefaults(enabled...)
+				for _, client := range enabled {
+					config.Clients[client] = &commonIface.ClientConfig{}
+				}
 			}
 
 		} else {

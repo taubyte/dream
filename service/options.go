@@ -35,11 +35,11 @@ func Provider(provider string) Option {
 	}
 	return func(c *Client) error {
 		enabled, ok := providers[provider]
-		if ok == false {
-			return fmt.Errorf("New client provider option `%s` unknown", provider)
+		if !ok {
+			return fmt.Errorf("new client provider option `%s` unknown", provider)
 		}
-		if enabled == false {
-			return fmt.Errorf("New client provider option `%s` not enabled", provider)
+		if !enabled {
+			return fmt.Errorf("new client provider option `%s` not enabled", provider)
 		}
 		c.provider = provider
 		return nil

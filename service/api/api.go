@@ -10,23 +10,22 @@ import (
 	httpIface "github.com/taubyte/http"
 	http "github.com/taubyte/http/basic"
 	"github.com/taubyte/http/options"
-	"github.com/taubyte/tau/libdream/common"
-	"github.com/taubyte/tau/libdream/services"
+	"github.com/taubyte/tau/libdream"
 )
 
 type multiverseService struct {
 	rest httpIface.Service
-	common.Multiverse
+	*libdream.Multiverse
 }
 
 func BigBang() error {
 	var err error
 
 	srv := &multiverseService{
-		Multiverse: services.NewMultiVerse(),
+		Multiverse: libdream.MultiVerse(),
 	}
 
-	srv.rest, err = http.New(srv.Context(), options.Listen(common.DreamlandApiListen), options.AllowedOrigins(true, []string{".*"}))
+	srv.rest, err = http.New(srv.Context(), options.Listen(libdream.DreamlandApiListen), options.AllowedOrigins(true, []string{".*"}))
 	if err != nil {
 		return err
 	}
@@ -45,7 +44,7 @@ func BigBang() error {
 				pterm.Error.Println("Dreamland failed to start")
 				return srv.rest.Error()
 			}
-			_, err := goHttp.Get("http://" + common.DreamlandApiListen)
+			_, err := goHttp.Get("http://" + libdream.DreamlandApiListen)
 			if err == nil {
 				pterm.Info.Println("Dreamland ready")
 				return nil

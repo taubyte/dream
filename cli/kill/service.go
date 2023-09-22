@@ -3,12 +3,12 @@ package kill
 import (
 	"github.com/taubyte/dreamland/cli/command"
 	client "github.com/taubyte/dreamland/service"
-	dreamland "github.com/taubyte/tau/libdream/services"
+	"github.com/taubyte/go-specs/common"
 	"github.com/urfave/cli/v2"
 )
 
 func service(multiverse *client.Client) []*cli.Command {
-	validServices := dreamland.ValidServices()
+	validServices := common.P2PStreamProtocols
 	commands := make([]*cli.Command, len(validServices))
 
 	for idx, _service := range validServices {

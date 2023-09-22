@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	httpIface "github.com/taubyte/http"
-	"github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream"
 )
 
 func (srv *multiverseService) fixtureHttp() {
@@ -26,7 +26,7 @@ func (srv *multiverseService) apiHandlerFixture(ctx httpIface.Context) (interfac
 	}
 
 	var found bool
-	fixtures := srv.ValidFixtures()
+	fixtures := libdream.ValidFixtures()
 	for _, _fixture := range fixtures {
 		if fixture == _fixture {
 			found = true
@@ -37,16 +37,14 @@ func (srv *multiverseService) apiHandlerFixture(ctx httpIface.Context) (interfac
 	}
 
 	// Grab the universe
-	var universe common.Universe
+	var universe *libdream.Universe
 	_name, err := ctx.GetStringVariable("universe")
 	if err != nil {
 		return nil, fmt.Errorf("failed getting universe name error %w", err)
 	}
 
-	exist := srv.Exist(_name)
-	if exist {
-		universe = srv.Universe(_name)
-	} else {
+	universe, err = libdream.GetUniverse(_name)
+	if err != nil {
 		return nil, fmt.Errorf("universe %s does not exist", _name)
 	}
 

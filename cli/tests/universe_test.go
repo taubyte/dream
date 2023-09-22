@@ -10,8 +10,7 @@ import (
 
 	client "github.com/taubyte/dreamland/service"
 	commonIface "github.com/taubyte/go-interfaces/common"
-	common "github.com/taubyte/tau/libdream/common"
-	dreamland "github.com/taubyte/tau/libdream/services"
+	"github.com/taubyte/tau/libdream"
 
 	_ "github.com/taubyte/tau/utils/dreamland"
 )
@@ -21,11 +20,10 @@ var services = []string{"seer", "auth", "patrick", "tns", "monkey", "hoarder", "
 func TestKillService(t *testing.T) {
 	t.Skip("this test needs to be redone")
 	api.BigBang()
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
-	err := u.StartWithConfig(&common.Config{
+	u := libdream.New(libdream.UniverseConfig{Name: t.Name()})
+	err := u.StartWithConfig(&libdream.Config{
 		Services: map[string]commonIface.ServiceConfig{},
-		Clients:  map[string]commonIface.ClientConfig{},
-		Simples:  map[string]common.SimpleConfig{},
+		Simples:  map[string]libdream.SimpleConfig{},
 	})
 
 	if err != nil {
@@ -88,10 +86,9 @@ func TestKillSimple(t *testing.T) {
 	statusName := fmt.Sprintf("%s@%s", testSimpleName, universeName)
 
 	api.BigBang()
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
-	err := u.StartWithConfig(&common.Config{
-		Clients: map[string]commonIface.ClientConfig{},
-		Simples: map[string]common.SimpleConfig{
+	u := libdream.New(libdream.UniverseConfig{Name: t.Name()})
+	err := u.StartWithConfig(&libdream.Config{
+		Simples: map[string]libdream.SimpleConfig{
 			testSimpleName: {},
 		},
 	})
@@ -157,9 +154,8 @@ func TestKillSimple(t *testing.T) {
 	}
 
 	// Create another with same name
-	_, err = u.CreateSimpleNode("client", &common.SimpleConfig{
+	_, err = u.CreateSimpleNode("client", &libdream.SimpleConfig{
 		CommonConfig: commonIface.CommonConfig{},
-		Clients:      common.SimpleConfigClients{},
 	})
 	if err != nil {
 		t.Error(err)
@@ -184,58 +180,10 @@ func TestKillSimple(t *testing.T) {
 
 }
 
-func TestUniverseAll(t *testing.T) {
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
-	defer u.Stop()
-	err := u.StartAll()
-	if err != nil {
-		t.Error(err)
-		return
-	}
-
-	simple, err := u.Simple(common.StartAllDefaultSimple)
-	if err != nil {
-		t.Error(err)
-		return
-	}
-
-	if u.Substrate() == nil {
-		t.Error("Substrate is nil")
-		return
-	}
-	if u.Seer() == nil || simple.Seer() == nil {
-		t.Error("Seer || SeerClient == nil")
-		return
-	}
-	if u.Auth() == nil || simple.Auth() == nil {
-		t.Error("Auth || AuthClient == nil")
-		return
-	}
-	if u.Patrick() == nil || simple.Patrick() == nil {
-		t.Error("Patrick || PatrickClient == nil")
-		return
-	}
-	if u.TNS() == nil || simple.TNS() == nil {
-		t.Error("TNS || TNSClient == nil")
-		return
-	}
-	if u.Monkey() == nil || simple.Monkey() == nil {
-		t.Error("Monkey || MonkeyClient == nil")
-		return
-	}
-	if u.Hoarder() == nil || simple.Hoarder() == nil {
-		t.Error("Hoarder || HoarderClient == nil")
-		return
-	}
-
-	// Wait for seer announce
-	time.Sleep(time.Second * 5)
-}
-
 func TestMultipleServices(t *testing.T) {
-	u := dreamland.Multiverse(dreamland.UniverseConfig{Name: t.Name()})
+	u := libdream.New(libdream.UniverseConfig{Name: t.Name()})
 	defer u.Stop()
-	err := u.StartWithConfig(&common.Config{
+	err := u.StartWithConfig(&libdream.Config{
 		Services: map[string]commonIface.ServiceConfig{
 			"seer":      {Others: map[string]int{"copies": 1}},
 			"auth":      {Others: map[string]int{"copies": 3}},

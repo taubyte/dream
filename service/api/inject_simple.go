@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	httpIface "github.com/taubyte/http"
-	"github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream"
 )
 
 func (srv *multiverseService) injectSimpleHttp() {
@@ -31,7 +31,7 @@ func (srv *multiverseService) apiHandlerSimple(ctx httpIface.Context) (interface
 	}
 
 	config := struct {
-		Config common.SimpleConfig
+		Config libdream.SimpleConfig
 	}{}
 
 	err = ctx.ParseBody(&config)

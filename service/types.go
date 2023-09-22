@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	commonDreamland "github.com/taubyte/tau/libdream/common"
+	"github.com/taubyte/tau/libdream"
 )
 
 var Dev bool
@@ -25,7 +25,7 @@ func (c *Client) Universe(name string) *Universe {
 	return &Universe{Name: name, client: c}
 }
 
-func (c *Client) StartUniverseWithConfig(name string, config *commonDreamland.Config) error {
+func (c *Client) StartUniverseWithConfig(name string, config *libdream.Config) error {
 	return c.post("/universe/"+name, map[string]interface{}{"config": config}, nil)
 }
 
