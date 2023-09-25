@@ -197,3 +197,11 @@ $ dream inject push-all
 $ dream inject attach-plugin -p {path-to-plugin}
 ```
 
+## Suggested Changes
+Changes made in api.go file:
+  - Moved the time intervals to constants
+  - Changed pterm logger with logrus to get the structured logs
+  - Changed Time.After with the Ticker because time.After in a loop creates a new timer on each iteration, which could 
+      lead to a slight overhead when the polling interval is very short. On the other hand Ticker is designed for cases
+      where we want to do something at regular intervals, which is precisely the use case here.
+  - Closed response body at the end in order to prevent the resources leaks.
