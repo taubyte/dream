@@ -25,7 +25,25 @@ func New(ctx context.Context, options ...Option) (*Client, error) {
 		Timeout: c.timeout,
 	}
 
-	if c.unsecure == false {
+	tlsConfig := &tls.Config{
+		MinVersion: tls.VersionTLS12, // Ensure TLS 1.2 or higher is used
+	}
+
+	if c.unsecure {
+		tlsConfig.InsecureSkipVerify = true
+	} else {
+		tlsConfig.RootCAs = rootCAs
+	}
+
+	c.client.Transport = &http.Transport{
+		TLSClientConfig: tlsConfig,
+	}
+
+	c.auth_header = fmt.Sprintf("%s %s", c.provider, c.token)
+
+	return c, nil
+
+	/*if c.unsecure == false {
 		c.client.Transport = &http.Transport{
 			TLSClientConfig: &tls.Config{
 				RootCAs: rootCAs,
@@ -41,5 +59,5 @@ func New(ctx context.Context, options ...Option) (*Client, error) {
 
 	c.auth_header = fmt.Sprintf("%s %s", c.provider, c.token)
 
-	return c, nil
+	return c, nil*/
 }
