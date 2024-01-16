@@ -1,46 +1,4 @@
-# Dreamland
-[![Release](https://img.shields.io/github/release/taubyte/dreamland.svg)](https://github.com/taubyte/dreamland/releases)
-[![License](https://img.shields.io/github/license/taubyte/dreamland)](LICENSE)
-[![Go Report Card](https://goreportcard.com/badge/taubyte/dreamland)](https://goreportcard.com/report/taubyte/dreamland)
-[![GoDoc](https://godoc.org/github.com/taubyte/dreamland?status.svg)](https://pkg.go.dev/github.com/taubyte/dreamland)
-[![Discord](https://img.shields.io/discord/973677117722202152?color=%235865f2&label=discord)](https://discord.gg/taubyte)
-
 `Dreamland` is a local development tool that lets you run a full-fledged Taubyte-based Cloud on your machine. For documentation, visit [https://tau.how](https://tau.how).
-
-## Installation
-
-## npm
-Run:
-
-```bash
-$ npm i dreamland
-```
-
-## Script
-Run:
-
-```bash
-$ curl https://get.tau.link/dream | sh
-```
-
-## Source
-First, use Go to install `dreamland`:
-
-```bash
-$ go install github.com/taubyte/dreamland
-```
-
-Then, you can create a symbolic link or an alias for the `dreamland` command:
-
-Symbolic link:
-```bash
-$ ln -sv $(dirname $(which dreamland))/dream{land,} 
-```
-Alias:
-```bash
-$ echo 'alias dream=dreamland' >> ~/.bashrc
-$ source ~/.bashrc
-```
 
 ## Usage
 
@@ -82,7 +40,7 @@ $ dream inject set-branch {name-of-branch}
 
 If importing a project that has a library, or website you will need to register the resource on auth, before being able to trigger a build for these resources. This can be achieved on web console by going to the resource and using the fix repo tool.
 
-![](images/web-console-fix-repo.png)
+![](../images/web-console-fix-repo.png)
 
 
 ## Running HTTP Resources
