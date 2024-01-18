@@ -13,7 +13,7 @@
 Run:
 
 ```bash
-$ npm i dreamland
+$ npm i @taubyte/dream
 ```
 
 ## Script
