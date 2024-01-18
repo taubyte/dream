@@ -10,7 +10,7 @@ const packageJson = require("./package.json");
 
 const binaryDir = path.join(__dirname, "bin");
 const binaryPath = path.join(binaryDir, "dreamland");
-const packageVersion = packageJson.version;
+const packageVersion = packageJson.dream;
 
 function binaryExists() {
   return fs.existsSync(binaryPath);
