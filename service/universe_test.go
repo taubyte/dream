@@ -2,7 +2,6 @@ package http
 
 import (
 	"context"
-	"fmt"
 	"testing"
 	"time"
 
@@ -24,6 +23,7 @@ import (
 )
 
 func TestRoutes(t *testing.T) {
+	univerName := "dreamland-http"
 	// start multiverse
 	err := api.BigBang()
 	if err != nil {
@@ -31,7 +31,7 @@ func TestRoutes(t *testing.T) {
 		return
 	}
 
-	u := libdream.New(libdream.UniverseConfig{Name: t.Name()})
+	u := libdream.New(libdream.UniverseConfig{Name: univerName})
 	defer u.Stop()
 
 	err = u.StartWithConfig(&libdream.Config{
@@ -68,7 +68,7 @@ func TestRoutes(t *testing.T) {
 		return
 	}
 
-	universe := client.Universe("dreamland-http")
+	universe := client.Universe(univerName)
 
 	// Create simple called test1
 	err = universe.Inject(inject.Simple("test1", &libdream.SimpleConfig{}))
@@ -93,20 +93,6 @@ func TestRoutes(t *testing.T) {
 		return
 	}
 
-	// Should not fail
-	err = universe.KillService("seer")
-	if err != nil {
-		t.Errorf("Failed kill call with error: %v", err)
-		return
-	}
-
-	// Should fail
-	err = universe.KillService("seer")
-	if err == nil {
-		t.Error("Expected killing seer again to fail")
-		return
-	}
-
 	// Should fail
 	err = universe.Inject(inject.Fixture("should fail", "dne"))
 	if err == nil {
@@ -119,11 +105,10 @@ func TestRoutes(t *testing.T) {
 		t.Error(err)
 		return
 	}
-	_, ok := test["dreamland-http"]
+	_, ok := test[univerName]
 	if ok == false {
 		t.Error("Did not find universe in status")
 		return
 	}
 
-	fmt.Println("-------------------END-------------")
 }

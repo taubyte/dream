@@ -1,11 +1,30 @@
-# Dreamland
+
+<h2 align="center">
+  <a href="https://taubyte.com" target="_blank" rel="noopener noreferrer">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="images/dream-logo-box-v2.png">
+      <img width="80" src="images/dream-logo-box-v2.png" alt="Dreamland">
+    </picture>
+  </a>
+  <br />
+  Dreamland
+  
+  ***Local Coding Equals Global Production***
+</h2>
+<div align="center">
+
 [![Release](https://img.shields.io/github/release/taubyte/dreamland.svg)](https://github.com/taubyte/dreamland/releases)
 [![License](https://img.shields.io/github/license/taubyte/dreamland)](LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/taubyte/dreamland)](https://goreportcard.com/report/taubyte/dreamland)
 [![GoDoc](https://godoc.org/github.com/taubyte/dreamland?status.svg)](https://pkg.go.dev/github.com/taubyte/dreamland)
-[![Discord](https://img.shields.io/discord/973677117722202152?color=%235865f2&label=discord)](https://discord.gg/taubyte)
+[![Discord](https://img.shields.io/discord/973677117722202152?color=%235865f2&label=discord)](https://discord.gg/wM8mdskh)
 
-`Dreamland` is a local development tool that lets you run a full-fledged Taubyte-based Cloud on your machine. For documentation, visit [https://tau.how](https://tau.how).
+</div>
+
+![](images/dream-banner.png)
+
+Dreamland is a CLI tool that forms part of Taubyte's suite of development tools, designed to create local cloud environments that reflect the autonomous nature of Taubyte's cloud computing solution. By leveraging [libdream](https://github.com/taubyte/tau/tree/main/libdream), Dreamland provides an API for real-time configuration and testing, enabling developers and platform engineers to simulate and interact with applications in an environment that closely aligns with the autonomy and scalability of Taubyte's approach to cloud computing. This tool facilitates the development and testing process, aligning with Taubyte's principle of "Infrastructure's Autopilot - Local Coding Equals Global Production," and empowers users to innovate beyond the constraints of traditional cloud infrastructure management.
+
 
 ## Installation
 
