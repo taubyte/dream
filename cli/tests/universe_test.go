@@ -86,7 +86,7 @@ func TestKillSimple(t *testing.T) {
 	statusName := fmt.Sprintf("%s@%s", testSimpleName, universeName)
 
 	api.BigBang()
-	u := libdream.New(libdream.UniverseConfig{Name: t.Name()})
+	u := libdream.New(libdream.UniverseConfig{Name: universeName})
 	err := u.StartWithConfig(&libdream.Config{
 		Simples: map[string]libdream.SimpleConfig{
 			testSimpleName: {},
@@ -125,7 +125,7 @@ func TestKillSimple(t *testing.T) {
 		return
 	}
 
-	err = u.KillNodeByNameID("client", simple.PeerNode().ID().Pretty())
+	err = u.KillNodeByNameID("client", simple.PeerNode().ID().String())
 	if err != nil {
 		t.Error(err)
 		return

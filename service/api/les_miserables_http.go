@@ -57,14 +57,14 @@ func (srv *multiverseService) apiHandlerLesMiesrable(ctx httpIface.Context) (int
 	}
 
 	for i, n := range u.All() {
-		_cat, ok := u.Lookup(n.ID().Pretty())
+		_cat, ok := u.Lookup(n.ID().String())
 		if !ok {
 			continue
 		}
 
 		cat := _cat.Name
 		name := fmt.Sprintf("%s@%s", cat, u.Name())
-		pid := n.ID().Pretty()
+		pid := n.ID().String()
 		ret.Categories = append(ret.Categories, &EchartCat{
 			Name: cat,
 		})
@@ -79,10 +79,10 @@ func (srv *multiverseService) apiHandlerLesMiesrable(ctx httpIface.Context) (int
 		})
 
 		for _, l := range n.Peer().Peerstore().Peers() {
-			if l.Pretty() != pid {
+			if l.String() != pid {
 				ret.Links = append(ret.Links, &EchartLinks{
 					Source: pid,
-					Target: l.Pretty(),
+					Target: l.String(),
 				})
 			}
 		}
