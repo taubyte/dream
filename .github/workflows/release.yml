@@ -5,7 +5,7 @@ on:
       - '*'
 
 jobs:
-  goreleaser:
+  linux:
     runs-on: ubuntu-latest
     steps:
       -
@@ -24,6 +24,53 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           version: latest
-          args: release --clean --config .goreleaser.yml
+          args: release --clean --config .goreleaser.yml --id linux
+        env:
+          GITHUB_TOKEN: ${{ secrets.GORELEASER_TOKEN }}
+
+  mac:
+    runs-on: macos-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      -
+        name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.22.0'
+      -
+        name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v4
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          version: latest
+          args: release --clean --config .goreleaser.yml --id darwin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GORELEASER_TOKEN }}
+
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      -
+        name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.22.0'
+      -
+        name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v4
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          version: latest
+          args: release --clean --config .goreleaser.yml --id windows
         env:
           GITHUB_TOKEN: ${{ secrets.GORELEASER_TOKEN }}

@@ -65,8 +65,13 @@ builds:
     binary: "dreamland"
     goos: 
       - darwin
+    goarch: 
+      - arm64
+      - amd64
     env:
       - CGO_ENABLED=1
+    flags:
+      - -trimpath
     tags:
       - darwin
       - odo
