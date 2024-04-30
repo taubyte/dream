@@ -66,8 +66,7 @@ builds:
     goos: 
       - darwin
     env:
-      - CGO_ENABLED=0
-      - GOAMD64=v2
+      - CGO_ENABLED=1
     tags:
       - darwin
       - odo
