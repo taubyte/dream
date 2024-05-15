@@ -17,7 +17,7 @@ release:
 builds:
   - id: "windows"
     main: "main.go"
-    binary: "dreamland.exe"
+    binary: "dreamland"
     goos:
       - windows
     goarch:

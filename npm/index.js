@@ -10,10 +10,19 @@ const packageJson = require("./package.json");
 
 const binaryDir = path.join(__dirname, "bin");
 const binaryPath = path.join(binaryDir, "dreamland");
+const versionFilePath = path.join(binaryDir, "version.txt");
 const packageVersion = packageJson.dream;
 
 function binaryExists() {
   return fs.existsSync(binaryPath);
+}
+
+function versionMatches() {
+  if (!fs.existsSync(versionFilePath)) {
+    return false;
+  }
+  const installedVersion = fs.readFileSync(versionFilePath, "utf-8").trim();
+  return installedVersion === packageVersion;
 }
 
 function parseAssetName() {
@@ -41,7 +50,7 @@ function parseAssetName() {
 }
 
 async function downloadAndExtractBinary() {
-  if (binaryExists()) {
+  if (binaryExists() && versionMatches()) {
     return;
   }
 
@@ -84,6 +93,7 @@ async function downloadAndExtractBinary() {
         C: binaryDir,
       });
       fs.unlinkSync(tarPath); // Remove the tarball after extraction
+      fs.writeFileSync(versionFilePath, version); // Save the version to a file
       resolve();
     });
     writer.on("error", reject);

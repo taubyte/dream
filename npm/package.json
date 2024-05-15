@@ -1,7 +1,7 @@
 {
   "name": "@taubyte/dream",
-  "version": "0.1.5",
-  "dream": "1.0.4",
+  "version": "0.1.6",
+  "dream": "1.0.5",
   "description": "Node wrapper for taubyte/dreamland",
   "bin": {
     "dream": "./index.js"
