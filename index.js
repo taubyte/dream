@@ -11,7 +11,7 @@ const packageJson = require("./package.json");
 const binaryDir = path.join(__dirname, "bin");
 const binaryPath = path.join(binaryDir, "dream");
 const versionFilePath = path.join(binaryDir, "version.txt");
-const packageVersion = packageJson.dream;
+const packageVersion = packageJson.version;
 
 function binaryExists() {
   return fs.existsSync(binaryPath);
@@ -58,7 +58,7 @@ async function downloadAndExtractBinary() {
 
   const { os: currentOs, arch: currentArch } = parseAssetName();
   const assetName = `dream_${version}_${currentOs}_${currentArch}.tar.gz`;
-  const assetUrl = `https://github.com/taubyte/tau/releases/download/v${version}/${assetName}`;
+  const assetUrl = `https://github.com/taubyte/dream/releases/download/v${version}/${assetName}`;
 
   console.log(`Downloading dream v${version}...`);
   const { data, headers } = await axios({

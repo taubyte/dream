@@ -38,7 +38,7 @@ $ curl https://get.tau.link/dream | sh
 ```
 
 ## Source
-Source is located in `tools/dream` in [https://github.com/taubyte/tau](https://github.com/taubyte/tau).
+Source is located in [https://github.com/taubyte/tau](https://github.com/taubyte/tau) under `tools/dream`.
 
 ## Usage
 

@@ -8,7 +8,7 @@ node_modules/
 dist/
 build/
 fakeroot/
-
+bin/
 
 # Compiled Java class files
 *.class
