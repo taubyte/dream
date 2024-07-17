@@ -17,7 +17,7 @@ release:
   
 builds:
   - id: "darwin"
-    main: "./tau/tools/dream/main.go"
+    main: "./tools/dream/main.go"
     binary: "dream"
     goos:
       - darwin

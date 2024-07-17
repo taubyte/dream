@@ -30,8 +30,9 @@ jobs:
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v4
+        working-directory: tau
         with:
           version: latest
-          args: release --config ${{ matrix.config }}
+          args: release --config ../${{ matrix.config }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
