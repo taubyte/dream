@@ -3,28 +3,23 @@
   <a href="https://taubyte.com" target="_blank" rel="noopener noreferrer">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="images/dream-logo-box-v2.png">
-      <img width="80" src="images/dream-logo-box-v2.png" alt="Dreamland">
+      <img width="80" src="images/dream-logo-box-v2.png" alt="Dream">
     </picture>
   </a>
   <br />
-  Dreamland
+  Dream
   
   ***Local Coding Equals Global Production***
 </h2>
 <div align="center">
 
-[![Release](https://img.shields.io/github/release/taubyte/dreamland.svg)](https://github.com/taubyte/dreamland/releases)
-[![License](https://img.shields.io/github/license/taubyte/dreamland)](LICENSE)
-[![Go Report Card](https://goreportcard.com/badge/taubyte/dreamland)](https://goreportcard.com/report/taubyte/dreamland)
-[![GoDoc](https://godoc.org/github.com/taubyte/dreamland?status.svg)](https://pkg.go.dev/github.com/taubyte/dreamland)
-[![Discord](https://img.shields.io/discord/973677117722202152?color=%235865f2&label=discord)](https://discord.gg/wM8mdskh)
-
+[![Release](https://img.shields.io/github/release/taubyte/dream.svg)](https://github.com/taubyte/dream/releases)
+[![License](https://img.shields.io/github/license/taubyte/dream)](LICENSE)
 </div>
 
 ![](images/dream-banner.png)
 
-Dreamland is a CLI tool that forms part of Taubyte's suite of development tools, designed to create local cloud environments that reflect the autonomous nature of Taubyte's cloud computing solution. By leveraging [libdream](https://github.com/taubyte/tau/tree/main/libdream), Dreamland provides an API for real-time configuration and testing, enabling developers and platform engineers to simulate and interact with applications in an environment that closely aligns with the autonomy and scalability of Taubyte's approach to cloud computing. This tool facilitates the development and testing process, aligning with Taubyte's principle of "Infrastructure's Autopilot - Local Coding Equals Global Production," and empowers users to innovate beyond the constraints of traditional cloud infrastructure management.
-
+Dream is a CLI tool that forms part of Taubyte's suite of development tools, designed to create local cloud environments.
 
 ## Installation
 
@@ -43,39 +38,23 @@ $ curl https://get.tau.link/dream | sh
 ```
 
 ## Source
-First, use Go to install `dreamland`:
-
-```bash
-$ go install github.com/taubyte/dreamland
-```
-
-Then, you can create a symbolic link or an alias for the `dreamland` command:
-
-Symbolic link:
-```bash
-$ ln -sv $(dirname $(which dreamland))/dream{land,} 
-```
-Alias:
-```bash
-$ echo 'alias dream=dreamland' >> ~/.bashrc
-$ source ~/.bashrc
-```
+Source is located in `tools/dream` in [https://github.com/taubyte/tau](https://github.com/taubyte/tau).
 
 ## Usage
 
-Dreamland can simulate multiple Taubyte networks, each referred to as a 'universe'. You can start a new universe (default name is "blackhole") with the following command:
+Dream can simulate multiple Taubyte networks, each referred to as a 'universe'. You can start a new universe (default name is "blackhole") with the following command:
 
 ```bash
 $ dream new multiverse 
 ```
 Once the message `[SUCCESS] Universe blackhole started!` appears, your local Taubyte instance is ready. You are now running elder, monkey, tns, hoarder, patrick, auth, seer, and substrate nodes locally on your machine.
 
-You can interact with Dreamland using the Web Console. Dreamland can be selected from the network selection dropdown if it's active locally. From here, you can create new projects, import existing ones, trigger builds, and run resources like websites and dFuncs.
+You can interact with Dream using the Web Console. Dream can be selected from the network selection dropdown if it's active locally. From here, you can create new projects, import existing ones, trigger builds, and run resources like websites and dFuncs.
 
 
-## Connecting Console to Dreamland
-Similarly to when selecting a network on web console ([console.taubyte.com](https://console.taubyte.com)), dreamland can be selected from the network selection dropdown 
-If dreamland is active, then a selection option for dreamland will appear in the network selection
+## Connecting Console to Dream
+Similarly to when selecting a network on web console ([console.taubyte.com](https://console.taubyte.com)), dream can be selected from the network selection dropdown 
+If dream is active, then a selection option for dream will appear in the network selection
 ![](images/web-console-login.png)
 
 
@@ -106,7 +85,7 @@ If importing a project that has a library, or website you will need to register 
 
 ## Running HTTP Resources
 
-HTTP resources run locally on Dreamland. You need to add the domains for these resources to your `/etc/hosts` file under `127.0.0.1`. To access these resources, you also need the port that the substrate node is running on. Once you have the domain and the port, you can access the resource at `{domain}:{port}/{path}`.
+HTTP resources run locally on Dream. You need to add the domains for these resources to your `/etc/hosts` file under `127.0.0.1`. To access these resources, you also need the port that the substrate node is running on. Once you have the domain and the port, you can access the resource at `{domain}:{port}/{path}`.
 
 ## Viewing Port Information
 

@@ -9,7 +9,7 @@ const tar = require("tar");
 const packageJson = require("./package.json");
 
 const binaryDir = path.join(__dirname, "bin");
-const binaryPath = path.join(binaryDir, "dreamland");
+const binaryPath = path.join(binaryDir, "dream");
 const versionFilePath = path.join(binaryDir, "version.txt");
 const packageVersion = packageJson.dream;
 
@@ -57,10 +57,10 @@ async function downloadAndExtractBinary() {
   let version = packageVersion;
 
   const { os: currentOs, arch: currentArch } = parseAssetName();
-  const assetName = `dreamland_${version}_${currentOs}_${currentArch}.tar.gz`;
-  const assetUrl = `https://github.com/taubyte/dreamland/releases/download/v${version}/${assetName}`;
+  const assetName = `dream_${version}_${currentOs}_${currentArch}.tar.gz`;
+  const assetUrl = `https://github.com/taubyte/tau/releases/download/v${version}/${assetName}`;
 
-  console.log(`Downloading dreamland v${version}...`);
+  console.log(`Downloading dream v${version}...`);
   const { data, headers } = await axios({
     url: assetUrl,
     method: "GET",
@@ -87,7 +87,7 @@ async function downloadAndExtractBinary() {
 
   return new Promise((resolve, reject) => {
     writer.on("finish", async () => {
-      console.log(`Extracting dreamland v${version}...`);
+      console.log(`Extracting dream v${version}...`);
       await tar.x({
         file: tarPath,
         C: binaryDir,

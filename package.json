@@ -1,8 +1,8 @@
 {
   "name": "@taubyte/dream",
-  "version": "0.1.6",
-  "dream": "1.0.5",
-  "description": "Node wrapper for taubyte/dreamland",
+  "version": "1.2.0",
+  "dream": "1.2.0",
+  "description": "Node wrapper for taubyte/dream",
   "bin": {
     "dream": "./index.js"
   },
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taubyte/dreamland.git"
+    "url": "git+https://github.com/taubyte/tau.git"
   },
   "keywords": [
     "serverless",
@@ -24,10 +24,11 @@
   "author": "Taubyte",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/taubyte/dreamland/issues"
+    "url": "https://github.com/taubyte/tau/issues"
   },
-  "homepage": "https://github.com/taubyte/dreamland#readme",
+  "homepage": "https://github.com/taubyte/tau#readme",
   "dependencies": {
+    "@taubyte/dream": "^0.1.7",
     "axios": "^1.6.5",
     "progress": "^2.0.3",
     "tar": "^6.2.0"

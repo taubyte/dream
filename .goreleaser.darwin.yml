@@ -1,8 +1,9 @@
+project_name: dream
 release:
   # Repo in which the release will be created.
   github:
     owner: taubyte
-    name: dreamland
+    name: tau
 
   # Control the draft and prerelease settings
   draft: false
@@ -16,8 +17,8 @@ release:
   
 builds:
   - id: "darwin"
-    main: "main.go"
-    binary: "dreamland"
+    main: "./tau/tools/dream/main.go"
+    binary: "dream"
     goos:
       - darwin
     goarch:
@@ -31,9 +32,8 @@ builds:
       - darwin
       - odo
 
-
 changelog:
-  skip: true
+  disable: true
 
 checksum:
   disable: true
