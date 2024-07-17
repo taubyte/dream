@@ -3,7 +3,7 @@ release:
   # Repo in which the release will be created.
   github:
     owner: taubyte
-    name: tau
+    name: dream
 
   # Control the draft and prerelease settings
   draft: false
