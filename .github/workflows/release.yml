@@ -28,6 +28,9 @@ jobs:
         with:
           go-version: '1.22.0'
 
+      - name: Remove .git folder from submodule
+        run: rm -rf tau/.git
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v4
         with:
