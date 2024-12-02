@@ -9,7 +9,7 @@ const tar = require("tar");
 const packageJson = require("./package.json");
 
 const binaryDir = path.join(__dirname, "bin");
-const binaryPath = path.join(binaryDir, "dream");
+const binaryPath = path.join(binaryDir, process.platform === "win32" ? "dream.exe" : "dream");
 const versionFilePath = path.join(binaryDir, "version.txt");
 const packageVersion = packageJson.version;
 
