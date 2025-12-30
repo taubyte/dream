@@ -1,24 +1,13 @@
 
-<h2 align="center">
-  <a href="https://taubyte.com" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="images/dream-logo-box-v2.png">
-      <img width="80" src="images/dream-logo-box-v2.png" alt="Dream">
-    </picture>
-  </a>
-  <br />
-  Dream
-  
-  ***Local Coding Equals Global Production***
-</h2>
 <div align="center">
 
 [![Release](https://img.shields.io/github/release/taubyte/dream.svg)](https://github.com/taubyte/dream/releases)
 [![License](https://img.shields.io/github/license/taubyte/dream)](LICENSE)
 </div>
 
-![](images/dream-banner.png)
-
+<img width="2664" height="1364" alt="dream cli diagram" src="https://github.com/user-attachments/assets/4fd29715-9ca5-4d0c-a8d2-7c282978d353" />
+<br/>
+<br/>
 Dream is a CLI tool that forms part of Taubyte's suite of development tools, designed to create local cloud environments.
 
 ## Installation
