@@ -26,7 +26,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.22.0'
+          go-version: '1.26.0'
 
       - name: Remove .git folder from submodule on Windows
         if: runner.os == 'Windows'
