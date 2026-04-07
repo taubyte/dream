@@ -4,6 +4,10 @@ on:
     tags:
       - '*'
 
+# Default GITHUB_TOKEN is often contents:read; GoReleaser must create/update releases and upload assets.
+permissions:
+  contents: write
+
 jobs:
   release:
     strategy:
